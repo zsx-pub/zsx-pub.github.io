@@ -158,6 +158,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-c复习随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/">c复习随笔</a>
+    </h1>
+  
+
+	<!--显示阅读次数-->
+	
+	<!--显示阅读次数完毕-->
+        
+        <a href="/blog/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/" class="archive-article-date">
+  	<time datetime="2020-05-12T00:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><h2 id="1-指针的使用"><a href="#1-指针的使用" class="headerlink" title="1.指针的使用"></a>1.指针的使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;指针的初始化</span><br><span class="line"></span><br><span class="line">int p &#x3D; 5;</span><br><span class="line">int *p_t &#x3D; &amp;p;</span><br><span class="line">&#x2F;&#x2F;或</span><br><span class="line">int p &#x3D; 5;</span><br><span class="line">int *p_t;</span><br><span class="line">p_t &#x3D; &amp;p;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">long *fellow; </span><br><span class="line">*fellow &#x3D; 23323;  &#x2F;&#x2F;不可行，fellow是一个指针，但它指向的是哪里？</span><br><span class="line">&#x2F;&#x2F;一定要在对指针的应用解除引用运算符（*）之前，将指针初始化为一个确定的、适当的地址。</span><br><span class="line"></span><br><span class="line">int *pt &#x3D; new int;</span><br><span class="line">*pt &#x3D; 1001;   &#x2F;&#x2F;使用new为int类型的数据对象分配内存</span><br><span class="line">delete pt;	 &#x2F;&#x2F;new分配的地址需要释放</span><br></pre></td></tr></table></figure>
+<h2 id="2-指针算术"><a href="#2-指针算术" class="headerlink" title="2.指针算术"></a>2.指针算术</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int tacos[10] &#x3D; &#123;5, 2, 8, 4, 1, 2, 2, 4, 6, 8&#125;;</span><br><span class="line">	int *pt &#x3D; tacos;  &#x2F;&#x2F;数组名为数组的第一个元素的地址</span><br><span class="line">	pt &#x3D; pt + 1;</span><br><span class="line">	int *pe &#x3D; &amp;tacos[9];</span><br><span class="line">	pe &#x3D; pe - 1;</span><br><span class="line">	int diff &#x3D; pe - pt;</span><br><span class="line">	printf(&quot;diff&#x3D;%d&quot;,diff); &#x2F;&#x2F;diff&#x3D;7</span><br><span class="line">	getchar();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="1-运算符"><a href="#1-运算符" class="headerlink" title="1.++运算符"></a>1.++运算符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int x &#x3D; 5;</span><br><span class="line">int y &#x3D; ++x; &#x2F;&#x2F; y &#x3D; 6, x &#x3D; 6</span><br><span class="line"></span><br><span class="line">int z &#x3D; 5;</span><br><span class="line">int y &#x3D; z++; &#x2F;&#x2F;y &#x3D; 5, z &#x3D; 6;</span><br></pre></td></tr></table></figure>
+<h2 id="2-运算符和指针"><a href="#2-运算符和指针" class="headerlink" title="2.++运算符和指针"></a>2.++运算符和指针</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">double arr[5] &#x3D; &#123;21.1, 32.8, 23.4, 45.2, 37.4&#125;;</span><br><span class="line">double *pt &#x3D; arr;  &#x2F;&#x2F; pt points to arr[0], to 21.1</span><br><span class="line">++pt;			&#x2F;&#x2F;pt points toarr[1],to 32.8</span><br><span class="line">double x &#x3D; *++pt;  &#x2F;&#x2F;先++用于pt,再将*应用于被递增后的pt。  arr[2],to 23.4</span><br><span class="line">++*p;        &#x2F;&#x2F;先取pt指向的值再加1，把23.4改成 24.4. pt仍然指向arr[2].</span><br><span class="line">(*pt)++;     &#x2F;&#x2F;先取得pt的值再加1，把24.4改成25.4，pt仍然指向arr[2]</span><br><span class="line">x &#x3D; *pt++;   &#x2F;&#x2F;后缀++优先级高，指针先递增，但是后缀运算符将对原来的地址（&amp;arr[2]）而不是递增后的地址解除引用（*），因此*pt++的</span><br><span class="line">			&#x2F;&#x2F;	值是arr[2],25.4。在该语句执行完后，pt的值讲师arr[3]的地址</span><br></pre></td></tr></table></figure>
+<p>前缀递增、前缀递减和*的优先级相同，以从右到左的方式结合。<br>后缀递增、后缀递减的优先级相同，比前缀运算符优先级高，以从左到右方式结合</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-gitee+hexo搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -181,7 +262,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h2><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br><code>node -v</code> #查看node版本<br><code>npm -v</code>    #查看npm版本<br><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code> #安装淘宝的cnpm 管理器<br><code>cnpm -v</code>    #查看cnpm版本`</p>
+        <h2 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h2><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js下载</a><br><code>node -v</code> #查看node版本<br><code>npm -v</code>    #查看npm版本<br><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code> #安装淘宝的cnpm 管理器<br><code>cnpm -v</code>    #查看cnpm版本`</p>
         
       
 
@@ -332,6 +413,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
