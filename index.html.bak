@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://A-XIAN.gitee.io">
-  <title>Archives: 2020/5 | A|XIAN</title>
+  <title>A|XIAN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="A-XIAN记录">
 <meta property="og:type" content="website">
 <meta property="og:title" content="A|XIAN">
-<meta property="og:url" content="http://a-xian.gitee.io/archives/2020/05/index.html">
+<meta property="og:url" content="http://a-xian.gitee.io/index.html">
 <meta property="og:site_name" content="A|XIAN">
 <meta property="og:description" content="A-XIAN记录">
 <meta property="og:locale" content="zh_CN">
@@ -158,34 +158,40 @@
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-c复习随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2020-05-12T00:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/">c复习随笔</a>
+      <a class="article-title" href="/blog/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/">c复习随笔</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+	<!--显示阅读次数-->
+	
+	<!--显示阅读次数完毕-->
+        
+        <a href="/blog/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/" class="archive-article-date">
+  	<time datetime="2020-05-12T00:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><h2 id="1-指针的使用"><a href="#1-指针的使用" class="headerlink" title="1.指针的使用"></a>1.指针的使用</h2>
+        
+          <a class="article-more-a" href="/blog/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,33 +203,74 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2020/05/11/gitee+hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-05-11T01:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-gitee+hexo搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/05/11/gitee+hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">windows\gitee+hexo 搭建博客记录</a>
+      <a class="article-title" href="/blog/2020/05/11/gitee+hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">windows\gitee+hexo 搭建博客记录</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+	<!--显示阅读次数-->
+	
+	<!--显示阅读次数完毕-->
+        
+        <a href="/blog/2020/05/11/gitee+hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2020-05-11T01:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h2><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js下载</a><br><code>node -v</code> #查看node版本<br><code>npm -v</code>    #查看npm版本<br><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code> #安装淘宝的cnpm 管理器<br><code>cnpm -v</code>    #查看cnpm版本`</p>
+        
+          <a class="article-more-a" href="/blog/2020/05/11/gitee+hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -239,19 +286,41 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020/05/11/gitee+hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
 
 
           </div>
@@ -285,9 +354,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
