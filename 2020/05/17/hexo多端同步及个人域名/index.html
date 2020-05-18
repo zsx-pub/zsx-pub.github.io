@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/%E9%98%BF%E9%87%8C%E4%BA%91.PNG">
 <meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/github%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D.PNG">
 <meta property="article:published_time" content="2020-05-17T07:10:23.000Z">
-<meta property="article:modified_time" content="2020-05-18T03:09:26.241Z">
+<meta property="article:modified_time" content="2020-05-18T03:16:13.893Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="gitee">
@@ -201,15 +201,16 @@
 <p><img src="http://qa5rgbn80.bkt.clouddn.com/hexo%E5%88%86%E6%94%AF2.PNG" alt></p>
 <h2 id="2-备份本地blog到github的hexo分支上"><a href="#2-备份本地blog到github的hexo分支上" class="headerlink" title="2.备份本地blog到github的hexo分支上"></a><h2 id="2">2.备份本地blog到github的hexo分支上</h2></h2><p>进本地blog文件夹<br>初始化本地仓库：<code>git init</code><br>添加本地所以文件到仓库：<code>git add .</code><br>添加commit：<code>git commit -m &quot;修改文件描述&quot;</code><br>添加本地仓库分支：<code>git branch hexo</code><br>添加远程仓库：<code>git remote add origin git@github.com:yourname/yourname.github.io.git</code></p>
 <blockquote>
-<p>远程仓库查看命令：<code>git remote</code><br>远程仓库删除命令：<code>git remote rm hexo</code><br>添加本地文件到远程仓库hexo分支：<code>git push origin hexo -f</code></p>
+<p>远程仓库查看命令：<code>git remote</code><br>远程仓库删除命令：<code>git remote rm hexo</code></p>
 </blockquote>
+<p>添加本地文件到远程仓库hexo分支：<code>git push origin hexo -f</code></p>
 <p><strong>注：</strong>远程仓库中的 master 分支用于存储 hexo 生成的静态页面，hexo 分支用于存储 hexo 源文件；</p>
 <p><strong>问提点：yilia主题的文件上传为空文件夹，导致博客打开空白？？？</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意这里有个巨大的坑！！！如果你用的是第三方的主题theme，是使用git clone下来的话，要把主题文件夹下面把.git文件夹删除掉，不然主题无法push到远程仓库，导致你发布的博客是一片空白</span><br></pre></td></tr></table></figure>
 <p>此答案无法解决！！</p>
 <h2 id="3-在b电脑上，加载hexo分支内容"><a href="#3-在b电脑上，加载hexo分支内容" class="headerlink" title="3.在b电脑上，加载hexo分支内容"></a>3.在b电脑上，加载hexo分支内容</h2><p>安装node.js，安装git，创建SSH秘钥(参考<a href="http://zsx.pub/2020/05/11/gitee+hexo搭建博客/" target="_blank" rel="noopener">搭建博客记录</a>)<br>进到要加载的本地目录<br>克隆远程仓库hexo分支到本地：<code>git clone -b hexo git@github.com:yourname/yourname.github.io.git</code><br>安装插件<code>npm install</code><br>hexo git部署<code>npm install hexo-deployer-git</code></p>
 <p>可编写博客，生成并部署<code>hexo clean，hexo g，hexo d</code><br>再同步到分支，执行* <a href="#2">第二步</a></p>
-<h2 id="4-多端同步"><a href="#4-多端同步" class="headerlink" title="4.多端同步"></a>4.多端同步</h2><p>在任意终端更新博客前，拉取最新的版本<code>git pull origin hexo</code><br>更新完后同步hexo分支</p>
+<h2 id="4-多端同步"><a href="#4-多端同步" class="headerlink" title="4.多端同步"></a>4.多端同步</h2><p>在任意终端更新博客前，拉取最新的版本<code>git pull origin hexo</code><br>更新完后同步hexo分支:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add.</span><br><span class="line">git commit -m &quot;描述&quot;</span><br><span class="line">git push origin hexo</span><br></pre></td></tr></table></figure>
 <p>生成并部署<code>hexo clean，hexo g，hexo d</code></p>
 <p>附录：<a href="https://help.github.com/cn/github/managing-files-in-a-repository/adding-a-file-to-a-repository" target="_blank" rel="noopener">github帮助中文</a></p>
