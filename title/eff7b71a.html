@@ -6,20 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zsx.pub">
-  <title>c复习随笔 | A|XIAN</title>
+  <title>简易ss连接教程 | A|XIAN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="指针1.指针的使用">
+  <meta name="description" content="Just my sock注册Just my sock">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c复习随笔">
-<meta property="og:url" content="http://zsx.pub/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/index.html">
+<meta property="og:title" content="简易ss连接教程">
+<meta property="og:url" content="http://zsx.pub/title/eff7b71a.html">
 <meta property="og:site_name" content="A|XIAN">
-<meta property="og:description" content="指针1.指针的使用">
+<meta property="og:description" content="Just my sock注册Just my sock">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-12T00:43:23.000Z">
-<meta property="article:modified_time" content="2020-05-14T01:06:13.743Z">
+<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/justmysock1.png">
+<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/justmysock2.png">
+<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/justmysock4.png">
+<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/justmysock5.png">
+<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/justmysock6.png">
+<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/justmysock7.png">
+<meta property="article:published_time" content="2020-05-18T02:25:23.000Z">
+<meta property="article:modified_time" content="2020-05-18T02:44:53.544Z">
 <meta property="article:author" content="ZSX">
-<meta property="article:tag" content="c++">
+<meta property="article:tag" content="机场">
+<meta property="article:tag" content="shadowsocks">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qa5rgbn80.bkt.clouddn.com/justmysock1.png">
   
     <link rel="alternative" href="/atom.xml" title="A|XIAN" type="application/atom+xml">
   
@@ -30,7 +38,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(200deg,#ccc,#000);
     }
   </style>
   
@@ -159,14 +167,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-c复习随笔" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-简易ss连接教程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      c复习随笔
+      简易ss连接教程
     </h1>
   
 
@@ -182,20 +190,23 @@
 	
 	<!--显示阅读次数完毕-->
         
-        <a href="/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/" class="archive-article-date">
-  	<time datetime="2020-05-12T00:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
+        <a href="/title/eff7b71a.html" class="archive-article-date">
+  	<time datetime="2020-05-18T02:25:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><h2 id="1-指针的使用"><a href="#1-指针的使用" class="headerlink" title="1.指针的使用"></a>1.指针的使用</h2><a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;指针的初始化</span><br><span class="line"></span><br><span class="line">int p &#x3D; 5;</span><br><span class="line">int *p_t &#x3D; &amp;p;</span><br><span class="line">&#x2F;&#x2F;或</span><br><span class="line">int p &#x3D; 5;</span><br><span class="line">int *p_t;</span><br><span class="line">p_t &#x3D; &amp;p;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">long *fellow; </span><br><span class="line">*fellow &#x3D; 23323;  &#x2F;&#x2F;不可行，fellow是一个指针，但它指向的是哪里？</span><br><span class="line">&#x2F;&#x2F;一定要在对指针的应用解除引用运算符（*）之前，将指针初始化为一个确定的、适当的地址。</span><br><span class="line"></span><br><span class="line">int *pt &#x3D; new int;</span><br><span class="line">*pt &#x3D; 1001;   &#x2F;&#x2F;使用new为int类型的数据对象分配内存</span><br><span class="line">delete pt;	 &#x2F;&#x2F;new分配的地址需要释放</span><br></pre></td></tr></table></figure>
-<h2 id="2-指针算术"><a href="#2-指针算术" class="headerlink" title="2.指针算术"></a>2.指针算术</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int tacos[10] &#x3D; &#123;5, 2, 8, 4, 1, 2, 2, 4, 6, 8&#125;;</span><br><span class="line">	int *pt &#x3D; tacos;  &#x2F;&#x2F;数组名为数组的第一个元素的地址</span><br><span class="line">	pt &#x3D; pt + 1;</span><br><span class="line">	int *pe &#x3D; &amp;tacos[9];</span><br><span class="line">	pe &#x3D; pe - 1;</span><br><span class="line">	int diff &#x3D; pe - pt;</span><br><span class="line">	printf(&quot;diff&#x3D;%d&quot;,diff); &#x2F;&#x2F;diff&#x3D;7</span><br><span class="line">	getchar();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><h2 id="1-运算符"><a href="#1-运算符" class="headerlink" title="1.++运算符"></a>1.++运算符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int x &#x3D; 5;</span><br><span class="line">int y &#x3D; ++x; &#x2F;&#x2F; y &#x3D; 6, x &#x3D; 6</span><br><span class="line"></span><br><span class="line">int z &#x3D; 5;</span><br><span class="line">int y &#x3D; z++; &#x2F;&#x2F;y &#x3D; 5, z &#x3D; 6;</span><br></pre></td></tr></table></figure>
-<h2 id="2-运算符和指针"><a href="#2-运算符和指针" class="headerlink" title="2.++运算符和指针"></a>2.++运算符和指针</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">double arr[5] &#x3D; &#123;21.1, 32.8, 23.4, 45.2, 37.4&#125;;</span><br><span class="line">double *pt &#x3D; arr;  &#x2F;&#x2F; pt points to arr[0], to 21.1</span><br><span class="line">++pt;			&#x2F;&#x2F;pt points toarr[1],to 32.8</span><br><span class="line">double x &#x3D; *++pt;  &#x2F;&#x2F;先++用于pt,再将*应用于被递增后的pt。  arr[2],to 23.4</span><br><span class="line">++*p;        &#x2F;&#x2F;先取pt指向的值再加1，把23.4改成 24.4. pt仍然指向arr[2].</span><br><span class="line">(*pt)++;     &#x2F;&#x2F;先取得pt的值再加1，把24.4改成25.4，pt仍然指向arr[2]</span><br><span class="line">x &#x3D; *pt++;   &#x2F;&#x2F;后缀++优先级高，指针先递增，但是后缀运算符将对原来的地址（&amp;arr[2]）而不是递增后的地址解除引用（*），因此*pt++的</span><br><span class="line">			&#x2F;&#x2F;	值是arr[2],25.4。在该语句执行完后，pt的值讲师arr[3]的地址</span><br></pre></td></tr></table></figure>
-<p>前缀递增、前缀递减和*的优先级相同，以从右到左的方式结合。<br>后缀递增、后缀递减的优先级相同，比前缀运算符优先级高，以从左到右方式结合</p>
+        <h1 id="Just-my-sock"><a href="#Just-my-sock" class="headerlink" title="Just my sock"></a>Just my sock</h1><p>注册<br><a href="https://justmysocks2.net/" target="_blank" rel="noopener">Just my sock</a></p>
+<a id="more"></a>
+
+<p>购买套餐<br><img src="http://qa5rgbn80.bkt.clouddn.com/justmysock1.png" alt></p>
+<p>选择套餐，优惠码(JMS9272283),点击 CheckOut 进行支付(alipay支付宝)<br><img src="http://qa5rgbn80.bkt.clouddn.com/justmysock2.png" alt><br><img src="http://qa5rgbn80.bkt.clouddn.com/justmysock4.png" alt></p>
+<p>购买完成在 My Services下面 可以看到shadowsocks 的端口，密码和 IP 等信息(查看剩余流量也在这)<br><img src="http://qa5rgbn80.bkt.clouddn.com/justmysock5.png" alt></p>
+<h1 id="shadowrocks使用"><a href="#shadowrocks使用" class="headerlink" title="shadowrocks使用"></a>shadowrocks使用</h1><p>下载对应版本<br><img src="http://qa5rgbn80.bkt.clouddn.com/justmysock6.png" alt></p>
+<p>以windows为例:<br>安装后打开,端口、IP、加密方式等信息对应填写，填完点确定<br><img src alt></p>
+<p>在任务栏找到小飞机 并 右键开启代理 （PAC为部分流量走代理，全局为所有流量走代理）<br><img src="http://qa5rgbn80.bkt.clouddn.com/justmysock7.png" alt></p>
 
       
 
@@ -235,7 +246,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">机场</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">shadowsocks</a>
         		</li>
       		
 		</ul>
@@ -291,7 +306,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zsx.pub/2020/05/12/c%E5%A4%8D%E4%B9%A0%E9%9A%8F%E7%AC%94/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zsx.pub/title/eff7b71a.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -305,18 +320,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/05/17/hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5%E5%8F%8A%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo多端同步及个人域名,搜索引擎收录
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/11/gitee+hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">windows\gitee+hexo 搭建博客记录</div>
+    <a href="/title/58178cf3.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo多端同步</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -343,7 +349,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#指针"><span class="toc-number">1.</span> <span class="toc-text">指针</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-指针的使用"><span class="toc-number">1.1.</span> <span class="toc-text">1.指针的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-指针算术"><span class="toc-number">1.2.</span> <span class="toc-text">2.指针算术</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运算符"><span class="toc-number">2.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-运算符"><span class="toc-number">2.1.</span> <span class="toc-text">1.++运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-运算符和指针"><span class="toc-number">2.2.</span> <span class="toc-text">2.++运算符和指针</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Just-my-sock"><span class="toc-number">1.</span> <span class="toc-text">Just my sock</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shadowrocks使用"><span class="toc-number">2.</span> <span class="toc-text">shadowrocks使用</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -494,15 +500,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">gitee</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
