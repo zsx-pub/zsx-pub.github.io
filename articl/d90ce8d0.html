@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/jiagou.png">
 <meta property="article:published_time" content="2020-05-20T00:43:23.000Z">
-<meta property="article:modified_time" content="2020-05-20T07:37:34.511Z">
+<meta property="article:modified_time" content="2020-05-20T16:27:13.671Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="linux">
@@ -58,6 +58,21 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
   })();
 </script>
 
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <!-- Js����Loding��Ч-->
+	<script>
+	  //��������״̬�ı�
+	  document.onreadystatechange = completeLoading;
+	  
+	  //����״̬Ϊcompleteʱ�Ƴ�loadingЧ��
+	  function completeLoading() {
+	      if (document.readyState == "complete") {
+		  var loadingMask = document.getElementById('loader-wrapper');
+		  loadingMask.parentNode.removeChild(loadingMask);
+	      }
+	  }  
+	</script>
+  <!-- loading���� -->
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
@@ -65,7 +80,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #00000"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -86,6 +101,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
+		      <script>
+			      var menu = document.getElementsByClassName('header-menu')[0];
+			      var lis = menu.children[0].getElementsByTagName('li');
+			      var n = lis.length
+			      var menu_icon = new Array()
+			      //���menu_icon����װͼ�꣬ͼ��������������桰fa fa-xxx�����������Ӿ���
+			      menu_icon[0]="<i class=\"fa fa-home\" aria-hidden=\"true\"></i> "
+					menu_icon[1]="<i class=\"fa fa-book\" aria-hidden=\"true\"></i> "
+			      for (var i = 0; i < n; i++){
+				var temp = lis[i].children[0].innerHTML;
+				lis[i].children[0].innerHTML = menu_icon[i] + temp;
+			      }
+		      </script>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -119,10 +147,16 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </div>
 
     </div>
+    <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <!-- <div class="load_title">Loading. . .<br></div> -->
+    </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #00000"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -191,6 +225,37 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     </h1>
   
 
+	
+          <div style="margin-top:10px;margin-bottom:-15px;">
+    
+      
+        <span class="article-type" style="
+          color: white;
+          font-size: 14px;
+          background: #bf59f3;
+          padding: 0 5px 1px 5px;
+          margin-right: 5px;
+          border-radius: 2px;">原创</span>
+      
+    
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
+        <span class="post-count" style="font-size: 14px;color: navy">1.1k</span>
+      </span>
+    </span>
+    
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
+        <span class="post-count" style="font-size: 14px;color: navy">5分</span>
+      </span>
+    </span>
+</div>
+          
 	<!--显示阅读次数-->
 	
 	  <br/>
@@ -209,6 +274,33 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
       </header>
     
+    <!-- 目录内容 -->
+    
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+    	<div id="toc-article" class="toc-article">
+    	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    		<strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-了解hexo自动部署的架构"><span class="toc-number">1.</span> <span class="toc-text">1.了解hexo自动部署的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-搭建流程"><span class="toc-number">2.</span> <span class="toc-text">2.搭建流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-服务器环境搭建"><span class="toc-number">3.</span> <span class="toc-text">3.服务器环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1.1"><span class="toc-number">3.1.</span> <span class="toc-text">1. 安装git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.2"><span class="toc-number">3.2.</span> <span class="toc-text">2. Nginx配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-自动化部署"><span class="toc-number">4.</span> <span class="toc-text">4.自动化部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2.1"><span class="toc-number">4.1.</span> <span class="toc-text">1. 创建git用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2.2"><span class="toc-number">4.2.</span> <span class="toc-text">2. 创建git裸库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2.3"><span class="toc-number">4.3.</span> <span class="toc-text">3. Hooks同步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-hexo本地配置"><span class="toc-number">5.</span> <span class="toc-text">5.hexo本地配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3.1"><span class="toc-number">5.1.</span> <span class="toc-text">1. ssh连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3.2"><span class="toc-number">5.2.</span> <span class="toc-text">2. deploy修改</span></a></li></ol></li></ol>
+             </div>
+       <script type="text/javascript">
+    	function showToc(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:block");
+    		show_toc_btn.setAttribute("style","display:none");
+    		};
+    	function showBtn(){
+    		var toc_article = document.getElementById("toc-article");
+    		var show_toc_btn = document.getElementById("show-toc-btn");
+    		toc_article.setAttribute("style","display:none");
+    		show_toc_btn.setAttribute("style","display:block");
+    		};
+       </script>
+          
+    <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
@@ -267,7 +359,6 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: git@SERVER:&#x2F;home&#x2F;git&#x2F;blog.git    &#x2F;&#x2F;&lt;repository url&gt;</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
 
       
-
       
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
@@ -558,15 +649,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">gitee</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -735,5 +826,9 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+  <!-- ����鸴�ƹ��� -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="/clipboard_use.js"></script>
 </body>
 </html>

@@ -52,6 +52,21 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
   })();
 </script>
 
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <!-- Js����Loding��Ч-->
+	<script>
+	  //��������״̬�ı�
+	  document.onreadystatechange = completeLoading;
+	  
+	  //����״̬Ϊcompleteʱ�Ƴ�loadingЧ��
+	  function completeLoading() {
+	      if (document.readyState == "complete") {
+		  var loadingMask = document.getElementById('loader-wrapper');
+		  loadingMask.parentNode.removeChild(loadingMask);
+	      }
+	  }  
+	</script>
+  <!-- loading���� -->
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
@@ -59,7 +74,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #00000"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -80,6 +95,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
+		      <script>
+			      var menu = document.getElementsByClassName('header-menu')[0];
+			      var lis = menu.children[0].getElementsByTagName('li');
+			      var n = lis.length
+			      var menu_icon = new Array()
+			      //���menu_icon����װͼ�꣬ͼ��������������桰fa fa-xxx�����������Ӿ���
+			      menu_icon[0]="<i class=\"fa fa-home\" aria-hidden=\"true\"></i> "
+					menu_icon[1]="<i class=\"fa fa-book\" aria-hidden=\"true\"></i> "
+			      for (var i = 0; i < n; i++){
+				var temp = lis[i].children[0].innerHTML;
+				lis[i].children[0].innerHTML = menu_icon[i] + temp;
+			      }
+		      </script>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -113,10 +141,16 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </div>
 
     </div>
+    <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <!-- <div class="load_title">Loading. . .<br></div> -->
+    </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #00000"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -337,15 +371,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">gitee</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,5 +548,9 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+  <!-- ����鸴�ƹ��� -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="/clipboard_use.js"></script>
 </body>
 </html>

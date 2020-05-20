@@ -64,6 +64,21 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
   })();
 </script>
 
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <!-- Js����Loding��Ч-->
+	<script>
+	  //��������״̬�ı�
+	  document.onreadystatechange = completeLoading;
+	  
+	  //����״̬Ϊcompleteʱ�Ƴ�loadingЧ��
+	  function completeLoading() {
+	      if (document.readyState == "complete") {
+		  var loadingMask = document.getElementById('loader-wrapper');
+		  loadingMask.parentNode.removeChild(loadingMask);
+	      }
+	  }  
+	</script>
+  <!-- loading���� -->
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
@@ -71,7 +86,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #00000"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -92,6 +107,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
+		      <script>
+			      var menu = document.getElementsByClassName('header-menu')[0];
+			      var lis = menu.children[0].getElementsByTagName('li');
+			      var n = lis.length
+			      var menu_icon = new Array()
+			      //���menu_icon����װͼ�꣬ͼ��������������桰fa fa-xxx�����������Ӿ���
+			      menu_icon[0]="<i class=\"fa fa-home\" aria-hidden=\"true\"></i> "
+					menu_icon[1]="<i class=\"fa fa-book\" aria-hidden=\"true\"></i> "
+			      for (var i = 0; i < n; i++){
+				var temp = lis[i].children[0].innerHTML;
+				lis[i].children[0].innerHTML = menu_icon[i] + temp;
+			      }
+		      </script>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -125,10 +153,16 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </div>
 
     </div>
+    <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <!-- <div class="load_title">Loading. . .<br></div> -->
+    </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #00000"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -197,6 +231,29 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     </h1>
   
 
+	
+          <div style="margin-top:10px;margin-bottom:-15px;">
+    
+      
+    
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
+        <span class="post-count" style="font-size: 14px;color: navy">135</span>
+      </span>
+    </span>
+    
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
+        <span class="post-count" style="font-size: 14px;color: navy">1分</span>
+      </span>
+    </span>
+</div>
+          
 	<!--显示阅读次数-->
 	
 	  <br/>
@@ -215,6 +272,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
       </header>
     
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Just-my-sock"><a href="#Just-my-sock" class="headerlink" title="Just my sock"></a>Just my sock</h1><p>注册<br><a href="https://justmysocks2.net/" target="_blank" rel="noopener">Just my sock</a></p>
@@ -228,7 +288,6 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>在任务栏找到小飞机 并 右键开启代理 （PAC为部分流量走代理，全局为所有流量走代理）<br><img src="http://qa5rgbn80.bkt.clouddn.com/justmysock7.png" alt></p>
 
       
-
       
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
@@ -528,15 +587,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">gitee</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -705,5 +764,9 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+  <!-- ����鸴�ƹ��� -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="/clipboard_use.js"></script>
 </body>
 </html>
