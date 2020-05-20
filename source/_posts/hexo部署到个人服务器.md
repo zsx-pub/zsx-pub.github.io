@@ -7,24 +7,27 @@ tags:
 ---
 ---
 **前言**
-偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有[V2ray伪装流量](tlanyan.me/v2ray-traffic-mask/)的方法不知道效果会不会好一点),进而就想着把hexo部署到这来
+偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有[V2ray伪装流量](http://tlanyan.me/v2ray-traffic-mask/)的方法不知道效果会不会好一点),进而就想着把hexo部署到这来
+PS:vps只能免费试用2天。。。！！！？？？我。。
 ---
+<!-- more -->
 # 1.了解hexo自动部署的架构
  在搞明白hexo的发布架构后，就会理解后边的操作内容
-![]()
+![](http://qa5rgbn80.bkt.clouddn.com/jiagou.png)
 # 2.搭建流程
-1. 服务器环境搭建
+1. **服务器环境搭建**
 	1.1 [安装git](#1.1)
 	1.2 [Nginx配置](#1.2)
-2. 自动化部署
+2. **自动化部署**
 	2.1 [创建git用户](#2.1)
 	2.2 [创建git裸库](#2.2)
 	2.3 [hooks同步](#2.3)
-3. 本地hexo配置
+3. **本地hexo配置**
 	3.1 [ssh连接](#3.1)
 	3.2 [deploy修改](#3.2)
 # 3.服务器环境搭建
 <h2 id="1.1">1. 安装git</h2>
+远程登录服务器(SecureCRT,putty)
 ```
 git --version //没有则安装
 yum install git //安装
@@ -32,8 +35,9 @@ yum install git //安装
 curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -
 ```
 <h2 id="1.2">2. Nginx配置</h2>
-1.安装:`yum install -y git nginx`
-2.修改配置文件`/etc/nginx/nginx.conf`，(用editplus远程登录后修改文件，不喜欢用vim)
+
+1)安装: `yum install -y git nginx`
+</br>2)修改配置文件`/etc/nginx/nginx.conf`，(用editplus远程登录后修改文件，不喜欢用vim)
 ```
 server {
 
@@ -64,7 +68,7 @@ server {
 
     }
 ```
-3.刷新配置`nginx -s reload`
+3)刷新配置 `nginx -s reload`
 >如果报错,参考:
 ```
 nginx: [error] open() "/run/nginx.pid" failed (2: No such file or directory)
@@ -72,7 +76,8 @@ nginx: [error] open() "/run/nginx.pid" failed (2: No such file or directory)
 执行可解决：
 /usr/sbin/nginx -c /etc/nginx/nginx.conf   #使用指定nginx.conf文件的方式重启nginx
 ```
-4.启动nginx`nginx`
+4)启动nginx`nginx`
+
 >如果报错，参考:
 ```
 如果发现如下报错：
@@ -123,12 +128,14 @@ COMMIT
 [root@localhost ~]# systemctl restart iptables.service
 
 ```
+
 # 4.自动化部署
 <h2 id="2.1">1. 创建git用户</h2>
 ```
 adduser git      
 sudo passwd git  #设置git用户的密码
 ```
+
 <h2 id="2.2">2. 创建git裸库</h2>
 ```
 su git
@@ -137,6 +144,7 @@ mkdir -p blog
 mkdir repos && cd repos
 git init --bare blog.git
 ```
+
 <h2 id="2.3">3. Hooks同步</h2>
 使用的是 post-receive这个钩子，当git有收发的时候就会调用这个钩子。 在 ~/blog.git 裸库的 hooks文件夹中，新建post-receive文件
 ```
@@ -152,16 +160,19 @@ chmod +x ./blog.git/hooks/post-receive
 cd ~
 chown -R git:git /home/git/repos/blog.git/   #添加权限
 ```
+
 # 5.hexo本地配置
 <h2 id="3.1">1. ssh连接</h2>
-在本地电脑操作
-`ssh-copy-id -i ~/.ssh/id_rsa.pub git@SERVER`
+
+在本地电脑操作 `ssh-copy-id -i ~/.ssh/id_rsa.pub git@SERVER`
+
 >切换至git用户， 可以看到~/.ssh/authorized_keys 文件里已经有了本地电脑的公钥拷贝，这样就建立了ssh信任
 ```
 su git
 mkdir ~/.ssh
 cat ~/.ssh/authorized_keys
 ```
+
 回本地电脑,查看是否能免密登录
 `ssh -v git@SEVER`
 <h2 id="3.2">2. deploy修改</h2>
