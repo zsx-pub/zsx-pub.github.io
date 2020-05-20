@@ -1,9 +1,10 @@
 ---
-title: hexo多端同步及个人域名
-date: 2020-05-17 15:10:23
+title: hexo多端同步
 tags:
-     - hexo
-     - gitee
+  - hexo
+  - gitee
+abbrlink: adc93921
+date: 2020-05-17 15:10:23
 ---
 ## 1.github创建hexo分支
 创建hexo分支并设置为默认
@@ -52,10 +53,4 @@ git push origin hexo
 
 附录：[github帮助中文](https://help.github.com/cn/github/managing-files-in-a-repository/adding-a-file-to-a-repository)
 
-# 个人域名修改
-1.域名购买：阿里云
-2.添加解析
-`ping 个人博客地址`放回ip地址
-![](http://qa5rgbn80.bkt.clouddn.com/%E9%98%BF%E9%87%8C%E4%BA%91.PNG)
-3.github添加个人域名
-![](http://qa5rgbn80.bkt.clouddn.com/github%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D.PNG)
+

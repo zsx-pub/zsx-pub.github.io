@@ -1,9 +1,10 @@
 ---
 title: windows\gitee+hexo 搭建博客记录
-date: 2020-05-11 09:43:23
 tags:
-     - hexo
-     - gitee
+  - hexo
+  - gitee
+abbrlink: '98113609'
+date: 2020-05-11 09:43:23
 ---
 
 1.安装node.js
@@ -196,6 +197,14 @@ valine:
     }
 </script>
 ```
+
+# 9.个人域名修改
+1.域名购买：阿里云
+2.添加解析
+`ping 个人博客地址`放回ip地址
+![](http://qa5rgbn80.bkt.clouddn.com/%E9%98%BF%E9%87%8C%E4%BA%91.PNG)
+3.github添加个人域名
+![](http://qa5rgbn80.bkt.clouddn.com/github%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D.PNG)
 
 附录
 -
