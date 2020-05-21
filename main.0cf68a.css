@@ -597,7 +597,7 @@ page-nav{text-align:center;margin-top:30px}#page-nav .page-number{width:20px;hei
 
 /* ��Ȩ���� */
 .copyright {
-	background-color: rgba(209, 209, 209, 0.5);
+	background-color: rgba(209, 209, 209, 0.9);
 	margin-top: 2em;
 	border-left: 3px solid #03a9f4;
 	padding: .5em 1em;
