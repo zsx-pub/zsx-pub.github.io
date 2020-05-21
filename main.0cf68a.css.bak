@@ -434,7 +434,7 @@ page-nav{text-align:center;margin-top:30px}#page-nav .page-number{width:20px;hei
 .article-meta{width:150px;font-size:14;text-align:right;position:absolute;right:0;top:23px;text-align:center;z-index:1}
 .article-meta time{color:#aaa}.article-meta time .icon-clock{margin-right:8px;font-size:16px}
 .article-more-link{margin-top:0;text-align:left;float:right}
-.article-more-link a{background:#EF7522;color:#fff;font-size:12px;padding:5px 8px;line-height:16px;border-radius:2px;transition:background .3s}
+.article-more-link a{background:#ba8f6c;color:#fff;font-size:12px;padding:5px 8px;line-height:16px;border-radius:2px;transition:background .3s}
 .article-more-link a:hover{background:#3c3c3c}.article-more-link a.hidden{visibility:hidden}.article-info.info-on-right{margin:10px 0 0;float:right}
 .article-info-index.article-info{padding-top:20px;margin:30px 7.6923% 0;min-height:72px;border-top:1px solid #ddd}
 .article-info-post.article-info{padding:0;border:none;margin:-30px 0 20px 7.6923%}.article-inner p{margin:0 0 1.75em}
@@ -443,7 +443,7 @@ page-nav{text-align:center;margin-top:30px}#page-nav .page-number{width:20px;hei
 .article-inner h3{font-size:19px;font-size:1.1875rem;line-height:1.1052631579;margin-top:2.9473684211em;margin-bottom:1.4736842105em}
 .article-inner h4,.article-inner h5,.article-inner h6{font-size:16px;font-size:1rem;line-height:1.3125;margin-top:3.5em;margin-bottom:1.75em}
 .article-inner h4{letter-spacing:.140625em;text-transform:uppercase}.article-inner h6{font-style:italic}
-.article-inner h1.article-title,.article-title {color: #000000;margin-left: 0;font-weight: 300;line-height: 35px;margin-bottom:20px;font-size: 32px;transition: color .3s}
+.article-inner h1.article-title,.article-title {color: #E1FFFF;margin-left: 0;font-weight: 300;line-height: 35px;margin-bottom:20px;font-size: 32px;transition: color .3s}
 .article-inner h2,.article-inner h3,.article-inner h4,.article-inner h5,.article-inner h6{font-weight:900}
 .article-inner h1:first-child,.article-inner h2:first-child,.article-inner h3:first-child,.article-inner h4:first-child,.article-inner h5:first-child,.article-inner h6:first-child{margin-top:0}
 .article-inner h1:first-child{margin-bottom:10px;display:inline}.article-entry{line-height:1.8em;padding-right:7.6923%;padding-left:7.6923%}
