@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://zsx.pub">
   <title>hexo部署到个人服务器linux | A|XIAN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有V2ray伪装流量的方法不知道效果会不会好一点),进而就想着把hexo部署到这来PS:vps只能免费试用2天。。。！！！？？？我。。">
+  <meta name="description" content="前言  偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有V2ray伪装流量的方法不知道效果会不会好一点),进而就想着把hexo部署到这来PS:vps只能免费试用2天。。。！！！？？？我。。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo部署到个人服务器linux">
 <meta property="og:url" content="http://zsx.pub/articl/d90ce8d0.html">
 <meta property="og:site_name" content="A|XIAN">
-<meta property="og:description" content="前言偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有V2ray伪装流量的方法不知道效果会不会好一点),进而就想着把hexo部署到这来PS:vps只能免费试用2天。。。！！！？？？我。。">
+<meta property="og:description" content="前言  偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有V2ray伪装流量的方法不知道效果会不会好一点),进而就想着把hexo部署到这来PS:vps只能免费试用2天。。。！！！？？？我。。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com/jiagou.png">
 <meta property="article:published_time" content="2020-05-20T00:43:23.000Z">
-<meta property="article:modified_time" content="2020-05-21T02:54:29.772Z">
+<meta property="article:modified_time" content="2020-05-22T08:21:30.381Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="linux">
@@ -148,13 +148,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/zsx-pub/zsx-pub.github.io" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="qq" target="_blank" href="/644256659" title="qq"><i class="icon-qq"></i></a>
+					<a class="weixin" target="_blank" href="/sbb121" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -197,13 +197,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/zsx-pub/zsx-pub.github.io" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="qq" target="_blank" href="/644256659" title="qq"><i class="icon-qq"></i></a>
+						<a class="weixin" target="_blank" href="/sbb121" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
@@ -298,8 +298,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p><strong>前言</strong><br>偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有<a href="http://tlanyan.me/v2ray-traffic-mask/" target="_blank" rel="noopener">V2ray伪装流量</a>的方法不知道效果会不会好一点),进而就想着把hexo部署到这来<br>PS:vps只能免费试用2天。。。！！！？？？我。。</p>
+        <p><br><strong>前言</strong></p>
+<blockquote>
+<p>偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有<a href="http://tlanyan.me/v2ray-traffic-mask/" target="_blank" rel="noopener">V2ray伪装流量</a>的方法不知道效果会不会好一点),进而就想着把hexo部署到这来<br>PS:vps只能免费试用2天。。。！！！？？？我。。</p>
+</blockquote>
 <hr>
 <a id="more"></a>
 <h1 id="1-了解hexo自动部署的架构"><a href="#1-了解hexo自动部署的架构" class="headerlink" title="1.了解hexo自动部署的架构"></a>1.了解hexo自动部署的架构</h1><p> 在搞明白hexo的发布架构后，就会理解后边的操作内容<br><img src="http://qa5rgbn80.bkt.clouddn.com/jiagou.png" alt></p>
@@ -371,7 +373,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-05-21T02:54:29.772Z" itemprop="dateUpdated">2020年05月21日 10:54:29</time>
+        <time datetime="2020-05-22T08:21:30.381Z" itemprop="dateUpdated">2020年05月22日 16:21:30</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -607,11 +609,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
       	</div>
 	<!-- 不算子统计 -->
 	     
-        <span id="busuanzi_container_site_pv">
+        <span id="busuanzi_container_site_pv" style="color: white;font-size: 14px;">
                 总点击量:<span id="busuanzi_value_site_pv"></span>
         </span>
         <span class="post-meta-divider">|</span>
-        <span id="busuanzi_container_site_uv" style='display:none'>
+        <span id="busuanzi_container_site_uv" style="display:none;color: white;font-size: 14px;">
                 访客数:<span id="busuanzi_value_site_uv"></span>
         </span>
         <script async src="/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -698,15 +700,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">gitee</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -1022,11 +1022,12 @@ body {
 }
 
 .mid-col {
+/*youbianlan beiji*/
 	position: absolute;
 	right: 0;
 	min-height: 100%;
 /*background:#eaeaea;*/
-	background: #DCDCDC;
+	background: linear-gradient(200deg,#ccc,#000);
 	left: 300px;
 	width: auto
 }
@@ -1071,7 +1072,7 @@ body {
 }
 
 .left-col #header a {
-	color: #fff
+	color: #D3D3D3
 }
 
 .left-col #header a:hover {
@@ -2260,13 +2261,14 @@ page-nav {
 }
 
 .article {
+/*wenzhangtikuang yanse*/
 	margin: 30px;
 	position: relative;
 	border: 1px solid #DCDCDC;
 	border-top: 1px solid #DCDCDC;
 	border-bottom: 1px solid #808080;
 	/*background: linear-gradient(#f5f5f5,#dcdcdc,#c0c0c0);*/
-	background: #DCDCDC;
+	background: rgba(255,255,254,0.4);
 	transition: all .2s ease-in
 }
 
@@ -2285,7 +2287,8 @@ page-nav {
 }
 */
 .article-header {
-	border-left: 5px solid #696969;
+/*biaotizuobian yanse*/
+	border-left: 5px solid #808080;
 	padding: 30px 0 15px 25px;
 	padding-left: 7.6923%
 }
@@ -2402,7 +2405,8 @@ page-nav {
 }
 
 .article-inner h1.article-title,.article-title {
-	color: #696969;
+/*biaoti yanse*/
+	color: #FAF0E6;
 	margin-left: 0;
 	font-weight: 300;
 	line-height: 35px;
@@ -2500,13 +2504,18 @@ page-nav {
 }
 
 .article-entry h1 {
-	margin-top: 30px
+	margin-top: 30px;
+	font-weight: 700;
+	color: #fffff8;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ddd
 }
 
 .article-entry h2,.article-entry h3,.article-entry h4,.article-entry h5,.article-entry h6 {
+/*geji biaoti yanse*/
 	margin-top: 20px;
 	font-weight: 700;
-	color: #574c4c;
+	color: #808080;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #ddd
 }
