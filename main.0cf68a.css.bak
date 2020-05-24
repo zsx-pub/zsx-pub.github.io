@@ -2269,6 +2269,7 @@ page-nav {
 	border-bottom: 1px solid #808080;
 	/*background: linear-gradient(#f5f5f5,#dcdcdc,#c0c0c0);*/
 	background: rgba(255,255,254,0.4);
+	box-shadow: 10px 10px 5px #888888;
 	transition: all .2s ease-in
 }
 
@@ -2290,7 +2291,13 @@ page-nav {
 /*biaotizuobian yanse*/
 	border-left: 5px solid #808080;
 	padding: 30px 0 15px 25px;
-	padding-left: 7.6923%
+	padding-left: 7.6923%;
+}
+
+.article-header:hover {
+	border-left: 5px solid #fff;
+	padding: 30px 0 15px 25px;
+	padding-left: 8.6923%;
 }
 
 .article-meta {
@@ -2406,7 +2413,7 @@ page-nav {
 
 .article-inner h1.article-title,.article-title {
 /*biaoti yanse*/
-	color: #FAF0E6;
+	color: #fffff8;
 	margin-left: 0;
 	font-weight: 300;
 	line-height: 35px;
@@ -2515,7 +2522,7 @@ page-nav {
 /*geji biaoti yanse*/
 	margin-top: 20px;
 	font-weight: 700;
-	color: #808080;
+	color: #fffff8;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #ddd
 }
