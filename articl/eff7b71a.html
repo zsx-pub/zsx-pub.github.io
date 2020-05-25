@@ -95,13 +95,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
-  <div id="container" q-class="show:isCtnShow">
+  <div d id="container" q-class="show:isCtnShow" data-scroll-reveal>
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="left-col" q-class="show:isShow">
+    <div class="left-col" q-class="show:isShow" >
       
 <div class="overlay" style="background: #00000"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
+	
 		<a href="/" class="profilepic">
 			<img src="http://qa5rgbn80.bkt.clouddn.com/2.jpg" class="js-avatar">
 		</a>
@@ -126,7 +127,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			      var lis = menu.children[0].getElementsByTagName('li');
 			      var n = lis.length
 			      var menu_icon = new Array()
-			      //���menu_icon����װͼ�꣬ͼ��������������桰fa fa-xxx�����������Ӿ���
+			      //这个menu_icon用来装图标，图标的类名都是下面“fa fa-xxx”，自行添加就行
 			      menu_icon[0]="<i class=\"fa fa-home\" aria-hidden=\"true\"></i> "
 					menu_icon[1]="<i class=\"fa fa-book\" aria-hidden=\"true\"></i> "
 			      for (var i = 0; i < n; i++){
@@ -151,6 +152,20 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     			
             
 		</nav>
+
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<form id="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="站内搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+    <i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+</form>
+<div id="local-search-result"></div> <!-- 搜索结果区 -->
+<p class='no-result'>没找到。。。</p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+<script type="text/javascript" src="/search.js"></script>
+<script>
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script>
+
 		<nav class="header-nav">
 			<div class="social">
 				
@@ -164,17 +179,18 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		        
 			</div>
 		</nav>
+
 	</header>		
 </div>
 
     </div>
-    <div id="loader-wrapper">
-    <div id="loader"></div>
+    <div id="loader-wrapper" >
+    <div id="loader" ></div>
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
     <!-- <div class="load_title">Loading. . .<br></div> -->
     </div>
-    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse" >
       
 <nav id="mobile-nav">
   	<div class="overlay js-overlay" style="background: #00000"></div>
@@ -229,14 +245,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
 
-      <div id="wrapper" class="body-wrap">
-        <div class="menu-l">
+      <div id="wrapper" class="body-wrap" >
+        <div class="menu-l" >
           <div class="canvas-wrap">
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
-          <div id="js-content" class="content-ll">
+          <div id="js-content" class="content-ll" >
             <article id="post-简易ss连接教程" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+  <div class="article-inner"  >
     
       <header class="article-header">
         
@@ -302,7 +318,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
       </header>
     
 
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody" >
       
         <h1 id="Just-my-sock"><a href="#Just-my-sock" class="headerlink" title="Just my sock"></a><br>Just my sock</h1><p>注册<br><a href="https://justmysocks2.net/" target="_blank" rel="noopener">Just my sock</a></p>
 <a id="more"></a>
@@ -487,9 +503,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
 <aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+    <div class="mod-side-operation" >
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
+        <div class="jump-container" id="js-jump-container" style="display:none;" >
             <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
                 <i class="icon-font icon-back"></i>
             </a>
@@ -660,10 +676,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -672,11 +684,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">unix,ntp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -688,7 +704,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">unix,ntp</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
             
             <div class="clearfix"></div>
@@ -849,5 +865,21 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/clipboard_use.js"></script>
+
+
 </body>
+
+<script src="https://cdn.bootcss.com/scrollReveal.js/0.1.1/scrollReveal.min.js"></script>
+<script>
+var config = {
+    after: '0s',
+    enter: 'bottom',
+    over: '0.5s',
+    easing: 'ease-in-out',
+    viewportFactor: 0.33,
+    reset: false,
+    init: true
+};
+window.scrollReveal = new scrollReveal(config);
+</script>
 </html>
