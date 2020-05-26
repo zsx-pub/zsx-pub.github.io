@@ -1238,7 +1238,8 @@ body {
 	overflow: auto;
 	color: #fff;
 	font-size: .9em;
-	line-height: 22.400000000000002px
+	line-height: 22.400000000000002px;
+	
 }
 
 .article-entry .gist .gist-file .gist-data .line-numbers,.article-entry .highlight .gutter pre,.article-entry .highlight .gutter pre .line {
@@ -1247,7 +1248,8 @@ body {
 
 .
 article-entry code,.article-entry pre {
-	font-family: Source Code Pro,Consolas,Monaco,Menlo,monospace
+	font-family: Source Code Pro,Consolas,Monaco,Menlo,monospace;
+
 }
 
 .article-entry code {
@@ -1260,7 +1262,8 @@ article-entry code,.article-entry pre {
 	background: none;
 	text-shadow: none;
 	padding: 0;
-	color: #fff
+	color: #fff;
+		max-height:500px;
 }
 
 .article-entry .highlight {
@@ -4482,6 +4485,7 @@ ul.copyright li {
 
 /*无匹配搜索结果时显示*/
 p.no-result {
+  display: none;
   margin: 2em 0 2em 6%;
   padding-bottom: 0.5em;
   text-align: left;
