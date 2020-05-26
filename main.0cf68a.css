@@ -572,10 +572,40 @@ progress {
 	display: none
 }
 
+/*chaolianjie*/
 a {
 	background: transparent;
 	text-decoration: none;
 	color: #08c
+}
+
+.article-entry a{
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+    font-family: lucida console;
+}
+
+.article-entry a:hover{
+    color: #d7191a;
+    transition:.8s;
+}
+
+.article-entry a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+.article-entry a::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom center;
+  transition: transform 0.5s ease-out;
 }
 
 a:active {
@@ -1042,6 +1072,7 @@ body {
 }
 
 .left-col {
+/*zuobian beijin*/
 	/*background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('http://qa5rgbn80.bkt.clouddn.com/%E8%83%8C%E6%99%AF.jpg') no-repeat 0% 20%/ cover;*/
 	background: linear-gradient(200deg,#ccc,#000);
 	width: 300px;
@@ -1232,19 +1263,21 @@ body {
 }
 
 .article-entry .highlight,.article-entry pre {
+/*daima kuang */
 	background: #808080;
 	margin: 10px 0;
 	padding: 10px;
 	overflow: auto;
 	color: #fff;
 	font-size: .9em;
-	line-height: 22.400000000000002px;
-	max-height:1000px;
+	line-height: 22px;
+	max-height:1100px;
 	
 }
 
 .article-entry .gist .gist-file .gist-data .line-numbers,.article-entry .highlight .gutter pre,.article-entry .highlight .gutter pre .line {
-	color: #EF7522
+	color: #EF7522;
+	overflow: hidden;
 }
 
 .
@@ -1256,14 +1289,14 @@ article-entry code,.article-entry pre {
 .article-entry code {
 	background: #eee;
 	padding: 0 .3em;
-	border: none
+	border: none;
 }
 
 .article-entry pre code {
 	background: none;
 	text-shadow: none;
 	padding: 0;
-	color: #fff
+	color: #fff;
 }
 
 .article-entry .highlight {
@@ -1315,6 +1348,7 @@ article-entry code,.article-entry pre {
 }
 
 .article-entry .highlight .line {
+/*daima ziti*/
 	color: #FFFFFF;
 	min-height: 19px
 }
