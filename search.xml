@@ -4,11 +4,32 @@
   
     
     <entry>
+      <title>vi命令</title>
+      <link href="/articl/2ca53460.html"/>
+      <url>/articl/2ca53460.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="linux-Vi常用命令"><a href="#linux-Vi常用命令" class="headerlink" title="linux Vi常用命令"></a>linux Vi常用命令</h1><p>Ctrl+u：向文件首翻半屏；<br>Ctrl+d：向文件尾翻半屏；<br>Ctrl+f：向文件尾翻一屏；<br>Ctrl+b：向文件首翻一屏；</p><a id="more"></a><p>Esc：从编辑模式切换到命令模式；<br>ZZ：命令模式下保存当前文件所做的修改后退出vi；<br>:行号：光标跳转到指定行的行首；<br>:$：光标跳转到最后一行的行首；<br>x或X：删除一个字符，x删除光标后的，而X删除光标前的；<br>D：删除从当前光标到光标所在行尾的全部字符；<br>dd：删除光标行正行内容；<br>ndd：删除当前行及其后n-1行；<br>nyy：将当前行及其下n行的内容保存到寄存器？中，其中？为一个字母，n为一个数字；<br>p：粘贴文本操作，用于将缓存区的内容粘贴到当前光标所在位置的下方；<br>P：粘贴文本操作，用于将缓存区的内容粘贴到当前光标所在位置的上方；<br>/字符串：文本查找操作，用于从当前光标所在位置开始向文件尾部查找指定字符串的内容，查找的字符串会被加亮显示；<br>？name：文本查找操作，用于从当前光标所在位置开始向文件头部查找指定字符串的内容，查找的字符串会被加亮显示；<br>a，bs/F/T：替换文本操作，用于在第a行到第b行之间，将F字符串换成T字符串。其中，“s/”表示进行替换操作；<br>a：在当前字符后添加文本；<br>A：在行末添加文本；<br>i：在当前字符前插入文本；<br>I：在行首插入文本；<br>o：在当前行后面插入一空行；<br>O：在当前行前面插入一空行；<br>:wq：在命令模式下，执行存盘退出操作；<br>:w：在命令模式下，执行存盘操作；<br>:w！：在命令模式下，执行强制存盘操作；<br>:q：在命令模式下，执行退出vi操作；<br>:q！：在命令模式下，执行强制退出vi操作；<br>:e文件名：在命令模式下，打开并编辑指定名称的文件；<br>:n：在命令模式下，如果同时打开多个文件，则继续编辑下一个文件；<br>:f：在命令模式下，用于显示当前的文件名、光标所在行的行号以及显示比例；<br>:set number：在命令模式下，用于在最左端显示行号；<br>:set nonumber：在命令模式下，用于在最左端不显示行号；</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> vi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IE11仿真空白解决办法</title>
       <link href="/articl/433d3724.html"/>
       <url>/articl/433d3724.html</url>
       
-        <content type="html"><![CDATA[<h1 id="IE11-F12调试时仿真页面没有内容"><a href="#IE11-F12调试时仿真页面没有内容" class="headerlink" title="IE11 F12调试时仿真页面没有内容"></a>IE11 F12调试时仿真页面没有内容</h1><p>ie升级到11后用到某些功能需要调试到ie9运行，F12后没法调选<br>解决方法:<br>下载win7 IE11补丁：<br><a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=45134" target="_blank" rel="noopener">32位点击这里</a><br><a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=45154" target="_blank" rel="noopener">64位点击这里</a><br>安装补丁重启即可</p><blockquote><p>win7安装官方补丁出现错误代码0x80240037<br>1.把Windows6.1-KB2506143-x64.msu的后缀名msu改为cab<br>  2.双击打开cab压缩文件，会发现里面有一个同名的Windows6.1-KB2506143-x64.cab文件，将它解压到别的目录。<br>  3.运行cmd 输入：dism /online /add-package /packagepath:“X:\路径\文件名.cab”<br>例如（dism /online /add-package /packagepath:“C:\cab\cab\Windows6.1-KB2506143-x64.cab”）</p></blockquote><blockquote><p>错误 87 ：因为“dism /online /add-package /packagepath:” 这串口令中后面输入了空格。<br>错误 3 ：因为后半段放 Windows6.1-KB2506143-x64.cab 路径输入有误，（可以将其复制到 C 盘底下比较简单的目录中，如 C:\Users\Windows6.1-KB2506143-x64.cab，最好不要C盘根目录）。<br>错误 2 ：因为改名后的 Windows6.1-KB2506143-x64.cab 无法被解析，需要将其解压提取，提取后的同名文件 Windows6.1-KB2506143-x64.cab 才能被安装。</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="IE11-F12调试时仿真页面没有内容"><a href="#IE11-F12调试时仿真页面没有内容" class="headerlink" title="IE11 F12调试时仿真页面没有内容"></a>IE11 F12调试时仿真页面没有内容</h1><p>ie升级到11后用到某些功能需要调试到ie9运行，F12后没法调选<br>解决方法:<br>下载win7 IE11补丁：<br><a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=45134" target="_blank" rel="noopener">32位点击这里</a><br><a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=45154" target="_blank" rel="noopener">64位点击这里</a><br>安装补丁重启即可</p><a id="more"></a><blockquote><p>win7安装官方补丁出现错误代码0x80240037<br>1.把Windows6.1-KB2506143-x64.msu的后缀名msu改为cab<br>  2.双击打开cab压缩文件，会发现里面有一个同名的Windows6.1-KB2506143-x64.cab文件，将它解压到别的目录。<br>  3.运行cmd 输入：dism /online /add-package /packagepath:“X:\路径\文件名.cab”<br>例如（dism /online /add-package /packagepath:“C:\cab\cab\Windows6.1-KB2506143-x64.cab”）</p></blockquote><blockquote><p>错误 87 ：因为“dism /online /add-package /packagepath:” 这串口令中后面输入了空格。<br>错误 3 ：因为后半段放 Windows6.1-KB2506143-x64.cab 路径输入有误，（可以将其复制到 C 盘底下比较简单的目录中，如 C:\Users\Windows6.1-KB2506143-x64.cab，最好不要C盘根目录）。<br>错误 2 ：因为改名后的 Windows6.1-KB2506143-x64.cab 无法被解析，需要将其解压提取，提取后的同名文件 Windows6.1-KB2506143-x64.cab 才能被安装。</p></blockquote>]]></content>
       
       
       

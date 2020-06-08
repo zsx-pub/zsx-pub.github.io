@@ -6,26 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zsx.pub">
-  <title>windows做时间服务器，实现unix时间校准 | A|XIAN</title>
+  <title>vi命令 | A|XIAN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言:  unix系统在运行一段时间后，系统的时间就会出现偏差，由于是局域网无法连接到internet，于是将内网的可连接internet的windows主机做为时间服务器，unix通过它来校准时间">
+  <meta name="description" content="linux Vi常用命令Ctrl+u：向文件首翻半屏；Ctrl+d：向文件尾翻半屏；Ctrl+f：向文件尾翻一屏；Ctrl+b：向文件首翻一屏；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows做时间服务器，实现unix时间校准">
-<meta property="og:url" content="http://zsx.pub/articl/650c54f6.html">
+<meta property="og:title" content="vi命令">
+<meta property="og:url" content="http://zsx.pub/articl/2ca53460.html">
 <meta property="og:site_name" content="A|XIAN">
-<meta property="og:description" content="前言:  unix系统在运行一段时间后，系统的时间就会出现偏差，由于是局域网无法连接到internet，于是将内网的可连接internet的windows主机做为时间服务器，unix通过它来校准时间">
+<meta property="og:description" content="linux Vi常用命令Ctrl+u：向文件首翻半屏；Ctrl+d：向文件尾翻半屏；Ctrl+f：向文件尾翻一屏；Ctrl+b：向文件首翻一屏；">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523092000.png">
-<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523092321.png">
-<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523093632.png">
-<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523093735.png">
-<meta property="article:published_time" content="2020-05-22T08:37:49.000Z">
-<meta property="article:modified_time" content="2020-05-25T13:08:59.896Z">
+<meta property="article:published_time" content="2020-06-08T03:32:26.000Z">
+<meta property="article:modified_time" content="2020-06-08T03:36:33.732Z">
 <meta property="article:author" content="ZSX">
-<meta property="article:tag" content="unix">
-<meta property="article:tag" content="ntp">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="vi">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523092000.png">
   
     <link rel="alternative" href="/atom.xml" title="A|XIAN" type="application/atom+xml">
   
@@ -252,14 +247,14 @@ inputArea.onfocus = function(){ getSearchFile() }
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll" >
-            <article id="post-windows做时间服务器，实现unix时间校准" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vi命令" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner"  >
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      windows做时间服务器，实现unix时间校准
+      vi命令
     </h1>
   
 
@@ -278,8 +273,8 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
         
-        <a href="/articl/650c54f6.html" class="archive-article-date">
-  	<time datetime="2020-05-22T08:37:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-22</time>
+        <a href="/articl/2ca53460.html" class="archive-article-date">
+  	<time datetime="2020-06-08T03:32:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
 </a>
 
 	<!--显示字数-->
@@ -300,7 +295,7 @@ inputArea.onfocus = function(){ getSearchFile() }
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">1k</span>
+        <span class="post-count" style="font-size: 14px;color: navy">648</span>
       </span>
     </span>
     
@@ -309,7 +304,7 @@ inputArea.onfocus = function(){ getSearchFile() }
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">3分</span>
+        <span class="post-count" style="font-size: 14px;color: navy">2分</span>
       </span>
     </span>
 </div>
@@ -321,27 +316,9 @@ inputArea.onfocus = function(){ getSearchFile() }
 
     <div class="article-entry" itemprop="articleBody" >
       
-        <p>前言:</p>
-<blockquote>
-<p>unix系统在运行一段时间后，系统的时间就会出现偏差，由于是局域网无法连接到internet，于是将内网的可连接internet的windows主机做为时间服务器，unix通过它来校准时间</p>
-</blockquote>
+        <h1 id="linux-Vi常用命令"><a href="#linux-Vi常用命令" class="headerlink" title="linux Vi常用命令"></a>linux Vi常用命令</h1><p>Ctrl+u：向文件首翻半屏；<br>Ctrl+d：向文件尾翻半屏；<br>Ctrl+f：向文件尾翻一屏；<br>Ctrl+b：向文件首翻一屏；</p>
 <a id="more"></a>
-<p>NTP简介：<br>NTP是网络时间协议(Network Time Protocol)，它是用来同步网络中各个计算机的时间的协议。<br>在计算机的世界里，时间非常地重要<br>例如：对于火箭发射这种科研活动，对时间的统一性和准确性要求就非常地高，是按照A这台计算机的时间，还是按照B这台计算机的时间？<br>NTP就是用来解决这个问题的，NTP（Network Time Protocol，网络时间协议）是用来使网络中的各个计算机时间同步的一种协议。<br>它的用途是把计算机的时钟同步到世界协调时UTC，其精度在局域网内可达0.1ms，在互联网上绝大多数的地方其精度可以达到1-50ms。<br>它可以使计算机对其服务器或时钟源（如石英钟，GPS等等）进行时间同步，它可以提供高精准度的时间校正，而且可以使用加密确认的方式来防止病毒的协议攻击。</p>
-<h2 id="windows做时间服务器设置"><a href="#windows做时间服务器设置" class="headerlink" title="windows做时间服务器设置"></a>windows做时间服务器设置</h2><p>参考microsoft<a href="http://download.microsoft.com/download/E/A/9/EA9F5FDC-255C-46A3-9AFE-C714B6037703/MicrosoftEasyFix50395.msi" target="_blank" rel="noopener">如何在 Windows Server 中配置权威时间服务器</a></p>
-<p>1.将服务器类型更改为 NTP。 为此，请按照下列步骤操作：<br>依次选择开始 &gt; 运行，键入 <code>regedit</code>，然后选择确定。<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\Type</code><br>在右窗格中，右键单击键入，然后选择修改。</p>
-<p>2.在编辑值中的数值数据框中键入 NTP，然后选择确定。<br>将 <code>AnnounceFlags</code> 设置为 5。 为此，请按照下列步骤操作：<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\AnnounceFlags</code><br>在右窗格中，右键单击 <code>AnnounceFlags</code>，然后选择修改。<br>在编辑 DWORD 值中，在数值数据框中键入 5，然后选择确定。</p>
-<p>3.启用 <code>NTPServer</code>。 为此，请按照下列步骤操作：<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer</code><br>在右窗格中，右键单击已启用，然后选择修改。<br>在编辑 DWORD 值的数值数据框中，键入 1，然后选择确定。</p>
-<p>4.指定时间源。 为此，请按照下列步骤操作：<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters</code><br>在右窗格中，右键单击 NtpServer，然后选择修改。<br>在编辑值的数值数据框中键入 Peers，然后选择确定。</p>
-<blockquote>
-<p>注意:<br>Peers 是一个以空格分隔的对等机列表的占位符，计算机从中可获取时间戳。 列出的每个 DNS 名称都必须是唯一的。 必须在每个 DNS 名称后面附加 ,0x1。 如果不在每个 DNS 名称后附加 ,0x1，则在步骤 5 中所做的更改将不会生效。<img src="http://qa5rgbn80.bkt.clouddn.com//20200523092000.png" alt></p>
-</blockquote>
-<p>5.配置时间校准设置。 为此，请按照下列步骤操作：<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxPosPhaseCorrection</code><br>在右窗格中，右键单击 <code>MaxPosPhaseCorrection</code>，然后选择修改。<br>在“编辑 DWORD 值”中的“基数” 框中单击选择“十进制”。<br>在编辑 DWORD 值的数值数据框中键入 TimeInSeconds，然后选择确定。<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxNegPhaseCorrection</code></p>
-<p>在右窗格中，右键单击 <code>MaxNegPhaseCorrection</code>，然后选择修改。<br>在“编辑 DWORD 值”中的“基数” 框中单击选择“十进制”。<br>在编辑 DWORD 值的数值数据框中键入 TimeInSeconds，然后选择确定。</p>
-<p>6.重启windows时间服务，cmd命令<br><code>net stop w32time &amp;&amp; net start w32time</code></p>
-<p><strong>注:自动配置方法</strong><br><a href="http://download.microsoft.com/download/E/A/9/EA9F5FDC-255C-46A3-9AFE-C714B6037703/MicrosoftEasyFix50395.msi" target="_blank" rel="noopener">点击下载 EasyFix.msi</a><br><img src="http://qa5rgbn80.bkt.clouddn.com//20200523092321.png" alt></p>
-<h2 id="unix自动时间同步"><a href="#unix自动时间同步" class="headerlink" title="unix自动时间同步"></a>unix自动时间同步</h2><p>1.修改ntp配置文件<code>etc/ntp.config</code>，以windows服务器为准进行同步<br><img src="http://qa5rgbn80.bkt.clouddn.com//20200523093632.png" alt></p>
-<p>2.查看ntp同步状态<code>ntpq -p</code><br><img src="http://qa5rgbn80.bkt.clouddn.com//20200523093735.png" alt></p>
-<p>3.手动同步时间<br><code>ntpdate -u &#39;severIP&#39;</code></p>
+<p>Esc：从编辑模式切换到命令模式；<br>ZZ：命令模式下保存当前文件所做的修改后退出vi；<br>:行号：光标跳转到指定行的行首；<br>:$：光标跳转到最后一行的行首；<br>x或X：删除一个字符，x删除光标后的，而X删除光标前的；<br>D：删除从当前光标到光标所在行尾的全部字符；<br>dd：删除光标行正行内容；<br>ndd：删除当前行及其后n-1行；<br>nyy：将当前行及其下n行的内容保存到寄存器？中，其中？为一个字母，n为一个数字；<br>p：粘贴文本操作，用于将缓存区的内容粘贴到当前光标所在位置的下方；<br>P：粘贴文本操作，用于将缓存区的内容粘贴到当前光标所在位置的上方；<br>/字符串：文本查找操作，用于从当前光标所在位置开始向文件尾部查找指定字符串的内容，查找的字符串会被加亮显示；<br>？name：文本查找操作，用于从当前光标所在位置开始向文件头部查找指定字符串的内容，查找的字符串会被加亮显示；<br>a，bs/F/T：替换文本操作，用于在第a行到第b行之间，将F字符串换成T字符串。其中，“s/”表示进行替换操作；<br>a：在当前字符后添加文本；<br>A：在行末添加文本；<br>i：在当前字符前插入文本；<br>I：在行首插入文本；<br>o：在当前行后面插入一空行；<br>O：在当前行前面插入一空行；<br>:wq：在命令模式下，执行存盘退出操作；<br>:w：在命令模式下，执行存盘操作；<br>:w！：在命令模式下，执行强制存盘操作；<br>:q：在命令模式下，执行退出vi操作；<br>:q！：在命令模式下，执行强制退出vi操作；<br>:e文件名：在命令模式下，打开并编辑指定名称的文件；<br>:n：在命令模式下，如果同时打开多个文件，则继续编辑下一个文件；<br>:f：在命令模式下，用于显示当前的文件名、光标所在行的行号以及显示比例；<br>:set number：在命令模式下，用于在最左端显示行号；<br>:set nonumber：在命令模式下，用于在最左端不显示行号；</p>
 
       
 
@@ -357,19 +334,19 @@ inputArea.onfocus = function(){ getSearchFile() }
     </li>
     <li class="copyright_article-url">
     <strong>本文链接：</strong>
-    <a href="http://zsx.pub/articl/650c54f6.html" title="windows做时间服务器，实现unix时间校准" target="_blank">http://zsx.pub/articl/650c54f6.html</a>
+    <a href="http://zsx.pub/articl/2ca53460.html" title="vi命令" target="_blank">http://zsx.pub/articl/2ca53460.html</a>
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-05-25T13:08:59.896Z" itemprop="dateUpdated">2020年05月25日 21:08:59</time>
+        <time datetime="2020-06-08T03:36:33.732Z" itemprop="dateUpdated">2020年06月08日 11:36:33</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
-    <a href="http://zsx.pub/articl/650c54f6.html" title="windows做时间服务器，实现unix时间校准" target="_blank">windows做时间服务器，实现unix时间校准</a>
+    <a href="http://zsx.pub/articl/2ca53460.html" title="vi命令" target="_blank">vi命令</a>
     </li>
     <li class="copyright_create-time">
     <strong>发布时间：</strong>
-    2020-05-22
+    2020-06-08
     </li> -->
     <li class="copyright_copyright">
     <strong>版权声明：</strong>
@@ -423,11 +400,11 @@ inputArea.onfocus = function(){ getSearchFile() }
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">unix</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ntp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vi</a>
         		</li>
       		
 		</ul>
@@ -483,7 +460,7 @@ inputArea.onfocus = function(){ getSearchFile() }
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zsx.pub/articl/650c54f6.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zsx.pub/articl/2ca53460.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -497,18 +474,9 @@ inputArea.onfocus = function(){ getSearchFile() }
   
 <nav id="article-nav">
   
-    <a href="/articl/db1d7c34.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          yilia本地搜索功能
-        
-      </div>
-    </a>
   
-  
-    <a href="/articl/d5b19752.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo主题美化</div>
+    <a href="/articl/433d3724.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IE11仿真空白解决办法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -535,7 +503,7 @@ inputArea.onfocus = function(){ getSearchFile() }
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows做时间服务器设置"><span class="toc-number">1.</span> <span class="toc-text">windows做时间服务器设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unix自动时间同步"><span class="toc-number">2.</span> <span class="toc-text">unix自动时间同步</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux-Vi常用命令"><span class="toc-number">1.</span> <span class="toc-text">linux Vi常用命令</span></a></li></ol>
                     </div>
                 </span>
             </div>
