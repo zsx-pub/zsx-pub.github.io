@@ -15,22 +15,22 @@
 <meta property="og:site_name" content="A|XIAN">
 <meta property="og:description" content="前言:  unix系统在运行一段时间后，系统的时间就会出现偏差，由于是局域网无法连接到internet，于是将内网的可连接internet的windows主机做为时间服务器，unix通过它来校准时间">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523092000.png">
-<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523092321.png">
-<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523093632.png">
-<meta property="og:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523093735.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/09/d8k6vfX5qTcbWy7.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/09/yLicws6QXEtxB1N.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/09/Z4oUhX1BWetKVjQ.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/09/egdFL8RDx5AjTu1.png">
 <meta property="article:published_time" content="2020-05-22T08:37:49.000Z">
-<meta property="article:modified_time" content="2020-05-25T13:08:59.896Z">
+<meta property="article:modified_time" content="2020-06-09T08:57:54.924Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="unix">
 <meta property="article:tag" content="ntp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://qa5rgbn80.bkt.clouddn.com//20200523092000.png">
+<meta name="twitter:image" content="https://i.loli.net/2020/06/09/d8k6vfX5qTcbWy7.png">
   
     <link rel="alternative" href="/atom.xml" title="A|XIAN" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://qa5rgbn80.bkt.clouddn.com/favicon.ico">
+    <link rel="icon" href="favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -101,7 +101,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	<header id="header" class="inner">
 	
 		<a href="/" class="profilepic">
-			<img src="http://qa5rgbn80.bkt.clouddn.com/2.jpg" class="js-avatar">
+			<img src="https://i.loli.net/2020/06/09/rtmh4vsec7BogRX.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">ZSX</a></h1>
@@ -201,7 +201,7 @@ inputArea.onfocus = function(){ getSearchFile() }
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://qa5rgbn80.bkt.clouddn.com/2.jpg" class="js-avatar">
+				<img src="https://i.loli.net/2020/06/09/rtmh4vsec7BogRX.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">ZSX</h1>
@@ -333,14 +333,14 @@ inputArea.onfocus = function(){ getSearchFile() }
 <p>3.启用 <code>NTPServer</code>。 为此，请按照下列步骤操作：<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer</code><br>在右窗格中，右键单击已启用，然后选择修改。<br>在编辑 DWORD 值的数值数据框中，键入 1，然后选择确定。</p>
 <p>4.指定时间源。 为此，请按照下列步骤操作：<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters</code><br>在右窗格中，右键单击 NtpServer，然后选择修改。<br>在编辑值的数值数据框中键入 Peers，然后选择确定。</p>
 <blockquote>
-<p>注意:<br>Peers 是一个以空格分隔的对等机列表的占位符，计算机从中可获取时间戳。 列出的每个 DNS 名称都必须是唯一的。 必须在每个 DNS 名称后面附加 ,0x1。 如果不在每个 DNS 名称后附加 ,0x1，则在步骤 5 中所做的更改将不会生效。<img src="http://qa5rgbn80.bkt.clouddn.com//20200523092000.png" alt></p>
+<p>注意:<br>Peers 是一个以空格分隔的对等机列表的占位符，计算机从中可获取时间戳。 列出的每个 DNS 名称都必须是唯一的。 必须在每个 DNS 名称后面附加 ,0x1。 如果不在每个 DNS 名称后附加 ,0x1，则在步骤 5 中所做的更改将不会生效。<img src="https://i.loli.net/2020/06/09/d8k6vfX5qTcbWy7.png" alt></p>
 </blockquote>
 <p>5.配置时间校准设置。 为此，请按照下列步骤操作：<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxPosPhaseCorrection</code><br>在右窗格中，右键单击 <code>MaxPosPhaseCorrection</code>，然后选择修改。<br>在“编辑 DWORD 值”中的“基数” 框中单击选择“十进制”。<br>在编辑 DWORD 值的数值数据框中键入 TimeInSeconds，然后选择确定。<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\MaxNegPhaseCorrection</code></p>
 <p>在右窗格中，右键单击 <code>MaxNegPhaseCorrection</code>，然后选择修改。<br>在“编辑 DWORD 值”中的“基数” 框中单击选择“十进制”。<br>在编辑 DWORD 值的数值数据框中键入 TimeInSeconds，然后选择确定。</p>
 <p>6.重启windows时间服务，cmd命令<br><code>net stop w32time &amp;&amp; net start w32time</code></p>
-<p><strong>注:自动配置方法</strong><br><a href="http://download.microsoft.com/download/E/A/9/EA9F5FDC-255C-46A3-9AFE-C714B6037703/MicrosoftEasyFix50395.msi" target="_blank" rel="noopener">点击下载 EasyFix.msi</a><br><img src="http://qa5rgbn80.bkt.clouddn.com//20200523092321.png" alt></p>
-<h2 id="unix自动时间同步"><a href="#unix自动时间同步" class="headerlink" title="unix自动时间同步"></a>unix自动时间同步</h2><p>1.修改ntp配置文件<code>etc/ntp.config</code>，以windows服务器为准进行同步<br><img src="http://qa5rgbn80.bkt.clouddn.com//20200523093632.png" alt></p>
-<p>2.查看ntp同步状态<code>ntpq -p</code><br><img src="http://qa5rgbn80.bkt.clouddn.com//20200523093735.png" alt></p>
+<p><strong>注:自动配置方法</strong><br><a href="http://download.microsoft.com/download/E/A/9/EA9F5FDC-255C-46A3-9AFE-C714B6037703/MicrosoftEasyFix50395.msi" target="_blank" rel="noopener">点击下载 EasyFix.msi</a><br><img src="https://i.loli.net/2020/06/09/yLicws6QXEtxB1N.png" alt></p>
+<h2 id="unix自动时间同步"><a href="#unix自动时间同步" class="headerlink" title="unix自动时间同步"></a>unix自动时间同步</h2><p>1.修改ntp配置文件<code>etc/ntp.config</code>，以windows服务器为准进行同步<br><img src="https://i.loli.net/2020/06/09/Z4oUhX1BWetKVjQ.png" alt></p>
+<p>2.查看ntp同步状态<code>ntpq -p</code><br><img src="https://i.loli.net/2020/06/09/egdFL8RDx5AjTu1.png" alt></p>
 <p>3.手动同步时间<br><code>ntpdate -u &#39;severIP&#39;</code></p>
 
       
@@ -361,7 +361,7 @@ inputArea.onfocus = function(){ getSearchFile() }
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-05-25T13:08:59.896Z" itemprop="dateUpdated">2020年05月25日 21:08:59</time>
+        <time datetime="2020-06-09T08:57:54.924Z" itemprop="dateUpdated">2020年06月09日 16:57:54</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -402,7 +402,7 @@ inputArea.onfocus = function(){ getSearchFile() }
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://qa5rgbn80.bkt.clouddn.com/2.jpg">
+                      <img class="reward-img" src="https://i.loli.net/2020/06/09/rtmh4vsec7BogRX.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     

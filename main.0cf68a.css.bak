@@ -604,8 +604,6 @@ a {
   bottom: 0;
   left: 0;
   background-color: #0087ca;
-  /* 详见：https://www.w3school.com.cn/cssref/pr_transform-origin.asp,
-  旋转，与transform连用；这里作用：鼠标移开后，底部的下划线从中间开始消失 */
   transform-origin: bottom center;
   transition: transform 0.5s ease-out;
 }
