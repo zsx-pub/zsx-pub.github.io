@@ -249,6 +249,125 @@ inputArea.onfocus = function(){ getSearchFile() }
           <div id="js-content" class="content-ll" >
             
   
+    <article id="post-hp-ux集群命令cmviewcl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner"  >
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/articl/10d64041.html">hp-ux集群命令cmviewcl</a>
+    </h1>
+  
+
+	
+	<!--显示阅读次数-->
+	
+	<!--显示阅读次数完毕-->
+
+
+        
+        <a href="/articl/10d64041.html" class="archive-article-date">
+  	<time datetime="2020-06-16T01:04:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-16</time>
+</a>
+
+	<!--显示字数-->
+	
+          <div style="margin-top:10px;margin-bottom:-15px;">
+    
+      
+        <span class="article-type" style="
+          color: white;
+          font-size: 14px;
+          background: #BC8F8F;
+          padding: 0 5px 1px 5px;
+          margin-right: 5px;
+          border-radius: 2px;">原创</span>
+      
+    
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
+        <span class="post-count" style="font-size: 14px;color: navy">608</span>
+      </span>
+    </span>
+    
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
+        <span class="post-count" style="font-size: 14px;color: navy">2分</span>
+      </span>
+    </span>
+</div>
+          
+	<!--显示字数-->
+        
+      </header>
+    
+
+    <div class="article-entry" itemprop="articleBody" >
+      
+        <h2 id="1-HP-UX-集群管理"><a href="#1-HP-UX-集群管理" class="headerlink" title="1.HP-UX 集群管理"></a>1.HP-UX 集群管理</h2><p>Cluster 集群<br>Node 节点 集群下的各台计算机<br>Package 资源组（包括： 共享vg 卷组、浮动IP、锁盘、APP应用）</p>
+<h2 id="2-双机原理"><a href="#2-双机原理" class="headerlink" title="2.双机原理"></a>2.双机原理</h2><p>在2个主机节点上分别安装集群软件(如：HP ServiceGuard)，对客户端配置一个浮动IP，浮动意思是该IP地址适时绑定在2个节点中的某一个上，但该IP对客户端是固定的。每个节点配置3块网卡，分别是数据网卡，心跳信号网卡，以及一块对数据和心跳备份的网卡。数据和心跳网卡需要配置IP地址，备份网卡不配，当数据或心跳网卡失效，备份网卡自动接管数据或心跳网卡IP地址。当ServieGuard启动后，一旦主节点发生异常，如主节点停机、应用的关键进程退出、网络中断等情况发生，备节点立即启动预设的应用程序，同时将浮动IP绑定到备节点上，整个主备机切换时间大概在2分钟内完成，切换后，客户端通过浮动IP透明地连接到备机上。当主节点故障排除后，是否要将备节点重新切换到主节点有2个策略，一是手工切换，二是自动切换，缺省是手工切换。<br><img src="https://i.loli.net/2020/06/16/KNIl2EXgaRPS5U6.png" alt></p>
+<h2 id="3-集群相关命令"><a href="#3-集群相关命令" class="headerlink" title="3.集群相关命令"></a>3.集群相关命令</h2><p>启动集群：cmruncl –v<br>停止集群：cmhaltcl –v（若有包运行，加-f参数）<br>只在一个节点上启动集群：cmruncl –n 节点名<br>观察整个集群状态：cmviewcl –v<br>启动包：cmrunpkg –v –n 节点名 包名<br>停止包：cmhaltpkg –v 包名<br>设置包的自动切换属性：cmmodpkg –e 包名（允许包在节点之间自动切换）<br>启动节点：cmrunnode 节点名</p>
+<h2 id="4-容灾测试例子"><a href="#4-容灾测试例子" class="headerlink" title="4.容灾测试例子"></a>4.容灾测试例子</h2><p>1.关闭1号机，模拟其挂机<br><code>su</code>进root用户<br><code>cd /</code>进根目录<br><code>shutdown -hy -0</code>关闭1号机(关机前最好关闭服务器应用)<br>2.查看资源包是否切换到2号机<br>进2号机，<code>su</code>进root用户<br><code>cmviewcl</code>查看双机状态<br>如果资源包没有自动切换到2号机，<code>cmrunpkg 包名</code>将其拉起到2号机<br>3.将1号机开机，重新加入到集群<br>开机，进入1号机，<code>su</code>进root用户<br><code>cmviewcl</code>查看双机状态<br><code>cmrunnode -v</code>将1号机的节点拉起<br><code>cmmodpkg -e 包名</code>开启包的自动切换</p>
+<p>参考：<br><a href="http://blog.chinaunix.net/uid-9793706-id-1642178.html" target="_blank" rel="noopener">HP-UX 集群管理</a></p>
+
+      
+
+<!-- 版权声明 -->
+  
+    
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <ul class="copyright" hidden="hidden"></ul>
+
+<!-- 添加版权声明》 -->
+  
+<!-- 声明结束 -->
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/articl/10d64041.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation" >
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;" >
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vi命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner"  >
     
@@ -831,7 +950,7 @@ inputArea.onfocus = function(){ getSearchFile() }
 
     <div class="article-entry" itemprop="articleBody" >
       
-        <h2 id="1-添加浏览统计"><a href="#1-添加浏览统计" class="headerlink" title="1.添加浏览统计"></a><br>1.添加浏览统计</h2><p><strong>引入不算子统计</strong><br>修改yilia_config.yml</p>
+        <h2 id="1-添加浏览统计"><a href="#1-添加浏览统计" class="headerlink" title="1.添加浏览统计"></a>1.添加浏览统计</h2><p><strong>引入不算子统计</strong><br>修改yilia_config.yml</p>
         
       
 
@@ -1420,136 +1539,10 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
   
-    <article id="post-gitee+hexo搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner"  >
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/articl/98113609.html">windows\gitee+hexo 搭建博客记录</a>
-    </h1>
-  
-
-	
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-
-
-        
-        <a href="/articl/98113609.html" class="archive-article-date">
-  	<time datetime="2020-05-11T01:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
-</a>
-
-	<!--显示字数-->
-	
-          <div style="margin-top:10px;margin-bottom:-15px;">
-    
-      
-        <span class="article-type" style="
-          color: white;
-          font-size: 14px;
-          background: #BC8F8F;
-          padding: 0 5px 1px 5px;
-          margin-right: 5px;
-          border-radius: 2px;">原创</span>
-      
-    
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">472</span>
-      </span>
-    </span>
-    
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">2分</span>
-      </span>
-    </span>
-</div>
-          
-	<!--显示字数-->
-        
-      </header>
-    
-
-    <div class="article-entry" itemprop="articleBody" >
-      
-        <h2 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a><br>1.安装node.js</h2><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js下载</a><br><code>node -v</code> #查看node版本<br><code>npm -v</code>    #查看npm版本<br><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code> #安装淘宝的cnpm 管理器<br><code>cnpm -v</code>    #查看cnpm版本`</p>
-        
-      
-
-<!-- 版权声明 -->
-  
-    
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <ul class="copyright" hidden="hidden"></ul>
-
-<!-- 添加版权声明》 -->
-  
-<!-- 声明结束 -->
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">gitee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/articl/98113609.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation" >
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;" >
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -1658,6 +1651,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IE11</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
@@ -1670,11 +1667,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">vi</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1683,6 +1680,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ntp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1695,14 +1696,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IE11</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vi</a>
               </li>
             
             <div class="clearfix"></div>

@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/06/09/FOVXoP9WLjiJKrZ.png">
 <meta property="article:published_time" content="2020-05-21T06:34:43.000Z">
-<meta property="article:modified_time" content="2020-06-09T08:50:21.318Z">
+<meta property="article:modified_time" content="2020-06-09T09:21:06.243Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="yilia">
@@ -318,7 +318,7 @@ inputArea.onfocus = function(){ getSearchFile() }
 
     <div class="article-entry" itemprop="articleBody" >
       
-        <h2 id="1-添加浏览统计"><a href="#1-添加浏览统计" class="headerlink" title="1.添加浏览统计"></a><br>1.添加浏览统计</h2><p><strong>引入不算子统计</strong><br>修改yilia_config.yml</p>
+        <h2 id="1-添加浏览统计"><a href="#1-添加浏览统计" class="headerlink" title="1.添加浏览统计"></a>1.添加浏览统计</h2><p><strong>引入不算子统计</strong><br>修改yilia_config.yml</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#开启不算子访问统计</span><br><span class="line">busuanzi:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
 <p>在yilia/layout/_partial/after-footer.ej文件末尾添加:<br><code>&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code><br><strong>添加网站访问量统计</strong><br>在yilia/layout/_partial/footer.ejs文件<code>&lt;div class=&quot;footer-right&quot;&gt;&lt;/div&gt;</code>后面之间放入代码</p>
@@ -340,7 +340,8 @@ inputArea.onfocus = function(){ getSearchFile() }
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 代码复制按钮 *&#x2F;</span><br><span class="line">.btn-copy &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">    background-color: #eee;</span><br><span class="line">    background-image: linear-gradient(#fcfcfc, #eee);</span><br><span class="line">    border: 1px solid #d5d5d5;</span><br><span class="line">    border-radius: 3px;</span><br><span class="line">    -webkit-user-select: none;</span><br><span class="line">    -moz-user-select: none;</span><br><span class="line">    -ms-user-select: none;</span><br><span class="line">    user-select: none;</span><br><span class="line">    -webkit-appearance: none;</span><br><span class="line">    font-size: 13px;</span><br><span class="line">    font-weight: 700;</span><br><span class="line">    line-height: 20px;</span><br><span class="line">    color: #333;</span><br><span class="line">    -webkit-transition: opacity .3s ease-in-out;</span><br><span class="line">    -o-transition: opacity .3s ease-in-out;</span><br><span class="line">    transition: opacity .3s ease-in-out;</span><br><span class="line">    padding: 2px 6px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    right: 5px;</span><br><span class="line">    top: 5px;</span><br><span class="line">    opacity: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.btn-copy span &#123;</span><br><span class="line">    margin-left: 5px</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.code-wrapper:hover .btn-copy &#123;</span><br><span class="line">    opacity: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>找到\themes\yilia\layout\layout.ejs,在前加入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 代码块复制功能 --&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;clipboard@2.0.4&#x2F;dist&#x2F;clipboard.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;https:&#x2F;&#x2F;apps.bdimg.com&#x2F;libs&#x2F;jquery&#x2F;2.1.4&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;clipboard_use.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<p>5.添加左边栏主页图标<br>注:需要先引入font-awesome字体库<br>在\themes\yilia\layout_partial\left-col.ejs如下代码后边</p>
+
+<h2 id="5-添加左边栏主页图标"><a href="#5-添加左边栏主页图标" class="headerlink" title="5.添加左边栏主页图标"></a>5.添加左边栏主页图标</h2><p>注:需要先引入font-awesome字体库<br>在\themes\yilia\layout_partial\left-col.ejs如下代码后边</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav class&#x3D;&quot;header-menu&quot;&gt;</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">	&lt;% for (var i in theme.menu)&#123; %&gt;</span><br><span class="line">		&lt;li&gt;&lt;a href&#x3D;&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%&#x3D; i %&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;</span><br><span class="line">       &lt;%&#125;%&gt;</span><br><span class="line">	&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
 <p>添加代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line">      var menu &#x3D; document.getElementsByClassName(&#39;header-menu&#39;)[0];</span><br><span class="line">      var lis &#x3D; menu.children[0].getElementsByTagName(&#39;li&#39;);</span><br><span class="line">      var n &#x3D; lis.length</span><br><span class="line">      var menu_icon &#x3D; new Array()</span><br><span class="line">      &#x2F;&#x2F;这个menu_icon用来装图标，图标的类名都是下面“fa fa-xxx”，自行添加就行</span><br><span class="line">      menu_icon[0]&#x3D;&quot;&lt;i class&#x3D;\&quot;fa fa-home\&quot; aria-hidden&#x3D;\&quot;true\&quot;&gt;&lt;&#x2F;i&gt; &quot;</span><br><span class="line">		menu_icon[1]&#x3D;&quot;&lt;i class&#x3D;\&quot;fa fa-book\&quot; aria-hidden&#x3D;\&quot;true\&quot;&gt;&lt;&#x2F;i&gt; &quot;</span><br><span class="line">      for (var i &#x3D; 0; i &lt; n; i++)&#123;</span><br><span class="line">        var temp &#x3D; lis[i].children[0].innerHTML;</span><br><span class="line">        lis[i].children[0].innerHTML &#x3D; menu_icon[i] + temp;</span><br><span class="line">      &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
@@ -407,7 +408,7 @@ inputArea.onfocus = function(){ getSearchFile() }
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-06-09T08:50:21.318Z" itemprop="dateUpdated">2020年06月09日 16:50:21</time>
+        <time datetime="2020-06-09T09:21:06.243Z" itemprop="dateUpdated">2020年06月09日 17:21:06</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -581,8 +582,7 @@ inputArea.onfocus = function(){ getSearchFile() }
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-添加浏览统计"><span class="toc-number">1.</span> <span class="toc-text">
-1.添加浏览统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-添加文字数量，阅读时间"><span class="toc-number">2.</span> <span class="toc-text">2.添加文字数量，阅读时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-添加百度统计"><span class="toc-number">3.</span> <span class="toc-text">3.添加百度统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-代码复制按钮"><span class="toc-number">4.</span> <span class="toc-text">4.代码复制按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-添加背景图片"><span class="toc-number">5.</span> <span class="toc-text">7.添加背景图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-添加valine评论系统"><span class="toc-number">6.</span> <span class="toc-text">8.添加valine评论系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-添加版权声明"><span class="toc-number">7.</span> <span class="toc-text">9.添加版权声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-添加loading动图"><span class="toc-number">8.</span> <span class="toc-text">10.添加loading动图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-url优化"><span class="toc-number">9.</span> <span class="toc-text">11.url优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-百度搜索收录"><span class="toc-number">10.</span> <span class="toc-text">12.百度搜索收录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-给博客文章增加类型说明：“原创”或“转载”"><span class="toc-number">11.</span> <span class="toc-text">13.给博客文章增加类型说明：“原创”或“转载”</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-添加浏览统计"><span class="toc-number">1.</span> <span class="toc-text">1.添加浏览统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-添加文字数量，阅读时间"><span class="toc-number">2.</span> <span class="toc-text">2.添加文字数量，阅读时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-添加百度统计"><span class="toc-number">3.</span> <span class="toc-text">3.添加百度统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-代码复制按钮"><span class="toc-number">4.</span> <span class="toc-text">4.代码复制按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-添加左边栏主页图标"><span class="toc-number">5.</span> <span class="toc-text">5.添加左边栏主页图标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-添加背景图片"><span class="toc-number">6.</span> <span class="toc-text">7.添加背景图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-添加valine评论系统"><span class="toc-number">7.</span> <span class="toc-text">8.添加valine评论系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-添加版权声明"><span class="toc-number">8.</span> <span class="toc-text">9.添加版权声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-添加loading动图"><span class="toc-number">9.</span> <span class="toc-text">10.添加loading动图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-url优化"><span class="toc-number">10.</span> <span class="toc-text">11.url优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-百度搜索收录"><span class="toc-number">11.</span> <span class="toc-text">12.百度搜索收录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-给博客文章增加类型说明：“原创”或“转载”"><span class="toc-number">12.</span> <span class="toc-text">13.给博客文章增加类型说明：“原创”或“转载”</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -735,6 +735,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IE11</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
@@ -747,11 +751,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">vi</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,6 +764,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ntp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -772,14 +780,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">shadowsocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IE11</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vi</a>
               </li>
             
             <div class="clearfix"></div>
