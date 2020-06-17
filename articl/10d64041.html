@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://zsx.pub">
   <title>hp-ux集群命令cmviewcl | A|XIAN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.HP-UX 集群管理Cluster 集群Node 节点 集群下的各台计算机Package 资源组（包括： 共享vg 卷组、浮动IP、锁盘、APP应用） 2.双机原理在2个主机节点上分别安装集群软件(如：HP ServiceGuard)，对客户端配置一个浮动IP，浮动意思是该IP地址适时绑定在2个节点中的某一个上，但该IP对客户端是固定的。每个节点配置3块网卡，分别是数据网卡，心跳信号网卡，以及">
+  <meta name="description" content="1.HP-UX 集群管理Cluster 集群Node 节点 集群下的各台计算机Package 资源组（包括： 共享vg 卷组、浮动IP、锁盘、APP应用）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hp-ux集群命令cmviewcl">
 <meta property="og:url" content="http://zsx.pub/articl/10d64041.html">
 <meta property="og:site_name" content="A|XIAN">
-<meta property="og:description" content="1.HP-UX 集群管理Cluster 集群Node 节点 集群下的各台计算机Package 资源组（包括： 共享vg 卷组、浮动IP、锁盘、APP应用） 2.双机原理在2个主机节点上分别安装集群软件(如：HP ServiceGuard)，对客户端配置一个浮动IP，浮动意思是该IP地址适时绑定在2个节点中的某一个上，但该IP对客户端是固定的。每个节点配置3块网卡，分别是数据网卡，心跳信号网卡，以及">
+<meta property="og:description" content="1.HP-UX 集群管理Cluster 集群Node 节点 集群下的各台计算机Package 资源组（包括： 共享vg 卷组、浮动IP、锁盘、APP应用）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/06/16/KNIl2EXgaRPS5U6.png">
 <meta property="article:published_time" content="2020-06-16T01:04:24.000Z">
-<meta property="article:modified_time" content="2020-06-16T04:04:53.129Z">
+<meta property="article:modified_time" content="2020-06-16T04:11:36.745Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="c语言">
 <meta property="article:tag" content="c++">
@@ -321,6 +321,7 @@ inputArea.onfocus = function(){ getSearchFile() }
     <div class="article-entry" itemprop="articleBody" >
       
         <h2 id="1-HP-UX-集群管理"><a href="#1-HP-UX-集群管理" class="headerlink" title="1.HP-UX 集群管理"></a>1.HP-UX 集群管理</h2><p>Cluster 集群<br>Node 节点 集群下的各台计算机<br>Package 资源组（包括： 共享vg 卷组、浮动IP、锁盘、APP应用）</p>
+<a id="more"></a>
 <h2 id="2-双机原理"><a href="#2-双机原理" class="headerlink" title="2.双机原理"></a>2.双机原理</h2><p>在2个主机节点上分别安装集群软件(如：HP ServiceGuard)，对客户端配置一个浮动IP，浮动意思是该IP地址适时绑定在2个节点中的某一个上，但该IP对客户端是固定的。每个节点配置3块网卡，分别是数据网卡，心跳信号网卡，以及一块对数据和心跳备份的网卡。数据和心跳网卡需要配置IP地址，备份网卡不配，当数据或心跳网卡失效，备份网卡自动接管数据或心跳网卡IP地址。当ServieGuard启动后，一旦主节点发生异常，如主节点停机、应用的关键进程退出、网络中断等情况发生，备节点立即启动预设的应用程序，同时将浮动IP绑定到备节点上，整个主备机切换时间大概在2分钟内完成，切换后，客户端通过浮动IP透明地连接到备机上。当主节点故障排除后，是否要将备节点重新切换到主节点有2个策略，一是手工切换，二是自动切换，缺省是手工切换。<br><img src="https://i.loli.net/2020/06/16/KNIl2EXgaRPS5U6.png" alt></p>
 <h2 id="3-集群相关命令"><a href="#3-集群相关命令" class="headerlink" title="3.集群相关命令"></a>3.集群相关命令</h2><p>启动集群：cmruncl –v<br>停止集群：cmhaltcl –v（若有包运行，加-f参数）<br>只在一个节点上启动集群：cmruncl –n 节点名<br>观察整个集群状态：cmviewcl –v<br>启动包：cmrunpkg –v –n 节点名 包名<br>停止包：cmhaltpkg –v 包名<br>设置包的自动切换属性：cmmodpkg –e 包名（允许包在节点之间自动切换）<br>启动节点：cmrunnode 节点名</p>
 <h2 id="4-容灾测试例子"><a href="#4-容灾测试例子" class="headerlink" title="4.容灾测试例子"></a>4.容灾测试例子</h2><p>1.关闭1号机，模拟其挂机<br><code>su</code>进root用户<br><code>cd /</code>进根目录<br><code>shutdown -hy -0</code>关闭1号机(关机前最好关闭服务器应用)<br>2.查看资源包是否切换到2号机<br>进2号机，<code>su</code>进root用户<br><code>cmviewcl</code>查看双机状态<br>如果资源包没有自动切换到2号机，<code>cmrunpkg 包名</code>将其拉起到2号机<br>3.将1号机开机，重新加入到集群<br>开机，进入1号机，<code>su</code>进root用户<br><code>cmviewcl</code>查看双机状态<br><code>cmrunnode -v</code>将1号机的节点拉起<br><code>cmmodpkg -e 包名</code>开启包的自动切换</p>
@@ -344,7 +345,7 @@ inputArea.onfocus = function(){ getSearchFile() }
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-06-16T04:04:53.129Z" itemprop="dateUpdated">2020年06月16日 12:04:53</time>
+        <time datetime="2020-06-16T04:11:36.745Z" itemprop="dateUpdated">2020年06月16日 12:11:36</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -464,6 +465,15 @@ inputArea.onfocus = function(){ getSearchFile() }
 
   
 <nav id="article-nav">
+  
+    <a href="/articl/fd4fe3ba.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据结构复习笔记
+        
+      </div>
+    </a>
   
   
     <a href="/articl/2ca53460.html" id="article-nav-older" class="article-nav-link-wrap">
