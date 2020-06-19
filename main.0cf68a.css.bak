@@ -543,13 +543,14 @@ html {
 }
 
 body {
+/* beijin*/
 	margin: 0;
 	font-size: 14px;
 	font-family: Helvetica Neue,Helvetica,STHeiTi,Arial,sans-serif;
 	line-height: 1.5;
 	color: #333;
 	min-height: 100%;
-	background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('https://i.loli.net/2020/06/09/LOqExZYprtQe4fC.jpg') no-repeat 0% 0%/ cover;
+	background: url('https://i.loli.net/2020/06/19/F1A6KgkX9RevcqW.jpg') repeat 30% 30%/ cover;
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
@@ -576,13 +577,13 @@ progress {
 a {
 	background: transparent;
 	text-decoration: none;
-	color: #08c
+	color: #87CEFA
 }
 
 .article-entry a{
     display: inline-block;
     position: relative;
-    color: #0087ca;
+    color: #87CEFA;
     font-family: lucida console;
 }
 
@@ -1052,12 +1053,12 @@ body {
 }
 
 .mid-col {
-/*youbianlan beiji*/
+/*youbianlan beijin*/
 	position: absolute;
 	right: 0;
 	min-height: 100%;
     /*background:#777777;*/
-	background: linear-gradient(200deg,#ccc,#000);
+	/*background: url('pexels-photo-2425664.jpeg')repeat;*/
 	left: 300px;
 	width: auto
 }
@@ -1073,8 +1074,8 @@ body {
 
 .left-col {
 /*zuobian beijin*/
-	/*background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('http://qa5rgbn80.bkt.clouddn.com/%E8%83%8C%E6%99%AF.jpg') no-repeat 0% 20%/ cover;*/
-	background: linear-gradient(200deg,#ccc,#000);
+	background: url('https://i.loli.net/2020/06/19/F1A6KgkX9RevcqW.jpg') no-repeat 30% 30%/ cover;
+	/*background: linear-gradient(200deg,#ccc,#000);*/
 	width: 300px;
 	position: fixed;
 	opacity: 1;
@@ -2305,10 +2306,14 @@ page-nav {
 	border: 1px solid #DCDCDC;
 	border-top: 1px solid #DCDCDC;
 	border-bottom: 1px solid #808080;
-	background: #ccc;
-	/*background: rgba(255,255,254,0.4);*/
+	/*background: #ccc;*/
+	background: rgba(255,255,254,0.4);
 	box-shadow: 10px 10px 5px #000;
 	transition: all .2s ease-in
+}
+.article:hover {
+/*wenzhangtikuang yanse*/
+	margin: 25px 50px 10px;
 }
 
 .article img {
@@ -2334,8 +2339,8 @@ page-nav {
 
 .article-header:hover {
 	border-left: 5px solid #fff;
-	padding: 25px 0 15px 25px;
-	padding-left: 8.6923%;
+	padding: 30px 0 15px 25px;
+	padding-left: 7.6923%;
 }
 
 .article-meta {
@@ -2458,6 +2463,11 @@ page-nav {
 	margin-bottom: 20px;
 	font-size: 32px;
 	transition: color .3s
+}
+
+.article-inner h1.article-title,.article-title:hover {
+/*biaoti yanse*/
+	color: #000
 }
 
 .article-inner h2,.article-inner h3,.article-inner h4,.article-inner h5,.article-inner h6 {
@@ -3419,7 +3429,7 @@ page-nav {
 	}
 
 	.article .article-inner h1.article-title,.article .article-title {
-		font-size: 18px;
+		font-size: 25px;
 		font-weight: 300;
 		display: block;
 		margin: 0
@@ -4439,7 +4449,7 @@ ul.copyright li {
 }
 
 .search {
-  width: 1380px;
+  width: 138px;
   height: 25px;
   margin-top: 0px;
   padding: 0;
