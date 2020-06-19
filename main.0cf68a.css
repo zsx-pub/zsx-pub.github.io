@@ -2935,7 +2935,7 @@ page-nav {
 }
 
 .toc-container.tooltip-left {
-	background: #0F0F0F;
+	background: #87CEFA;
 	margin-top: 10px;
 	transition: .3s
 }
@@ -4439,7 +4439,7 @@ ul.copyright li {
 }
 
 .search {
-  width: 65%;
+  width: 138px;
   height: 25px;
   margin-top: 0px;
   padding: 0;
