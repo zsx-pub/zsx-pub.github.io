@@ -17,7 +17,7 @@ function showArticle(){
 	}
 	})
 }
-
+showArticle();
 var scrollFunc = function (e) { 
 
 e = e || window.event; 
