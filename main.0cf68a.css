@@ -1184,6 +1184,11 @@ body {
 	-webkit-transition: all .2s ease-in
 }
 
+.left-col #header .profilepic img:hover {
+	 transform:scale(1.5);
+	 transition:transform 0.5s linear;
+}
+
 .left-col #header .profilepic img.show {
 	width: 100%;
 	height: 100%;

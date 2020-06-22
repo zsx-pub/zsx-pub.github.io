@@ -280,6 +280,48 @@ inputArea.onfocus = function(){ getSearchFile()
   <div class="archive-article-inner">
     <header class="archive-article-header">
       	<div class="article-meta" >
+	      	<a href="/articl/a9fa2238.html" class="archive-article-date">
+  	<time datetime="2020-06-22T07:43:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/articl/a9fa2238.html">yilia添加过渡动画</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ScrollReveal</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta" >
 	      	<a href="/articl/47808168.html" class="archive-article-date">
   	<time datetime="2020-06-17T03:14:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-17</time>
 </a>
@@ -648,48 +690,6 @@ inputArea.onfocus = function(){ getSearchFile()
   </div>
 </article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta" >
-	      	<a href="/articl/eff7b71a.html" class="archive-article-date">
-  	<time datetime="2020-05-18T02:25:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/articl/eff7b71a.html">简易ss连接教程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">机场</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">shadowsocks</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
   
     </div></section>
   
@@ -874,6 +874,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ScrollReveal</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -1037,50 +1041,72 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
 <script>
 
-<!--
+
 function showArticle(){
 	$(".article").each(function(){
 		if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
-			$(this).removeClass("hidden").addClass("show");
-			$(this).addClass("is-hiddened");
+			$(this).css("visibility","visible");
+			$(this).addClass("is-hiddened"); 
+			$(this).css("transform-origin","right");
+			$(this).css("transform","rotate3d(300, 200, 200, 360deg)");
+			$(this).css("transition-duration","0.5s");
+			
 		} else {
 			if(!$(this).hasClass("is-hiddened")) {
-				$(this).addClass("hidden");
+				$(this).css("visibility","hidden");
+
 			}
 		}
 	})
 }
--->
+
+var scrollFunc = function (e) { 
+
+e = e || window.event; 
+if (e.wheelDelta) {   
+if (e.wheelDelta < 0) { 
+showArticle(); 
+} 
+} else if (e.detail) { 
+if (e.detail< 0) {  
+showArticle();
+} 
+} 
+showArticle();
+}
+
+if (document.addEventListener) {
+document.addEventListener('DOMMouseScroll', scrollFunc, false); 
+} 
+window.onmousewheel = document.onmousewheel = scrollFunc;
+
+
 
 var config = {
  	    reset: true,
-            origin: 'left', 
+            origin: 'top', 
             distance: '30px',
             duration: 1500, 
-            delay: 0.5, 
+            delay: 0, 
             rotate: { x: 0, y: 200, z: 0 }, 
             container: document.documentElement,
             opacity: 0, 
             scale: 1,
 
         beforeReveal: function(domEl){
-            console.log('动画执行了');
-	    
+            console.log('动画执行了');	    
         },
   
         beforeReset: function(domEl){
-            console.log('滚轮开始');
-	    
+            console.log('滚轮开始');	    
         },
    
         afterReveal: function(domEl){
-            console.log('动画结束');
-	   
+            console.log('动画结束');	   
         },
 
         afterReset: function(domEl){
-            console.log('滚动结束');
-	    
+            console.log('滚动结束');	    
         }
     };
 window.sr = ScrollReveal();

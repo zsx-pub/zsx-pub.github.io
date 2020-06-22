@@ -265,6 +265,139 @@ inputArea.onfocus = function(){ getSearchFile()
           <div id="js-content" class="content-ll" >
             
   
+    <article  id="post-简易ss连接教程" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
+  <div class="article-inner"  >
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/articl/eff7b71a.html">简易ss连接教程</a>
+    </h1>
+  
+
+	
+	<!--显示阅读次数-->
+	
+	<!--显示阅读次数完毕-->
+
+
+        
+        <a href="/articl/eff7b71a.html" class="archive-article-date">
+  	<time datetime="2020-05-18T02:25:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
+</a>
+
+	<!--显示字数-->
+	
+          <div style="margin-top:10px;margin-bottom:-15px;">
+    
+      
+        <span class="article-type" style="
+          color: white;
+          font-size: 14px;
+          background: #BC8F8F;
+          padding: 0 5px 1px 5px;
+          margin-right: 5px;
+          border-radius: 2px;">原创</span>
+      
+    
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
+        <span class="post-count" style="font-size: 14px;color: navy">135</span>
+      </span>
+    </span>
+    
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
+        <span class="post-count" style="font-size: 14px;color: navy">1分</span>
+      </span>
+    </span>
+</div>
+          
+	<!--显示字数-->
+        
+      </header>
+    
+
+<!--  文章目录
+
+-->
+    <div class="article-entry" itemprop="articleBody" >
+      
+        <h1 id="Just-my-sock"><a href="#Just-my-sock" class="headerlink" title="Just my sock"></a><br>Just my sock</h1><p>注册<br><a href="https://justmysocks2.net/" target="_blank" rel="noopener">Just my sock</a></p>
+        
+      
+
+<!-- 版权声明 -->
+  
+    
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <ul class="copyright" hidden="hidden"></ul>
+
+<!-- 添加版权声明》 -->
+  
+<!-- 声明结束 -->
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">机场</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">shadowsocks</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/articl/eff7b71a.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation" >
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;" >
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article  id="post-hexo多端同步" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
     
@@ -840,6 +973,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ScrollReveal</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -1003,50 +1140,72 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
 <script>
 
-<!--
+
 function showArticle(){
 	$(".article").each(function(){
 		if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
-			$(this).removeClass("hidden").addClass("show");
-			$(this).addClass("is-hiddened");
+			$(this).css("visibility","visible");
+			$(this).addClass("is-hiddened"); 
+			$(this).css("transform-origin","right");
+			$(this).css("transform","rotate3d(300, 200, 200, 360deg)");
+			$(this).css("transition-duration","0.5s");
+			
 		} else {
 			if(!$(this).hasClass("is-hiddened")) {
-				$(this).addClass("hidden");
+				$(this).css("visibility","hidden");
+
 			}
 		}
 	})
 }
--->
+
+var scrollFunc = function (e) { 
+
+e = e || window.event; 
+if (e.wheelDelta) {   
+if (e.wheelDelta < 0) { 
+showArticle(); 
+} 
+} else if (e.detail) { 
+if (e.detail< 0) {  
+showArticle();
+} 
+} 
+showArticle();
+}
+
+if (document.addEventListener) {
+document.addEventListener('DOMMouseScroll', scrollFunc, false); 
+} 
+window.onmousewheel = document.onmousewheel = scrollFunc;
+
+
 
 var config = {
  	    reset: true,
-            origin: 'left', 
+            origin: 'top', 
             distance: '30px',
             duration: 1500, 
-            delay: 0.5, 
+            delay: 0, 
             rotate: { x: 0, y: 200, z: 0 }, 
             container: document.documentElement,
             opacity: 0, 
             scale: 1,
 
         beforeReveal: function(domEl){
-            console.log('动画执行了');
-	    
+            console.log('动画执行了');	    
         },
   
         beforeReset: function(domEl){
-            console.log('滚轮开始');
-	    
+            console.log('滚轮开始');	    
         },
    
         afterReveal: function(domEl){
-            console.log('动画结束');
-	   
+            console.log('动画结束');	   
         },
 
         afterReset: function(domEl){
-            console.log('滚动结束');
-	    
+            console.log('滚动结束');	    
         }
     };
 window.sr = ScrollReveal();
