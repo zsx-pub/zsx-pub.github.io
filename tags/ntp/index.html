@@ -669,11 +669,6 @@ function showArticle(){
 		if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
 			$(this).css("visibility","visible");
 			$(this).addClass("is-hiddened"); 
-			<!--
-			$(this).css("transform-origin","right");
-			$(this).css("transform","rotate3d(300, 200, 200, 360deg)");
-			$(this).css("transition-duration","0.5s");
-			-->
 			
 		} else {
 			if(!$(this).hasClass("is-hiddened")) {
