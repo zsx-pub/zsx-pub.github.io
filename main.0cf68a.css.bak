@@ -1223,7 +1223,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 8px;
-	background-color: rgba(255,255,255,.2)
+	background-color: rgba(205,255,255,.4)
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -2963,7 +2963,7 @@ page-nav {
 }
 
 .toc-container.tooltip-left .icon-font {
-	font-size: 5px;
+	font-size: 18px;
 	line-height: 0px;
 	color: #fff
 }
