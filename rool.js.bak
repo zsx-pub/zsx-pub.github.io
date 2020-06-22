@@ -5,12 +5,14 @@
                 ],
                 len = animationNames.length,
                 randomAnimationName = 'fadeIn';
+				/*
 alert(!window.requestAnimationFrame);
 alert($(".article").offset().top);
 
 alert($(window).scrollTop());
 alert($(window).height());
 alert($firstArticle);
+*/
                 // Fallback (CSS3 keyframe, requestAnimationFrame)
                 if (!window.requestAnimationFrame) {
                     $('.body-wrap > article').css({opacity: 1});
