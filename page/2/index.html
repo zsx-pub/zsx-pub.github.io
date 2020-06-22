@@ -1146,9 +1146,11 @@ function showArticle(){
 		if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
 			$(this).css("visibility","visible");
 			$(this).addClass("is-hiddened"); 
+			<!--
 			$(this).css("transform-origin","right");
 			$(this).css("transform","rotate3d(300, 200, 200, 360deg)");
 			$(this).css("transition-duration","0.5s");
+			-->
 			
 		} else {
 			if(!$(this).hasClass("is-hiddened")) {
@@ -1191,7 +1193,7 @@ var config = {
             container: document.documentElement,
             opacity: 0, 
             scale: 1,
-
+<!--
         beforeReveal: function(domEl){
             console.log('动画执行了');	    
         },
@@ -1207,6 +1209,7 @@ var config = {
         afterReset: function(domEl){
             console.log('滚动结束');	    
         }
+-->
     };
 window.sr = ScrollReveal();
 sr.reveal('.body-wrap',config);                        
