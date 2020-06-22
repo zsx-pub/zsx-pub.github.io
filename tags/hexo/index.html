@@ -149,18 +149,29 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <form id="search-form"> <!-- 搜索框相关 -->
     
     <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
-    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
 </form>
 <div id="local-search-result"></div> <!-- 搜索结果区 -->
-<p class='no-result'>没找到。。。</p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+
 <script type="text/javascript" src="/search.js"></script>
 <script>
 var inputArea = document.querySelector("#local-search-input");
+var $resultArea = $("#local-search-result");
 var getSearchFile = function(){
     var path = "/search.xml";
     searchFunc(path, 'local-search-input', 'local-search-result');
+
 }
-inputArea.onfocus = function(){ getSearchFile() }
+inputArea.onfocus = function(){ getSearchFile() 
+        $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+            if (!$(e.target).text()) {
+                $(".no-result").show(200);
+            } else {
+              $(".no-result").hide();}
+	      })
+}
+
 </script>
 
 		<nav class="header-nav">
@@ -177,8 +188,11 @@ inputArea.onfocus = function(){ getSearchFile() }
 			</div>
 		</nav>
 
-	</header>		
+	</header>
+
+      
 </div>
+
 
     </div>
     <div id="loader-wrapper" >
@@ -243,6 +257,7 @@ inputArea.onfocus = function(){ getSearchFile() }
 </nav>
 
       <div id="wrapper" class="body-wrap" >
+
         <div class="menu-l" >
           <div class="canvas-wrap">
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
@@ -478,7 +493,7 @@ inputArea.onfocus = function(){ getSearchFile() }
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -766,22 +781,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/clipboard_use.js"></script>
-
-
 </body>
-<!--
-<script src="https://cdn.bootcss.com/scrollReveal.js/0.1.1/scrollReveal.min.js"></script>
-<script>
-var config = {
-    after: '0.5s',
-    enter: 'left',
-    over: '1s',
-    easing: 'ease-in-out',
-    viewportFactor: 0.33,
-    reset: false,
-    init: true
-};
-window.scrollReveal = new scrollReveal(config);
-</script>
--->
 </html>

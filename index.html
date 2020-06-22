@@ -149,18 +149,29 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <form id="search-form"> <!-- 搜索框相关 -->
     
     <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
-    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
 </form>
 <div id="local-search-result"></div> <!-- 搜索结果区 -->
-<p class='no-result'>没找到。。。</p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+
 <script type="text/javascript" src="/search.js"></script>
 <script>
 var inputArea = document.querySelector("#local-search-input");
+var $resultArea = $("#local-search-result");
 var getSearchFile = function(){
     var path = "/search.xml";
     searchFunc(path, 'local-search-input', 'local-search-result');
+
 }
-inputArea.onfocus = function(){ getSearchFile() }
+inputArea.onfocus = function(){ getSearchFile() 
+        $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+            if (!$(e.target).text()) {
+                $(".no-result").show(200);
+            } else {
+              $(".no-result").hide();}
+	      })
+}
+
 </script>
 
 		<nav class="header-nav">
@@ -177,8 +188,11 @@ inputArea.onfocus = function(){ getSearchFile() }
 			</div>
 		</nav>
 
-	</header>		
+	</header>
+
+      
 </div>
+
 
     </div>
     <div id="loader-wrapper" >
@@ -243,6 +257,7 @@ inputArea.onfocus = function(){ getSearchFile() }
 </nav>
 
       <div id="wrapper" class="body-wrap" >
+
         <div class="menu-l" >
           <div class="canvas-wrap">
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
@@ -309,10 +324,13 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <p>本文转载：<a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="noopener">Cmd 技术渲染的沙箱页面</a></p>
-<h1 id="Cmd-Markdown-简明语法手册"><a href="#Cmd-Markdown-简明语法手册" class="headerlink" title="Cmd Markdown 简明语法手册"></a>Cmd Markdown 简明语法手册</h1><hr>
+<h1 id="Cmd-Markdown-简明语法手册"><a href="#Cmd-Markdown-简明语法手册" class="headerlink" title="Cmd Markdown 简明语法手册"></a>Cmd Markdown 简明语法手册</h1><h3 id="1-斜体和粗体"><a href="#1-斜体和粗体" class="headerlink" title="1. 斜体和粗体"></a>1. 斜体和粗体</h3><p>使用 * 和 ** 表示斜体和粗体。<br>示例：<br>这是 <em>斜体</em>，这是 <strong>粗体</strong>。</p>
         
       
 
@@ -375,6 +393,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
     <article  id="post-数据结构复习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
@@ -435,6 +490,9 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <blockquote>
@@ -507,6 +565,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
     <article  id="post-hp-ux集群命令cmviewcl" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
@@ -567,6 +662,9 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <h2 id="1-HP-UX-集群管理"><a href="#1-HP-UX-集群管理" class="headerlink" title="1.HP-UX 集群管理"></a>1.HP-UX 集群管理</h2><p>Cluster 集群<br>Node 节点 集群下的各台计算机<br>Package 资源组（包括： 共享vg 卷组、浮动IP、锁盘、APP应用）</p>
@@ -640,6 +738,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
     <article  id="post-vi命令" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
@@ -681,7 +816,7 @@ inputArea.onfocus = function(){ getSearchFile() }
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">648</span>
+        <span class="post-count" style="font-size: 14px;color: navy">649</span>
       </span>
     </span>
     
@@ -700,9 +835,19 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
-        <h1 id="linux-Vi常用命令"><a href="#linux-Vi常用命令" class="headerlink" title="linux Vi常用命令"></a>linux Vi常用命令</h1><p>Ctrl+u：向文件首翻半屏；<br>Ctrl+d：向文件尾翻半屏；<br>Ctrl+f：向文件尾翻一屏；<br>Ctrl+b：向文件首翻一屏；</p>
+        <br>
+# linux Vi常用命令
+Ctrl+u：向文件首翻半屏；
+Ctrl+d：向文件尾翻半屏；
+Ctrl+f：向文件尾翻一屏；
+Ctrl+b：向文件首翻一屏；
+Esc：从编辑模式切换到命令模式；
+ZZ：命令模式下保存当前文件所做的修改后退出vi；
         
       
 
@@ -769,6 +914,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
     <article  id="post-0x80240037错误的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
@@ -829,6 +1011,9 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <h1 id="IE11-F12调试时仿真页面没有内容"><a href="#IE11-F12调试时仿真页面没有内容" class="headerlink" title="IE11 F12调试时仿真页面没有内容"></a>IE11 F12调试时仿真页面没有内容</h1><p>ie升级到11后用到某些功能需要调试到ie9运行，F12后没法调选<br>解决方法:<br>下载win7 IE11补丁：<br><a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=45134" target="_blank" rel="noopener">32位点击这里</a><br><a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=45154" target="_blank" rel="noopener">64位点击这里</a><br>安装补丁重启即可</p>
@@ -894,6 +1079,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
     <article  id="post-yilia本地搜索功能" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
@@ -935,7 +1157,7 @@ inputArea.onfocus = function(){ getSearchFile() }
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">2k</span>
+        <span class="post-count" style="font-size: 14px;color: navy">2.4k</span>
       </span>
     </span>
     
@@ -944,7 +1166,7 @@ inputArea.onfocus = function(){ getSearchFile() }
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">11分</span>
+        <span class="post-count" style="font-size: 14px;color: navy">13分</span>
       </span>
     </span>
 </div>
@@ -954,6 +1176,9 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <blockquote>
@@ -1025,6 +1250,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
     <article  id="post-windows做时间服务器，实现unix时间校准" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
@@ -1085,6 +1347,9 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <p>前言:</p>
@@ -1157,6 +1422,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
     <article  id="post-hexo主题美化" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
@@ -1217,6 +1519,9 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <h2 id="1-添加浏览统计"><a href="#1-添加浏览统计" class="headerlink" title="1.添加浏览统计"></a>1.添加浏览统计</h2><p><strong>引入不算子统计</strong><br>修改yilia_config.yml</p>
@@ -1286,6 +1591,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
     <article  id="post-hexo部署到个人服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
@@ -1346,6 +1688,9 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <p><br><strong>前言</strong></p>
@@ -1419,6 +1764,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
     <article  id="post-简易ss连接教程" class="article article-type-post  article-index" itemscope itemprop="blogPost" >
   <div class="article-inner"  >
@@ -1479,6 +1861,9 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <h1 id="Just-my-sock"><a href="#Just-my-sock" class="headerlink" title="Just my sock"></a><br>Just my sock</h1><p>注册<br><a href="https://justmysocks2.net/" target="_blank" rel="noopener">Just my sock</a></p>
@@ -1548,6 +1933,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
 
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
   
   
     <nav id="page-nav">
@@ -1600,7 +2022,7 @@ inputArea.onfocus = function(){ getSearchFile() }
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -1888,22 +2310,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/clipboard_use.js"></script>
-
-
 </body>
-<!--
-<script src="https://cdn.bootcss.com/scrollReveal.js/0.1.1/scrollReveal.min.js"></script>
-<script>
-var config = {
-    after: '0.5s',
-    enter: 'left',
-    over: '1s',
-    easing: 'ease-in-out',
-    viewportFactor: 0.33,
-    reset: false,
-    init: true
-};
-window.scrollReveal = new scrollReveal(config);
-</script>
--->
 </html>

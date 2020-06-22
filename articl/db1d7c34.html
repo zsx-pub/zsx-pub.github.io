@@ -16,7 +16,7 @@
 <meta property="og:description" content="yilia并没有在网站内搜索内容的功能，只能在所有文章里搜索匹配标题，这不能满足需求。在网上搜了不少资料，但并没有针对这个修改，这对前端基本没有了解的我，自己摸索起来是真的有点困难。在这里记录下自己修改的内容，并不是完善的功能，但是能实现搜索全站内容。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-25T13:07:52.000Z">
-<meta property="article:modified_time" content="2020-05-26T00:35:10.628Z">
+<meta property="article:modified_time" content="2020-06-22T02:36:44.334Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="yilia">
 <meta property="article:tag" content="本地搜索">
@@ -149,18 +149,29 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <form id="search-form"> <!-- 搜索框相关 -->
     
     <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
-    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
 </form>
 <div id="local-search-result"></div> <!-- 搜索结果区 -->
-<p class='no-result'>没找到。。。</p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+
 <script type="text/javascript" src="/search.js"></script>
 <script>
 var inputArea = document.querySelector("#local-search-input");
+var $resultArea = $("#local-search-result");
 var getSearchFile = function(){
     var path = "/search.xml";
     searchFunc(path, 'local-search-input', 'local-search-result');
+
 }
-inputArea.onfocus = function(){ getSearchFile() }
+inputArea.onfocus = function(){ getSearchFile() 
+        $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+            if (!$(e.target).text()) {
+                $(".no-result").show(200);
+            } else {
+              $(".no-result").hide();}
+	      })
+}
+
 </script>
 
 		<nav class="header-nav">
@@ -177,8 +188,11 @@ inputArea.onfocus = function(){ getSearchFile() }
 			</div>
 		</nav>
 
-	</header>		
+	</header>
+
+      
 </div>
+
 
     </div>
     <div id="loader-wrapper" >
@@ -243,6 +257,7 @@ inputArea.onfocus = function(){ getSearchFile() }
 </nav>
 
       <div id="wrapper" class="body-wrap" >
+
         <div class="menu-l" >
           <div class="canvas-wrap">
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
@@ -296,7 +311,7 @@ inputArea.onfocus = function(){ getSearchFile() }
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">2k</span>
+        <span class="post-count" style="font-size: 14px;color: navy">2.4k</span>
       </span>
     </span>
     
@@ -305,7 +320,7 @@ inputArea.onfocus = function(){ getSearchFile() }
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">11分</span>
+        <span class="post-count" style="font-size: 14px;color: navy">13分</span>
       </span>
     </span>
 </div>
@@ -315,6 +330,9 @@ inputArea.onfocus = function(){ getSearchFile() }
       </header>
     
 
+<!--  文章目录
+
+-->
     <div class="article-entry" itemprop="articleBody" >
       
         <blockquote>
@@ -348,6 +366,10 @@ inputArea.onfocus = function(){ getSearchFile() }
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var path &#x3D; &quot;&#x2F;search.xml&quot;;</span><br><span class="line">searchFunc(path, &#39;local-search-input&#39;, &#39;local-search-result&#39;);</span><br></pre></td></tr></table></figure>
 <p>//////////上面这两句替换为下面：////////</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var inputArea &#x3D; document.querySelector(&quot;#local-search-input&quot;);</span><br><span class="line">var getSearchFile &#x3D; function()&#123;</span><br><span class="line">    var path &#x3D; &quot;&#x2F;search.xml&quot;;</span><br><span class="line">    searchFunc(path, &#39;local-search-input&#39;, &#39;local-search-result&#39;);</span><br><span class="line">&#125;</span><br><span class="line">inputArea.onfocus &#x3D; function()&#123; getSearchFile() &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>PS:06/22 无匹配搜索结果显示解决如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;https:&#x2F;&#x2F;apps.bdimg.com&#x2F;libs&#x2F;jquery&#x2F;2.1.4&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;form id&#x3D;&quot;search-form&quot;&gt; &lt;!-- 搜索框相关 --&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;local-search-input&quot; name&#x3D;&quot;q&quot; results&#x3D;&quot;0&quot; style&#x3D;&quot;text-align:center&quot; placeholder&#x3D;&quot;&quot; class&#x3D;&quot;search form-control&quot; autocomplete&#x3D;&quot;off&quot; autocorrect&#x3D;&quot;off&quot;&#x2F;&gt;</span><br><span class="line">    &lt;i class&#x3D;&quot;icon-font icon-search&quot; onclick&#x3D;&quot;resetSearch()&quot;&gt;&lt;&#x2F;i&gt; &lt;!-- 清空&#x2F;重置搜索框  没有使用--&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;local-search-result&quot;&gt;&lt;&#x2F;div&gt; &lt;!-- 搜索结果区 --&gt;</span><br><span class="line">&lt;p class&#x3D;&#39;no-result&#39;&gt;无匹配结果！&lt;i class&#x3D;&#39;fa fa-spinner fa-pulse&#39;&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt; &lt;!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 --&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;search.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var inputArea &#x3D; document.querySelector(&quot;#local-search-input&quot;);</span><br><span class="line">var $resultArea &#x3D; $(&quot;#local-search-result&quot;);</span><br><span class="line">var getSearchFile &#x3D; function()&#123;</span><br><span class="line">    var path &#x3D; &quot;&#x2F;search.xml&quot;;</span><br><span class="line">    searchFunc(path, &#39;local-search-input&#39;, &#39;local-search-result&#39;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">inputArea.onfocus &#x3D; function()&#123; getSearchFile() </span><br><span class="line">        $resultArea.bind(&quot;DOMNodeRemoved DOMNodeInserted&quot;, function(e) &#123;</span><br><span class="line">            if (!$(e.target).text()) &#123;</span><br><span class="line">                $(&quot;.no-result&quot;).show(200);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">              $(&quot;.no-result&quot;).hide();&#125;</span><br><span class="line">	      &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
 <!-- 版权声明 -->
@@ -366,7 +388,7 @@ inputArea.onfocus = function(){ getSearchFile() }
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-05-26T00:35:10.628Z" itemprop="dateUpdated">2020年05月26日 08:35:10</time>
+        <time datetime="2020-06-22T02:36:44.334Z" itemprop="dateUpdated">2020年06月22日 10:36:44</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -534,7 +556,7 @@ inputArea.onfocus = function(){ getSearchFile() }
         
         
         <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
+            <i class="icon-font icon-category"><br>目录</br></i>
             <div class="tooltip tooltip-east">
                 <span class="tooltip-item">
                 </span>
@@ -587,6 +609,43 @@ inputArea.onfocus = function(){ getSearchFile() }
 
   
 
+
+ <!--
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+var config = {
+ 	    reset: true, 
+            origin: 'left', 
+            distance: '300px',
+            duration: 1000,
+            delay: 2,
+            rotate: { x: 0, y: 0, z: 0 }, 
+            container: document.documentElement,
+            opacity: 0,
+            scale: 0.8,
+            viewFactor: 100,
+  
+        beforeReveal: function(domEl){
+            console.log('动画执行了');
+        },
+        
+        beforeReset: function(domEl){
+            console.log('滚轮开始---');
+        },
+       
+        afterReveal: function(domEl){
+            console.log('动画结束了');
+        },
+       afterReset: function(domEl){
+            console.log('滚轮结束了');
+        }
+    };
+
+window.sr = ScrollReveal();
+sr.reveal('.article',config);
+</script>
+
+-->
           </div>
         </div>
       </div>
@@ -629,7 +688,7 @@ inputArea.onfocus = function(){ getSearchFile() }
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -917,22 +976,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/clipboard_use.js"></script>
-
-
 </body>
-<!--
-<script src="https://cdn.bootcss.com/scrollReveal.js/0.1.1/scrollReveal.min.js"></script>
-<script>
-var config = {
-    after: '0.5s',
-    enter: 'left',
-    over: '1s',
-    easing: 'ease-in-out',
-    viewportFactor: 0.33,
-    reset: false,
-    init: true
-};
-window.scrollReveal = new scrollReveal(config);
-</script>
--->
 </html>

@@ -1,0 +1,55 @@
+        if(!!yiliaConfig.isHome) {
+            require([yiliaConfig.scrollreveal], function (ScrollReveal) {
+                var animationNames = [
+                "pulse", "fadeIn","fadeInRight", "flipInX", "lightSpeedIn","rotateInUpLeft", "slideInUp","zoomIn",
+                ],
+                len = animationNames.length,
+                randomAnimationName = 'fadeIn';
+				/*
+alert(!window.requestAnimationFrame);
+alert($(".article").offset().top);
+
+alert($(window).scrollTop());
+alert($(window).height());
+alert($firstArticle);
+*/
+                // Fallback (CSS3 keyframe, requestAnimationFrame)
+                if (!window.requestAnimationFrame) {
+                    $('.body-wrap > article').css({opacity: 1});
+ 
+                        function showArticle(){
+                            $(".article").each(function(){
+                                if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
+                                    $(this).removeClass("hidden").addClass("show");
+                                    $(this).addClass("is-hiddened");
+                                } else {
+                                    if(!$(this).hasClass("is-hiddened")) {
+                                        $(this).addClass("hidden");
+                                    }
+                                }
+                            })
+                        }
+                        $(window).on('scroll', function(){
+							
+                            showArticle();
+                        });
+                        showArticle();
+                    
+                    return;
+                }
+ 
+                var animateScope = ".body-wrap > article";
+                var $firstArticle = $(".body-wrap > article:first-child");
+
+                if ($firstArticle.height() > $(window).height()) {
+                    var animateScope = ".body-wrap > article:not(:first-child)";
+                    $firstArticle.css({opacity: 1});
+                }
+                ScrollReveal({
+                    duration: 0,
+                    afterReveal: function (domEl) {
+                        $(domEl).addClass('animated ' + randomAnimationName).css({opacity: 1})
+                    }
+                }).reveal(animateScope);
+            })
+        }
