@@ -1283,7 +1283,7 @@ body {
 
 .article-entry .gist .gist-file .gist-data .line-numbers,.article-entry .highlight .gutter pre,.article-entry .highlight .gutter pre .line {
 	color: #EF7522;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 
 .
@@ -2963,7 +2963,7 @@ page-nav {
 }
 
 .toc-container.tooltip-left .icon-font {
-	font-size: 18px;
+	font-size: 17px;
 	line-height: 0px;
 	color: #fff
 }

@@ -1283,7 +1283,7 @@ body {
 
 .article-entry .gist .gist-file .gist-data .line-numbers,.article-entry .highlight .gutter pre,.article-entry .highlight .gutter pre .line {
 	color: #EF7522;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 
 .
@@ -1306,7 +1306,8 @@ article-entry code,.article-entry pre {
 }
 
 .article-entry .highlight {
-	border-radius: 4px
+	border-radius: 4px;
+	overflow: hidden;
 }
 
 .article-entry .highlight pre {

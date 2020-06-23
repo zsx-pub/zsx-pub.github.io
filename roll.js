@@ -8,7 +8,7 @@ function showArticle(){
 			$(this).css("visibility","visible");
 			$(this).addClass("is-hiddened"); 
 			$(this).css("transform-origin","right");
-			$(this).css("transform","rotate3d(300, 200, 200, 360deg)");
+			$(this).css("transform","rotate3d(500, 100, 0, 360deg)");
 			$(this).css("transition-duration","0.5s");
 			
 		} else {
