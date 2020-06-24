@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   
+  
+<meta name="keywords" content="c语言,c++,linux,hexo">
+
+
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zsx.pub">
@@ -146,51 +150,199 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		</nav>
 
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<form id="search-form"> <!-- 搜索框相关 -->
-    
-    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
-    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
-</form>
-<div id="local-search-result"></div> <!-- 搜索结果区 -->
-<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+	<form id="search-form"> <!-- 搜索框相关 -->    
+	    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
+	    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
+	</form>
+	<div id="local-search-result"></div> <!-- 搜索结果区 -->
+	<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
 
 <script type="text/javascript" src="/search.js"></script>
 <script>
-var inputArea = document.querySelector("#local-search-input");
-var $resultArea = $("#local-search-result");
-var getSearchFile = function(){
-    var path = "/search.xml";
-    searchFunc(path, 'local-search-input', 'local-search-result');
+	var inputArea = document.querySelector("#local-search-input");
+	var $resultArea = $("#local-search-result");
+	var getSearchFile = function(){
+	    var path = "/search.xml";
+	    searchFunc(path, 'local-search-input', 'local-search-result');
 
-}
-inputArea.onfocus = function(){ getSearchFile() 
-        $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
-            if (!$(e.target).text()) {
-                $(".no-result").show(200);
-            } else {
-              $(".no-result").hide();}
-	      })
-}
+	}
+	inputArea.onfocus = function(){ getSearchFile() 
+		$resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+		    if (!$(e.target).text()) {
+			$(".no-result").show(200);
+		    } else {
+		      $(".no-result").hide();}
+		      })
+	}
 
 </script>
 
-		<nav class="header-nav">
-			<div class="social">
+<nav class="header-nav">
+	<div class="social">
+		
+			<a class="github" target="_blank" href="https://github.com/zsx-pub/zsx-pub.github.io" title="github"><i class="icon-github"></i></a>
+	
+			<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+	
+			<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+	
+			<a class="weixin" target="_blank" href="/sbb121" title="weixin"><i class="icon-weixin"></i></a>
+	
+	</div>
+</nav>
+
+<style>
+* {padding: 0;margin: 0;font-family: "微软雅黑";font-size: 14px;}
+ul,li {list-style: none;}
+a {text-decoration: none;color: black;}
+.box{width: 250px;height: 200px;margin: 50px auto;overflow: hidden;position: relative;left:-10px}
+.box-1 ul{}
+.box-1 ul li{width: 250px;height: 200px;position: relative;overflow: hidden;}
+.box-1 ul li img{display:block;width: 250px; height: 200px;}
+.box-1 ul li h2{position: absolute;left: 0;bottom: 0;height: 20px;width:250px;background: rgba(125,125,120,.4);text-indent: 2em;
+				padding-right:50px ;font-size: 15px;line-height: 20px;text-overflow: ellipsis;overflow: hidden;
+				white-space: nowrap;font-weight: normal;color: ghostwhite}
+.box-2{position: absolute;right: 10px;bottom: 14px;}
+.box-2 ul li{float:left;width: 12px;height: 12px;overflow: hidden; margin: 0 5px; border-radius: 50%;
+				background: rgba(0,0,0,0.5);text-indent: 10px;cursor: pointer;}
+.box-2 ul .on{background: rgba(255,255,255,0.6);}
+.box-3 span{position: absolute;color: white;background: rgba(125,125,120,.1);width: 30px;height: 30px;
+				top:50%; font-family: "宋体";line-height: 30px;font-size:20px;margin-top: -10px;
+				text-align: center;cursor: pointer;}
+.box-3 .prev{left: 10px;}
+.box-3 .next{right: 10px;}
+.box-3 span::selection{background: transparent;}
+.box-3 span:hover{background: rgba(125,125,120,.8);}
+</style>
+
+<script type="text/javascript">
+window.onload = function(){
+	function $(param){
+		if(arguments[1] == true){
+			return document.querySelectorAll(param);
+		}else{
+			return document.querySelector(param);
+		}
+	}
+	var $box = $(".box");
+	var $box1 = $(".box-1 ul li",true);
+	var $box2 = $(".box-2 ul");
+	var $box3 = $(".box-3");
+	var $length = $box1.length;
+	
+	var str = "";
+	for(var i =0;i<$length;i++){
+		if(i==0){
+			str +="<li class='on'>"+(i+1)+"</li>";
+		}else{
+			str += "<li>"+(i+1)+"</li>";
+		}
+	}
+	$box2.innerHTML = str;
+	
+	var current = 0;
+	
+	var timer;
+	timer = setInterval(go,3000);
+	function go(){
+		for(var j =0;j<$length;j++){
+			$box1[j].style.display = "none";
+			$box2.children[j].className = "";
+		}
+		if($length == current){
+			current = 0;
+		}
+		$box1[current].style.display = "block";
+		$box2.children[current].className = "on";
+		current++;
+	}
+	
+	for(var k=0;k<$length;k++){
+		$box1[k].onmouseover = function(){
+			clearInterval(timer);
+		}
+		$box1[k].onmouseout = function(){
+			timer = setInterval(go,3000);
+		}
+	}
+	for(var p=0;p<$box3.children.length;p++){
+		$box3.children[p].onmouseover = function(){
+			clearInterval(timer);
+		};
+		$box3.children[p].onmouseout = function(){
+			timer = setInterval(go,3000);
+		}
+	}
+	
+	for(var u =0;u<$length;u++){
+		$box2.children[u].index  = u;
+		$box2.children[u].onmouseover = function(){
+			clearInterval(timer);
+			for(var j=0;j<$length;j++){
+				$box1[j].style.display = "none";
+				$box2.children[j].className = "";
+			}
+			this.className = "on";
+			$box1[this.index].style.display = "block";
+			current = this.index +1;
+		}
+		$box2.children[u].onmouseout = function(){
+			timer = setInterval(go,3000);
+		}
+	}
+	
+	$box3.children[0].onclick = function(){
+		back();
+	}
+	$box3.children[1].onclick = function(){
+		go();
+	}
+	function back(){
+		for(var j =0;j<$length;j++){
+			$box1[j].style.display = "none";
+			$box2.children[j].className = "";
+		}
+		if(current == 0){
+			current = $length;
+		}
+		$box1[current-1].style.display = "block";
+		$box2.children[current-1].className = "on";
+		current--;
+	}
+}
+</script>
+
+<div class="box">
+	<div class="box-1">
+		<ul>
+			<li>
+				<a href="http://www.baidu.com" target="_blank" rel="noopener">
+					<img src="https://i.loli.net/2020/06/25/zKh7AGkicOVm8g1.jpg" alt="这里是第一场图片"></img>
+				</a>
+				<h2>1</h2>
 				
-					<a class="github" target="_blank" href="https://github.com/zsx-pub/zsx-pub.github.io" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="weixin" target="_blank" href="/sbb121" title="weixin"><i class="icon-weixin"></i></a>
-		        
-			</div>
-		</nav>
-
-	</header>
-
-      
+			</li>
+			<li>
+				<img src="https://i.loli.net/2020/06/25/1dW6iHS8cvXmw3O.jpg" alt="这里是第二张图片"></img>
+				<h2>2</h2>
+			</li>
+			<li>
+				<img src="https://i.loli.net/2020/06/25/K5w9U84ecVorWks.jpg" alt="这里是第三张图片"></img>
+				<h2>3</h2>
+			</li>
+		</ul>
+	</div>
+	<div class="box-2">
+		<ul>
+			
+		</ul>
+	</div>
+	<div class="box-3">
+		<span class="prev"> < </span>
+		<span class="next"> > </span>
+	</div>
+</div>
+	</header>      
 </div>
 
 
@@ -472,7 +624,7 @@ inputArea.onfocus = function(){ getSearchFile()
         <span id="busuanzi_container_site_uv" style="display:none;color: white;font-size: 14px;">
                 访客数:<span id="busuanzi_value_site_uv"></span>
         </span>
-        <script async src="/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	
 	<!-- 不算子统计 -->
     </div>
@@ -676,7 +828,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://anyway1314.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>anyway1314</a>
             </li>
           
             <li class="search-li">
@@ -707,7 +859,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">学习&lt;br&gt;&lt;br&gt;不只是做一点&lt;br&gt;</div>
   	  	
     	</section>
     

@@ -3,21 +3,25 @@
 <head>
   <meta charset="utf-8">
   
+  
+<meta name="keywords" content="markdown,c语言,c++,linux,hexo">
+
+
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zsx.pub">
   <title>markdown用法 | A|XIAN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文转载：Cmd 技术渲染的沙箱页面 Cmd Markdown 简明语法手册1. 斜体和粗体使用 * 和 ** 表示斜体和粗体。示例：这是 斜体，这是 粗体。">
+  <meta name="description" content="markdown的语法及使用说明">
 <meta property="og:type" content="article">
 <meta property="og:title" content="markdown用法">
 <meta property="og:url" content="http://zsx.pub/articl/47808168.html">
 <meta property="og:site_name" content="A|XIAN">
-<meta property="og:description" content="本文转载：Cmd 技术渲染的沙箱页面 Cmd Markdown 简明语法手册1. 斜体和粗体使用 * 和 ** 表示斜体和粗体。示例：这是 斜体，这是 粗体。">
+<meta property="og:description" content="markdown的语法及使用说明">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.zybuluo.com/static/img/my_head.jpg">
 <meta property="article:published_time" content="2020-06-17T03:14:46.000Z">
-<meta property="article:modified_time" content="2020-06-21T05:08:26.913Z">
+<meta property="article:modified_time" content="2020-06-24T08:19:00.222Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="markdown">
 <meta name="twitter:card" content="summary">
@@ -147,51 +151,199 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		</nav>
 
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<form id="search-form"> <!-- 搜索框相关 -->
-    
-    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
-    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
-</form>
-<div id="local-search-result"></div> <!-- 搜索结果区 -->
-<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+	<form id="search-form"> <!-- 搜索框相关 -->    
+	    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
+	    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
+	</form>
+	<div id="local-search-result"></div> <!-- 搜索结果区 -->
+	<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
 
 <script type="text/javascript" src="/search.js"></script>
 <script>
-var inputArea = document.querySelector("#local-search-input");
-var $resultArea = $("#local-search-result");
-var getSearchFile = function(){
-    var path = "/search.xml";
-    searchFunc(path, 'local-search-input', 'local-search-result');
+	var inputArea = document.querySelector("#local-search-input");
+	var $resultArea = $("#local-search-result");
+	var getSearchFile = function(){
+	    var path = "/search.xml";
+	    searchFunc(path, 'local-search-input', 'local-search-result');
 
-}
-inputArea.onfocus = function(){ getSearchFile() 
-        $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
-            if (!$(e.target).text()) {
-                $(".no-result").show(200);
-            } else {
-              $(".no-result").hide();}
-	      })
-}
+	}
+	inputArea.onfocus = function(){ getSearchFile() 
+		$resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+		    if (!$(e.target).text()) {
+			$(".no-result").show(200);
+		    } else {
+		      $(".no-result").hide();}
+		      })
+	}
 
 </script>
 
-		<nav class="header-nav">
-			<div class="social">
+<nav class="header-nav">
+	<div class="social">
+		
+			<a class="github" target="_blank" href="https://github.com/zsx-pub/zsx-pub.github.io" title="github"><i class="icon-github"></i></a>
+	
+			<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+	
+			<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+	
+			<a class="weixin" target="_blank" href="/sbb121" title="weixin"><i class="icon-weixin"></i></a>
+	
+	</div>
+</nav>
+
+<style>
+* {padding: 0;margin: 0;font-family: "微软雅黑";font-size: 14px;}
+ul,li {list-style: none;}
+a {text-decoration: none;color: black;}
+.box{width: 250px;height: 200px;margin: 50px auto;overflow: hidden;position: relative;left:-10px}
+.box-1 ul{}
+.box-1 ul li{width: 250px;height: 200px;position: relative;overflow: hidden;}
+.box-1 ul li img{display:block;width: 250px; height: 200px;}
+.box-1 ul li h2{position: absolute;left: 0;bottom: 0;height: 20px;width:250px;background: rgba(125,125,120,.4);text-indent: 2em;
+				padding-right:50px ;font-size: 15px;line-height: 20px;text-overflow: ellipsis;overflow: hidden;
+				white-space: nowrap;font-weight: normal;color: ghostwhite}
+.box-2{position: absolute;right: 10px;bottom: 14px;}
+.box-2 ul li{float:left;width: 12px;height: 12px;overflow: hidden; margin: 0 5px; border-radius: 50%;
+				background: rgba(0,0,0,0.5);text-indent: 10px;cursor: pointer;}
+.box-2 ul .on{background: rgba(255,255,255,0.6);}
+.box-3 span{position: absolute;color: white;background: rgba(125,125,120,.1);width: 30px;height: 30px;
+				top:50%; font-family: "宋体";line-height: 30px;font-size:20px;margin-top: -10px;
+				text-align: center;cursor: pointer;}
+.box-3 .prev{left: 10px;}
+.box-3 .next{right: 10px;}
+.box-3 span::selection{background: transparent;}
+.box-3 span:hover{background: rgba(125,125,120,.8);}
+</style>
+
+<script type="text/javascript">
+window.onload = function(){
+	function $(param){
+		if(arguments[1] == true){
+			return document.querySelectorAll(param);
+		}else{
+			return document.querySelector(param);
+		}
+	}
+	var $box = $(".box");
+	var $box1 = $(".box-1 ul li",true);
+	var $box2 = $(".box-2 ul");
+	var $box3 = $(".box-3");
+	var $length = $box1.length;
+	
+	var str = "";
+	for(var i =0;i<$length;i++){
+		if(i==0){
+			str +="<li class='on'>"+(i+1)+"</li>";
+		}else{
+			str += "<li>"+(i+1)+"</li>";
+		}
+	}
+	$box2.innerHTML = str;
+	
+	var current = 0;
+	
+	var timer;
+	timer = setInterval(go,3000);
+	function go(){
+		for(var j =0;j<$length;j++){
+			$box1[j].style.display = "none";
+			$box2.children[j].className = "";
+		}
+		if($length == current){
+			current = 0;
+		}
+		$box1[current].style.display = "block";
+		$box2.children[current].className = "on";
+		current++;
+	}
+	
+	for(var k=0;k<$length;k++){
+		$box1[k].onmouseover = function(){
+			clearInterval(timer);
+		}
+		$box1[k].onmouseout = function(){
+			timer = setInterval(go,3000);
+		}
+	}
+	for(var p=0;p<$box3.children.length;p++){
+		$box3.children[p].onmouseover = function(){
+			clearInterval(timer);
+		};
+		$box3.children[p].onmouseout = function(){
+			timer = setInterval(go,3000);
+		}
+	}
+	
+	for(var u =0;u<$length;u++){
+		$box2.children[u].index  = u;
+		$box2.children[u].onmouseover = function(){
+			clearInterval(timer);
+			for(var j=0;j<$length;j++){
+				$box1[j].style.display = "none";
+				$box2.children[j].className = "";
+			}
+			this.className = "on";
+			$box1[this.index].style.display = "block";
+			current = this.index +1;
+		}
+		$box2.children[u].onmouseout = function(){
+			timer = setInterval(go,3000);
+		}
+	}
+	
+	$box3.children[0].onclick = function(){
+		back();
+	}
+	$box3.children[1].onclick = function(){
+		go();
+	}
+	function back(){
+		for(var j =0;j<$length;j++){
+			$box1[j].style.display = "none";
+			$box2.children[j].className = "";
+		}
+		if(current == 0){
+			current = $length;
+		}
+		$box1[current-1].style.display = "block";
+		$box2.children[current-1].className = "on";
+		current--;
+	}
+}
+</script>
+
+<div class="box">
+	<div class="box-1">
+		<ul>
+			<li>
+				<a href="http://www.baidu.com" target="_blank" rel="noopener">
+					<img src="https://i.loli.net/2020/06/25/zKh7AGkicOVm8g1.jpg" alt="这里是第一场图片"></img>
+				</a>
+				<h2>1</h2>
 				
-					<a class="github" target="_blank" href="https://github.com/zsx-pub/zsx-pub.github.io" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="weixin" target="_blank" href="/sbb121" title="weixin"><i class="icon-weixin"></i></a>
-		        
-			</div>
-		</nav>
-
-	</header>
-
-      
+			</li>
+			<li>
+				<img src="https://i.loli.net/2020/06/25/1dW6iHS8cvXmw3O.jpg" alt="这里是第二张图片"></img>
+				<h2>2</h2>
+			</li>
+			<li>
+				<img src="https://i.loli.net/2020/06/25/K5w9U84ecVorWks.jpg" alt="这里是第三张图片"></img>
+				<h2>3</h2>
+			</li>
+		</ul>
+	</div>
+	<div class="box-2">
+		<ul>
+			
+		</ul>
+	</div>
+	<div class="box-3">
+		<span class="prev"> < </span>
+		<span class="next"> > </span>
+	</div>
+</div>
+	</header>      
 </div>
 
 
@@ -333,36 +485,6 @@ inputArea.onfocus = function(){ getSearchFile()
 
 <!--  文章目录
 
-    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-          <span class="btn-bg"></span>
-          <span class="btn-text">文章导航</span>
-          </p>
-	<div id="toc-article" class="toc-article">
-	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-		<strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Cmd-Markdown-简明语法手册"><span class="toc-number">1.</span> <span class="toc-text">Cmd Markdown 简明语法手册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-斜体和粗体"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 斜体和粗体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-分级标题"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 分级标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-外链接"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 外链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-无序列表"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 无序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-有序列表"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 有序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-文字引用"><span class="toc-number">1.0.6.</span> <span class="toc-text">6. 文字引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-行内代码块"><span class="toc-number">1.0.7.</span> <span class="toc-text">7. 行内代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-代码块"><span class="toc-number">1.0.8.</span> <span class="toc-text">8.  代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-插入图像"><span class="toc-number">1.0.9.</span> <span class="toc-text">9.  插入图像</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cmd-Markdown-高阶语法手册"><span class="toc-number">2.</span> <span class="toc-text">Cmd Markdown 高阶语法手册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-内容目录"><span class="toc-number">2.0.1.</span> <span class="toc-text">1. 内容目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-标签分类"><span class="toc-number">2.0.2.</span> <span class="toc-text">2. 标签分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-删除线"><span class="toc-number">2.0.3.</span> <span class="toc-text">3. 删除线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-注脚"><span class="toc-number">2.0.4.</span> <span class="toc-text">4. 注脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-LaTeX-公式"><span class="toc-number">2.0.5.</span> <span class="toc-text">5. LaTeX 公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-加强的代码块"><span class="toc-number">2.0.6.</span> <span class="toc-text">6. 加强的代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-流程图"><span class="toc-number">2.0.7.</span> <span class="toc-text">7. 流程图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-number">2.0.7.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-序列图"><span class="toc-number">2.0.8.</span> <span class="toc-text">8. 序列图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-1"><span class="toc-number">2.0.8.1.</span> <span class="toc-text">示例 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-2"><span class="toc-number">2.0.8.2.</span> <span class="toc-text">示例 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：序列图语法参考"><span class="toc-number">2.0.8.3.</span> <span class="toc-text">更多语法参考：序列图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-甘特图"><span class="toc-number">2.0.9.</span> <span class="toc-text">9. 甘特图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：甘特图语法参考"><span class="toc-number">2.0.9.1.</span> <span class="toc-text">更多语法参考：甘特图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Mermaid-流程图"><span class="toc-number">2.0.10.</span> <span class="toc-text">10. Mermaid 流程图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：Mermaid-流程图语法参考"><span class="toc-number">2.0.10.1.</span> <span class="toc-text">更多语法参考：Mermaid 流程图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Mermaid-序列图"><span class="toc-number">2.0.11.</span> <span class="toc-text">11. Mermaid 序列图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：Mermaid-序列图语法参考"><span class="toc-number">2.0.11.1.</span> <span class="toc-text">更多语法参考：Mermaid 序列图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-表格支持"><span class="toc-number">2.0.12.</span> <span class="toc-text">12. 表格支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-定义型列表"><span class="toc-number">2.0.13.</span> <span class="toc-text">13. 定义型列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Html-标签"><span class="toc-number">2.0.14.</span> <span class="toc-text">14. Html 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-内嵌图标"><span class="toc-number">2.0.15.</span> <span class="toc-text">15. 内嵌图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-待办事宜-Todo-列表"><span class="toc-number">2.0.16.</span> <span class="toc-text">16. 待办事宜 Todo 列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.1"><span class="toc-number">2.1.</span> <span class="toc-text">1. 安装git</span></a></li></ol></li></ol>
-         </div>
-	     <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-	</style>
-   <script type="text/javascript">
-	function showToc(){
-		var toc_article = document.getElementById("toc-article");
-		var show_toc_btn = document.getElementById("show-toc-btn");
-		toc_article.setAttribute("style","display:block");
-		show_toc_btn.setAttribute("style","display:none");
-		};
-	function showBtn(){
-		var toc_article = document.getElementById("toc-article");
-		var show_toc_btn = document.getElementById("show-toc-btn");
-		toc_article.setAttribute("style","display:none");
-		show_toc_btn.setAttribute("style","display:block");
-		};
-   </script>
-      
 -->
     <div class="article-entry" itemprop="articleBody" >
       
@@ -694,24 +816,24 @@ inputArea.onfocus = function(){ getSearchFile()
 <td align="right">\omega</td>
 </tr>
 </tbody></table>
-<p><strong>3. 上标/下标</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">H&lt;sub&gt;2&lt;&#x2F;sub&gt;O</span><br><span class="line">商标&lt;sup&gt;TM&lt;&#x2F;sup&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="17-上标-下标"><a href="#17-上标-下标" class="headerlink" title="17. 上标/下标"></a>17. 上标/下标</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">H&lt;sub&gt;2&lt;&#x2F;sub&gt;O</span><br><span class="line">商标&lt;sup&gt;TM&lt;&#x2F;sup&gt;</span><br></pre></td></tr></table></figure>
 <p>效果：<br>H<sub>2</sub>O<br>商标<sup>TM</sup></p>
-<p><strong>4. 字体</strong><br>语法    :</p>
+<h3 id="18-字体"><a href="#18-字体" class="headerlink" title="18. 字体"></a>18. 字体</h3><p>语法    :</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">“黑体”</span>&gt;</span>我是黑体字<span class="tag">&lt;/<span class="name">font</span>&gt;</span>	我是黑体字</span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">“微软雅黑”</span>&gt;</span>我是微软雅黑	我是微软雅黑</span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">“STCAIYUN”</span>&gt;</span>我是华文彩云<span class="tag">&lt;/<span class="name">font</span>&gt;</span>	我是华文彩云</span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span>&gt;</span>我是红色<span class="tag">&lt;/<span class="name">font</span>&gt;</span>	我是红色</span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#008000</span>&gt;</span>我是绿色<span class="tag">&lt;/<span class="name">font</span>&gt;</span>	我是绿色</span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">Blue</span>&gt;</span>我是蓝色<span class="tag">&lt;/<span class="name">font</span>&gt;</span>	我是蓝色</span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">5</span>&gt;</span>我是尺寸<span class="tag">&lt;/<span class="name">font</span>&gt;</span>	我是尺寸</span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">“黑体”</span> <span class="attr">color</span>=<span class="string">green</span> <span class="attr">size</span>=<span class="string">5</span>&gt;</span>我是黑体，绿色，尺寸为5<span class="tag">&lt;/<span class="name">font</span>&gt;</span>	我是黑体，绿色，尺寸为5</span><br></pre></td></tr></table></figure>
 <p>效果:<br><font face="“黑体”">我是黑体字</font>    我是黑体字<br><font face="“微软雅黑”">我是微软雅黑    我是微软雅黑<br><font face="“STCAIYUN”">我是华文彩云</font>    我是华文彩云<br><font color="red">我是红色</font>    我是红色<br><font color="#008000">我是绿色</font>    我是绿色<br><font color="Blue">我是蓝色</font>    我是蓝色<br><font size="5">我是尺寸</font>    我是尺寸<br><font face="“黑体”" color="green" size="5">我是黑体，绿色，尺寸为5</font>    我是黑体，绿色，尺寸为5</font></p>
-<p><strong>5. 居中</strong><br>居中语法：</p>
+<h3 id="19-居中"><a href="#19-居中" class="headerlink" title="19. 居中"></a>19. 居中</h3><p>居中语法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;center&gt; 串口通信程序&lt;br&gt;&lt;br&gt;&lt;&#x2F;center &gt;</span><br></pre></td></tr></table></figure>
 <p>效果：</p>
 <center> 串口通信程序<br><br></center>
 
-<p><strong>6.删除线</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure>
+<h3 id="20-删除线"><a href="#20-删除线" class="headerlink" title="20.删除线"></a>20.删除线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure>
 <p>效果：<br><del>删除线</del></p>
-<p><strong>7.页内跳转</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[点我去到](#1.1)</span><br><span class="line"></span><br><span class="line">&lt;h2 id&#x3D;&quot;1.1&quot;&gt;1. 安装git&lt;&#x2F;h2&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="21-页内跳转"><a href="#21-页内跳转" class="headerlink" title="21.页内跳转"></a>21.页内跳转</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[点我去到](#1.1)</span><br><span class="line"></span><br><span class="line">&lt;h2 id&#x3D;&quot;1.1&quot;&gt;1. 安装git&lt;&#x2F;h2&gt;</span><br></pre></td></tr></table></figure>
 <p>效果：<br>     <a href="#1.1">点我去到</a></p>
-<h2 id="1.1">1. 安装git</h2><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start:>https://www.zybuluo.com
+<h2 id="1.1">1. 安装git</h2>
+
+<h3 id="22-缩进"><a href="#22-缩进" class="headerlink" title="22.缩进"></a>22.缩进</h3><p>一个空格大小的表示：&ensp;或&#8194;，此时只要在相应需要缩进的段落前加上 4个 如上的标记即可，注意要带上分号。</p>
+<p>两个空格的大小表示：&emsp;或&#8195;，同理，使用2个即可缩进2个汉字，推荐使用该方式。<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start:>https://www.zybuluo.com
 io=>inputoutput: verification
 op=>operation: Your Operation
 cond=>condition: Yes or No?
@@ -720,7 +842,8 @@ e=>end
 
 st->io->op->cond
 cond(yes)->e
-cond(no)->sub->io</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>
+cond(no)->sub->io</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
+
       
 
 <!-- 版权声明 -->
@@ -739,7 +862,7 @@ cond(no)->sub->io</textarea><textarea id="flowchart-0-options" style="display: n
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-06-21T05:08:26.913Z" itemprop="dateUpdated">2020年06月21日 13:08:26</time>
+        <time datetime="2020-06-24T08:19:00.222Z" itemprop="dateUpdated">2020年06月24日 16:19:00</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -910,7 +1033,7 @@ cond(no)->sub->io</textarea><textarea id="flowchart-0-options" style="display: n
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Cmd-Markdown-简明语法手册"><span class="toc-number">1.</span> <span class="toc-text">Cmd Markdown 简明语法手册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-斜体和粗体"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 斜体和粗体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-分级标题"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 分级标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-外链接"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 外链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-无序列表"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 无序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-有序列表"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 有序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-文字引用"><span class="toc-number">1.0.6.</span> <span class="toc-text">6. 文字引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-行内代码块"><span class="toc-number">1.0.7.</span> <span class="toc-text">7. 行内代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-代码块"><span class="toc-number">1.0.8.</span> <span class="toc-text">8.  代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-插入图像"><span class="toc-number">1.0.9.</span> <span class="toc-text">9.  插入图像</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cmd-Markdown-高阶语法手册"><span class="toc-number">2.</span> <span class="toc-text">Cmd Markdown 高阶语法手册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-内容目录"><span class="toc-number">2.0.1.</span> <span class="toc-text">1. 内容目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-标签分类"><span class="toc-number">2.0.2.</span> <span class="toc-text">2. 标签分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-删除线"><span class="toc-number">2.0.3.</span> <span class="toc-text">3. 删除线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-注脚"><span class="toc-number">2.0.4.</span> <span class="toc-text">4. 注脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-LaTeX-公式"><span class="toc-number">2.0.5.</span> <span class="toc-text">5. LaTeX 公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-加强的代码块"><span class="toc-number">2.0.6.</span> <span class="toc-text">6. 加强的代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-流程图"><span class="toc-number">2.0.7.</span> <span class="toc-text">7. 流程图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-number">2.0.7.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-序列图"><span class="toc-number">2.0.8.</span> <span class="toc-text">8. 序列图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-1"><span class="toc-number">2.0.8.1.</span> <span class="toc-text">示例 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-2"><span class="toc-number">2.0.8.2.</span> <span class="toc-text">示例 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：序列图语法参考"><span class="toc-number">2.0.8.3.</span> <span class="toc-text">更多语法参考：序列图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-甘特图"><span class="toc-number">2.0.9.</span> <span class="toc-text">9. 甘特图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：甘特图语法参考"><span class="toc-number">2.0.9.1.</span> <span class="toc-text">更多语法参考：甘特图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Mermaid-流程图"><span class="toc-number">2.0.10.</span> <span class="toc-text">10. Mermaid 流程图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：Mermaid-流程图语法参考"><span class="toc-number">2.0.10.1.</span> <span class="toc-text">更多语法参考：Mermaid 流程图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Mermaid-序列图"><span class="toc-number">2.0.11.</span> <span class="toc-text">11. Mermaid 序列图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：Mermaid-序列图语法参考"><span class="toc-number">2.0.11.1.</span> <span class="toc-text">更多语法参考：Mermaid 序列图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-表格支持"><span class="toc-number">2.0.12.</span> <span class="toc-text">12. 表格支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-定义型列表"><span class="toc-number">2.0.13.</span> <span class="toc-text">13. 定义型列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Html-标签"><span class="toc-number">2.0.14.</span> <span class="toc-text">14. Html 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-内嵌图标"><span class="toc-number">2.0.15.</span> <span class="toc-text">15. 内嵌图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-待办事宜-Todo-列表"><span class="toc-number">2.0.16.</span> <span class="toc-text">16. 待办事宜 Todo 列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.1"><span class="toc-number">2.1.</span> <span class="toc-text">1. 安装git</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Cmd-Markdown-简明语法手册"><span class="toc-number">1.</span> <span class="toc-text">Cmd Markdown 简明语法手册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-斜体和粗体"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 斜体和粗体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-分级标题"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. 分级标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-外链接"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. 外链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-无序列表"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. 无序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-有序列表"><span class="toc-number">1.0.5.</span> <span class="toc-text">5. 有序列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-文字引用"><span class="toc-number">1.0.6.</span> <span class="toc-text">6. 文字引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-行内代码块"><span class="toc-number">1.0.7.</span> <span class="toc-text">7. 行内代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-代码块"><span class="toc-number">1.0.8.</span> <span class="toc-text">8.  代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-插入图像"><span class="toc-number">1.0.9.</span> <span class="toc-text">9.  插入图像</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cmd-Markdown-高阶语法手册"><span class="toc-number">2.</span> <span class="toc-text">Cmd Markdown 高阶语法手册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-内容目录"><span class="toc-number">2.0.1.</span> <span class="toc-text">1. 内容目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-标签分类"><span class="toc-number">2.0.2.</span> <span class="toc-text">2. 标签分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-删除线"><span class="toc-number">2.0.3.</span> <span class="toc-text">3. 删除线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-注脚"><span class="toc-number">2.0.4.</span> <span class="toc-text">4. 注脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-LaTeX-公式"><span class="toc-number">2.0.5.</span> <span class="toc-text">5. LaTeX 公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-加强的代码块"><span class="toc-number">2.0.6.</span> <span class="toc-text">6. 加强的代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-流程图"><span class="toc-number">2.0.7.</span> <span class="toc-text">7. 流程图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-number">2.0.7.1.</span> <span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-序列图"><span class="toc-number">2.0.8.</span> <span class="toc-text">8. 序列图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-1"><span class="toc-number">2.0.8.1.</span> <span class="toc-text">示例 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-2"><span class="toc-number">2.0.8.2.</span> <span class="toc-text">示例 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：序列图语法参考"><span class="toc-number">2.0.8.3.</span> <span class="toc-text">更多语法参考：序列图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-甘特图"><span class="toc-number">2.0.9.</span> <span class="toc-text">9. 甘特图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：甘特图语法参考"><span class="toc-number">2.0.9.1.</span> <span class="toc-text">更多语法参考：甘特图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Mermaid-流程图"><span class="toc-number">2.0.10.</span> <span class="toc-text">10. Mermaid 流程图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：Mermaid-流程图语法参考"><span class="toc-number">2.0.10.1.</span> <span class="toc-text">更多语法参考：Mermaid 流程图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Mermaid-序列图"><span class="toc-number">2.0.11.</span> <span class="toc-text">11. Mermaid 序列图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多语法参考：Mermaid-序列图语法参考"><span class="toc-number">2.0.11.1.</span> <span class="toc-text">更多语法参考：Mermaid 序列图语法参考</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-表格支持"><span class="toc-number">2.0.12.</span> <span class="toc-text">12. 表格支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-定义型列表"><span class="toc-number">2.0.13.</span> <span class="toc-text">13. 定义型列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Html-标签"><span class="toc-number">2.0.14.</span> <span class="toc-text">14. Html 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-内嵌图标"><span class="toc-number">2.0.15.</span> <span class="toc-text">15. 内嵌图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-待办事宜-Todo-列表"><span class="toc-number">2.0.16.</span> <span class="toc-text">16. 待办事宜 Todo 列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-上标-下标"><span class="toc-number">2.0.17.</span> <span class="toc-text">17. 上标&#x2F;下标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-字体"><span class="toc-number">2.0.18.</span> <span class="toc-text">18. 字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-居中"><span class="toc-number">2.0.19.</span> <span class="toc-text">19. 居中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-删除线"><span class="toc-number">2.0.20.</span> <span class="toc-text">20.删除线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-页内跳转"><span class="toc-number">2.0.21.</span> <span class="toc-text">21.页内跳转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1.1"><span class="toc-number">2.1.</span> <span class="toc-text">1. 安装git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#22-缩进"><span class="toc-number">2.1.1.</span> <span class="toc-text">22.缩进</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -979,7 +1102,7 @@ cond(no)->sub->io</textarea><textarea id="flowchart-0-options" style="display: n
         <span id="busuanzi_container_site_uv" style="display:none;color: white;font-size: 14px;">
                 访客数:<span id="busuanzi_value_site_uv"></span>
         </span>
-        <script async src="/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	
 	<!-- 不算子统计 -->
     </div>
@@ -1183,7 +1306,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://anyway1314.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>anyway1314</a>
             </li>
           
             <li class="search-li">
@@ -1214,7 +1337,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">学习&lt;br&gt;&lt;br&gt;不只是做一点&lt;br&gt;</div>
   	  	
     	</section>
     

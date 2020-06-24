@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   
+  
+<meta name="keywords" content="c语言,c++,linux,hexo">
+
+
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zsx.pub">
@@ -23,8 +27,14 @@
 <meta property="og:image" content="https://i.loli.net/2020/06/17/oXFD1CrzdhmywM5.png">
 <meta property="og:image" content="https://i.loli.net/2020/06/17/Y4ogTfMd7V5DbrI.png">
 <meta property="og:image" content="https://i.loli.net/2020/06/17/NzdnWYXep3iTuJQ.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/23/FkPBMfvEVD1gATR.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/23/ZgTclBKMuwta7nV.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/23/F8K2aWLCiextqbJ.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/23/qjW3mi5wytJM7QS.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/23/lyiSNFjCuodYZx1.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/23/ebLpu5Z1GKcfsVM.png">
 <meta property="article:published_time" content="2020-06-17T01:36:22.000Z">
-<meta property="article:modified_time" content="2020-06-19T09:20:00.271Z">
+<meta property="article:modified_time" content="2020-06-23T08:54:27.451Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
@@ -155,51 +165,199 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		</nav>
 
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<form id="search-form"> <!-- 搜索框相关 -->
-    
-    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
-    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
-</form>
-<div id="local-search-result"></div> <!-- 搜索结果区 -->
-<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+	<form id="search-form"> <!-- 搜索框相关 -->    
+	    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
+	    <i class="icon-font icon-search" onclick="resetSearch()"></i> <!-- 清空/重置搜索框  没有使用-->
+	</form>
+	<div id="local-search-result"></div> <!-- 搜索结果区 -->
+	<p class='no-result'>无匹配结果！<i class='fa fa-spinner fa-pulse'></i></p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
 
 <script type="text/javascript" src="/search.js"></script>
 <script>
-var inputArea = document.querySelector("#local-search-input");
-var $resultArea = $("#local-search-result");
-var getSearchFile = function(){
-    var path = "/search.xml";
-    searchFunc(path, 'local-search-input', 'local-search-result');
+	var inputArea = document.querySelector("#local-search-input");
+	var $resultArea = $("#local-search-result");
+	var getSearchFile = function(){
+	    var path = "/search.xml";
+	    searchFunc(path, 'local-search-input', 'local-search-result');
 
-}
-inputArea.onfocus = function(){ getSearchFile() 
-        $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
-            if (!$(e.target).text()) {
-                $(".no-result").show(200);
-            } else {
-              $(".no-result").hide();}
-	      })
-}
+	}
+	inputArea.onfocus = function(){ getSearchFile() 
+		$resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+		    if (!$(e.target).text()) {
+			$(".no-result").show(200);
+		    } else {
+		      $(".no-result").hide();}
+		      })
+	}
 
 </script>
 
-		<nav class="header-nav">
-			<div class="social">
+<nav class="header-nav">
+	<div class="social">
+		
+			<a class="github" target="_blank" href="https://github.com/zsx-pub/zsx-pub.github.io" title="github"><i class="icon-github"></i></a>
+	
+			<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+	
+			<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+	
+			<a class="weixin" target="_blank" href="/sbb121" title="weixin"><i class="icon-weixin"></i></a>
+	
+	</div>
+</nav>
+
+<style>
+* {padding: 0;margin: 0;font-family: "微软雅黑";font-size: 14px;}
+ul,li {list-style: none;}
+a {text-decoration: none;color: black;}
+.box{width: 250px;height: 200px;margin: 50px auto;overflow: hidden;position: relative;left:-10px}
+.box-1 ul{}
+.box-1 ul li{width: 250px;height: 200px;position: relative;overflow: hidden;}
+.box-1 ul li img{display:block;width: 250px; height: 200px;}
+.box-1 ul li h2{position: absolute;left: 0;bottom: 0;height: 20px;width:250px;background: rgba(125,125,120,.4);text-indent: 2em;
+				padding-right:50px ;font-size: 15px;line-height: 20px;text-overflow: ellipsis;overflow: hidden;
+				white-space: nowrap;font-weight: normal;color: ghostwhite}
+.box-2{position: absolute;right: 10px;bottom: 14px;}
+.box-2 ul li{float:left;width: 12px;height: 12px;overflow: hidden; margin: 0 5px; border-radius: 50%;
+				background: rgba(0,0,0,0.5);text-indent: 10px;cursor: pointer;}
+.box-2 ul .on{background: rgba(255,255,255,0.6);}
+.box-3 span{position: absolute;color: white;background: rgba(125,125,120,.1);width: 30px;height: 30px;
+				top:50%; font-family: "宋体";line-height: 30px;font-size:20px;margin-top: -10px;
+				text-align: center;cursor: pointer;}
+.box-3 .prev{left: 10px;}
+.box-3 .next{right: 10px;}
+.box-3 span::selection{background: transparent;}
+.box-3 span:hover{background: rgba(125,125,120,.8);}
+</style>
+
+<script type="text/javascript">
+window.onload = function(){
+	function $(param){
+		if(arguments[1] == true){
+			return document.querySelectorAll(param);
+		}else{
+			return document.querySelector(param);
+		}
+	}
+	var $box = $(".box");
+	var $box1 = $(".box-1 ul li",true);
+	var $box2 = $(".box-2 ul");
+	var $box3 = $(".box-3");
+	var $length = $box1.length;
+	
+	var str = "";
+	for(var i =0;i<$length;i++){
+		if(i==0){
+			str +="<li class='on'>"+(i+1)+"</li>";
+		}else{
+			str += "<li>"+(i+1)+"</li>";
+		}
+	}
+	$box2.innerHTML = str;
+	
+	var current = 0;
+	
+	var timer;
+	timer = setInterval(go,3000);
+	function go(){
+		for(var j =0;j<$length;j++){
+			$box1[j].style.display = "none";
+			$box2.children[j].className = "";
+		}
+		if($length == current){
+			current = 0;
+		}
+		$box1[current].style.display = "block";
+		$box2.children[current].className = "on";
+		current++;
+	}
+	
+	for(var k=0;k<$length;k++){
+		$box1[k].onmouseover = function(){
+			clearInterval(timer);
+		}
+		$box1[k].onmouseout = function(){
+			timer = setInterval(go,3000);
+		}
+	}
+	for(var p=0;p<$box3.children.length;p++){
+		$box3.children[p].onmouseover = function(){
+			clearInterval(timer);
+		};
+		$box3.children[p].onmouseout = function(){
+			timer = setInterval(go,3000);
+		}
+	}
+	
+	for(var u =0;u<$length;u++){
+		$box2.children[u].index  = u;
+		$box2.children[u].onmouseover = function(){
+			clearInterval(timer);
+			for(var j=0;j<$length;j++){
+				$box1[j].style.display = "none";
+				$box2.children[j].className = "";
+			}
+			this.className = "on";
+			$box1[this.index].style.display = "block";
+			current = this.index +1;
+		}
+		$box2.children[u].onmouseout = function(){
+			timer = setInterval(go,3000);
+		}
+	}
+	
+	$box3.children[0].onclick = function(){
+		back();
+	}
+	$box3.children[1].onclick = function(){
+		go();
+	}
+	function back(){
+		for(var j =0;j<$length;j++){
+			$box1[j].style.display = "none";
+			$box2.children[j].className = "";
+		}
+		if(current == 0){
+			current = $length;
+		}
+		$box1[current-1].style.display = "block";
+		$box2.children[current-1].className = "on";
+		current--;
+	}
+}
+</script>
+
+<div class="box">
+	<div class="box-1">
+		<ul>
+			<li>
+				<a href="http://www.baidu.com" target="_blank" rel="noopener">
+					<img src="https://i.loli.net/2020/06/25/zKh7AGkicOVm8g1.jpg" alt="这里是第一场图片"></img>
+				</a>
+				<h2>1</h2>
 				
-					<a class="github" target="_blank" href="https://github.com/zsx-pub/zsx-pub.github.io" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="weixin" target="_blank" href="/sbb121" title="weixin"><i class="icon-weixin"></i></a>
-		        
-			</div>
-		</nav>
-
-	</header>
-
-      
+			</li>
+			<li>
+				<img src="https://i.loli.net/2020/06/25/1dW6iHS8cvXmw3O.jpg" alt="这里是第二张图片"></img>
+				<h2>2</h2>
+			</li>
+			<li>
+				<img src="https://i.loli.net/2020/06/25/K5w9U84ecVorWks.jpg" alt="这里是第三张图片"></img>
+				<h2>3</h2>
+			</li>
+		</ul>
+	</div>
+	<div class="box-2">
+		<ul>
+			
+		</ul>
+	</div>
+	<div class="box-3">
+		<span class="prev"> < </span>
+		<span class="next"> > </span>
+	</div>
+</div>
+	</header>      
 </div>
 
 
@@ -320,7 +478,7 @@ inputArea.onfocus = function(){ getSearchFile()
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">1.3k</span>
+        <span class="post-count" style="font-size: 14px;color: navy">3k</span>
       </span>
     </span>
     
@@ -329,7 +487,7 @@ inputArea.onfocus = function(){ getSearchFile()
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">4分</span>
+        <span class="post-count" style="font-size: 14px;color: navy">11分</span>
       </span>
     </span>
 </div>
@@ -367,6 +525,54 @@ inputArea.onfocus = function(){ getSearchFile()
 <h2 id="2-4-算法设计的要求"><a href="#2-4-算法设计的要求" class="headerlink" title="2.4 算法设计的要求"></a>2.4 算法设计的要求</h2><p>1.正确性:指算法至少应该具有输入、输出和加工处理无歧义性、能正确反映问题的需求，能够得到问题的正确答案。<br>2.可读性：算法设计的另一个目的是为了便于阅读、理解和交流。<br>3.健壮性：当输入数据不合法时，算法也能做出相关处理，而不是产生异常或莫名其妙的结果。<br>4.时间效率高和存储量低</p>
 <h2 id="2-5-算法效率的度量方法"><a href="#2-5-算法效率的度量方法" class="headerlink" title="2.5 算法效率的度量方法"></a>2.5 算法效率的度量方法</h2><h3 id="2-5-1-事后统计方法"><a href="#2-5-1-事后统计方法" class="headerlink" title="2.5.1 事后统计方法"></a>2.5.1 事后统计方法</h3><p>事后统计方法：这种方法是通过设计好的测试程序和数据，利用计算机计时器对不同算法编制的程序的运行时间进行比较，从而确定算法的效率的高低。<br>该方法缺陷较大，不予采纳。</p>
 <h3 id="2-5-2-事前分析估算方法"><a href="#2-5-2-事前分析估算方法" class="headerlink" title="2.5.2 事前分析估算方法"></a>2.5.2 事前分析估算方法</h3><p>事前分析估算方法：在计算机程序编制前，依据统计方法对算法进行估算。</p>
+<h2 id="2-6-算法的时间复杂度"><a href="#2-6-算法的时间复杂度" class="headerlink" title="2.6 算法的时间复杂度"></a>2.6 算法的时间复杂度</h2><h3 id="2-6-1-算法的时间复杂度定义"><a href="#2-6-1-算法的时间复杂度定义" class="headerlink" title="2.6.1 算法的时间复杂度定义"></a>2.6.1 算法的时间复杂度定义</h3><p>在进行算法分析时，语句的总的执行次数T(n)是关于问题规模n的函数，进而分析T(n)随n的变化情况而确定T(n)的数量级。算法的时间复杂度，也就是算法的时间量度，记作:T(n) = O(f(n))。它表示随问题规模n的增大，算法的执行时间的增长率和f(n)的增长率相同，称为算法的渐近时间复杂度，简称为时间复杂度。其中f(n)是问题规模n的某个函数。</p>
+<h3 id="2-6-2-推导大O阶方法"><a href="#2-6-2-推导大O阶方法" class="headerlink" title="2.6.2 推导大O阶方法"></a>2.6.2 推导大O阶方法</h3><p>1.用常数1取代运行时间中的所有加法常数。<br>2.在修改后的运行次数函数中，指保留最高阶项。<br>3.如果最高阶项存在且不是1，则去除与这个项相乘的常数。<br>得到的结果就是大O阶。</p>
+<h3 id="2-6-3-常见的时间复杂度"><a href="#2-6-3-常见的时间复杂度" class="headerlink" title="2.6.3 常见的时间复杂度"></a>2.6.3 常见的时间复杂度</h3><p><img src="https://i.loli.net/2020/06/23/FkPBMfvEVD1gATR.png" alt></p>
+<h2 id="2-7-算法的空间复杂度"><a href="#2-7-算法的空间复杂度" class="headerlink" title="2.7 算法的空间复杂度"></a>2.7 算法的空间复杂度</h2><p>算法的空间复杂度通过计算算法所需的存储空间实现，算法空间复杂度的计算公式记作:S(n) = O(f(n)),其中n为问题的规模，f(n)为语句关于n所占存储空间的函数。</p>
+<h1 id="3-线性表"><a href="#3-线性表" class="headerlink" title="3.线性表"></a>3.线性表</h1><h2 id="3-1-线性表的定义"><a href="#3-1-线性表的定义" class="headerlink" title="3.1 线性表的定义"></a>3.1 线性表的定义</h2><p>线性表(List)：零个或多个数据元素的有限序列。<br><img src="https://i.loli.net/2020/06/23/ZgTclBKMuwta7nV.png" alt></p>
+<h2 id="3-2线性表的抽象数据类型"><a href="#3-2线性表的抽象数据类型" class="headerlink" title="3.2线性表的抽象数据类型"></a>3.2线性表的抽象数据类型</h2><blockquote>
+<p>ADT 线性表(List)<br>Data<br>   线性表的数据对象集合为{a<sub>1</sub>,a<sub>2</sub>,a<sub>3</sub>,…,a<sub>n</sub>}，每个元素的类型均为DateType。其中除第一个元素a<sub>1</sub>外,每个元素有且只有一个直接前驱元素，除了最后一个元素a<sub>n</sub>外，每个元素有且只有一个直接后继元素。数据元素之间的关系是一对一的关系。<br>Operation<br>&emsp;&emsp;InitList(<em>L): 初始化操作，建立一个空的线性表L<br>&emsp;&emsp;ListEmpty(L): 若线性表为空，放回true，否则返回false<br>&emsp;&emsp;ClearList(</em>L): 将线性表清空<br>&emsp;&emsp;GetElem(L,i,<em>e): 将线性表L中的第i个位置元素值返回给e<br>&emsp;&emsp;LocateElem(L,e): 在线性表L中查找与给定值e相等的元素，如果查找成功返回该元素在表中的序号，否则返回0表示失败<br>&emsp;&emsp;ListInsert(</em>L,i,e): 在线性表L中的第i位置插入新元素e<br>&emsp;&emsp;ListDelete(*L,i,e): 删除线性表L中的第i位置元素，并用e返回其值<br>&emsp;&emsp;ListLength(L): 返回线性表L的元素个数<br>endADT<br><img src="https://i.loli.net/2020/06/23/F8K2aWLCiextqbJ.png" alt></p>
+</blockquote>
+<h2 id="3-3-线性表的顺序存储结构"><a href="#3-3-线性表的顺序存储结构" class="headerlink" title="3.3 线性表的顺序存储结构"></a>3.3 线性表的顺序存储结构</h2><h3 id="3-3-1-顺序存储定义"><a href="#3-3-1-顺序存储定义" class="headerlink" title="3.3.1 顺序存储定义"></a>3.3.1 顺序存储定义</h3><p>线性表的顺序存储结构是的是一段地址连续的存储单元依次存储线性表的数据元素。<br><img src="https://i.loli.net/2020/06/23/qjW3mi5wytJM7QS.png" alt></p>
+<h3 id="3-3-2-顺序存储方式"><a href="#3-3-2-顺序存储方式" class="headerlink" title="3.3.2 顺序存储方式"></a>3.3.2 顺序存储方式</h3><p>通过占位的形式，把一定内存空间给占了，然后把相同数据类型的数据元素依次存放在这块空地，可用一维数组来实现顺序存储结构，即把第一个数据元素存在数据下标为0的位置中，接着把线性表相邻的元素存储在数组的相邻位置。<br>结构代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 20</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElemType;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ElemType data[MAXSIZE];</span><br><span class="line">	<span class="keyword">int</span> length;</span><br><span class="line">&#125;SqlList;</span><br></pre></td></tr></table></figure>
+<p>从上可看出，描述顺序存储结构的三个属性:</p>
+<ul>
+<li>存储空间的起始位置：数组data，它的存储位置就是存储空间的存储位置。</li>
+<li>线性表的最大存储容量：数组长度MAXSIZE。</li>
+<li>线性表的当前长度：length。</li>
+</ul>
+<h3 id="3-3-3-地址计算方法"><a href="#3-3-3-地址计算方法" class="headerlink" title="3.3.3 地址计算方法"></a>3.3.3 地址计算方法</h3><p><img src="https://i.loli.net/2020/06/23/lyiSNFjCuodYZx1.png" alt></p>
+<h2 id="3-4顺序存储结构的插入和删除"><a href="#3-4顺序存储结构的插入和删除" class="headerlink" title="3.4顺序存储结构的插入和删除"></a>3.4顺序存储结构的插入和删除</h2><h3 id="3-4-1-获取元素的操作"><a href="#3-4-1-获取元素的操作" class="headerlink" title="3.4.1 获取元素的操作"></a>3.4.1 获取元素的操作</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  FALSE 0</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">status 是函数的类型，其值是函数结构状态代码</span></span><br><span class="line"><span class="comment">初始条件：顺序线性表L已存在，1≤i≤ListLength(L)</span></span><br><span class="line"><span class="comment">操作结果：用e返回L中第i个数据元素的值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(SqList L, <span class="keyword">int</span> i, ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(L.length == <span class="number">0</span> || i&lt;<span class="number">1</span> || i&gt;L.length)</span><br><span class="line">		<span class="keyword">return</span> ERROR;</span><br><span class="line">	*e = L.data[i<span class="number">-1</span>];</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-2-插入操作"><a href="#3-4-2-插入操作" class="headerlink" title="3.4.2 插入操作"></a>3.4.2 插入操作</h3><p>插入算法的思路：</p>
+<ul>
+<li>如果插入的位置不合理，抛出异常</li>
+<li>如果线性表的长度大于等于数组长度，则抛出异常或动态增加容量</li>
+<li>从最后一个元素开始向前遍历到第i个位置，分别将它们都向后移动一个位置</li>
+</ul>
+<p>代码实现如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(SqList *L, <span class="keyword">int</span> i, Elemtype e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> k;</span><br><span class="line">	<span class="keyword">if</span> (L-&gt;length == MAXSIZE)   <span class="comment">//顺序线性表满了</span></span><br><span class="line">		<span class="keyword">return</span> ERROR;</span><br><span class="line">	<span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L-&gt;length + <span class="number">1</span>)  <span class="comment">//i不在范围</span></span><br><span class="line">		<span class="keyword">return</span> ERROR;</span><br><span class="line">	<span class="keyword">if</span> (i &lt;= L-&gt;length)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(k = L-&gt;length <span class="number">-1</span>; k &gt;= i - <span class="number">1</span>; k--)</span><br><span class="line">			L-&gt;data[k+<span class="number">1</span>] = L-&gt;data[k];</span><br><span class="line">	&#125;</span><br><span class="line">	L-&gt;data[i<span class="number">-1</span>] = e;</span><br><span class="line">	L-&gt;length ++;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-3-删除操作"><a href="#3-4-3-删除操作" class="headerlink" title="3.4.3 删除操作"></a>3.4.3 删除操作</h3><p>删除算法的思路:</p>
+<ul>
+<li>如果删除的位置不合理，抛出异常</li>
+<li>取出删除的元素</li>
+<li>从删除的位置开始遍历到最后一个元素的位置，分别将它们向前移动一个位</li>
+</ul>
+<p>实现代码如下:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListDelete</span><span class="params">(SqList *L, <span class="keyword">int</span> i, ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> k;</span><br><span class="line">	<span class="keyword">if</span> (L-&gt;length == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> ERROR;</span><br><span class="line">	<span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L-&gt;length)</span><br><span class="line">		<span class="keyword">return</span> ERROR;</span><br><span class="line">	*e = L-&gt;data[i<span class="number">-1</span>];</span><br><span class="line">	<span class="keyword">if</span> (i &lt; L-&gt;length)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (k =i; k &lt; L-&gt;length; k++)</span><br><span class="line">			L-&gt;data[k<span class="number">-1</span>] = L-&gt;data[k];</span><br><span class="line">	&#125;</span><br><span class="line">	L-&gt;length--;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-5-线性表的顺序存储结构的优缺点"><a href="#3-4-5-线性表的顺序存储结构的优缺点" class="headerlink" title="3.4.5 线性表的顺序存储结构的优缺点"></a>3.4.5 线性表的顺序存储结构的优缺点</h3><p><strong>优点</strong></p>
+<ul>
+<li>无须为表示表中元素之间的逻辑关系而增加额外的存储空间</li>
+<li>可以快速的存取表中任一个位置的元素</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>插入和删除操作需要移动大量元素</li>
+<li>当线性表长度变化较大时，难以确定存储空间容量</li>
+<li>造成存储空间的碎片</li>
+</ul>
+<h2 id="3-5-线性表的链式存储结构"><a href="#3-5-线性表的链式存储结构" class="headerlink" title="3.5 线性表的链式存储结构"></a>3.5 线性表的链式存储结构</h2><h3 id="3-5-1-线性表链式存储结构定义"><a href="#3-5-1-线性表链式存储结构定义" class="headerlink" title="3.5.1 线性表链式存储结构定义"></a>3.5.1 线性表链式存储结构定义</h3><p>为了表示每个数据元素a<sub>i</sub>与其直接后继数据元素a<sub>i+1</sub>之间的逻辑关系，对数据元素a<sub>i</sub>来说，除了存储其本身的信息外，还需要存储一个指示其直接后继的信息(即直接后继的存储位置)。我们把存储数据元素信息的域称为<strong>数据域</strong>，把存储直接后继位置的域称为<strong>指针域</strong>。指针域中的存储信息称为<strong>指针或链</strong>。这两部分信息组成数据元素a<sub>i</sub>的存储映像，称为<strong>结点</strong>。<br>n个结点链结成一个链表，即为线性表的链式存储结构，因为此链表的每个结点中只包含一个指针域，所以叫做单链表。<br><img src="https://i.loli.net/2020/06/23/ebLpu5Z1GKcfsVM.png" alt></p>
 
       
 
@@ -386,7 +592,7 @@ inputArea.onfocus = function(){ getSearchFile()
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-06-19T09:20:00.271Z" itemprop="dateUpdated">2020年06月19日 17:20:00</time>
+        <time datetime="2020-06-23T08:54:27.451Z" itemprop="dateUpdated">2020年06月23日 16:54:27</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -561,7 +767,7 @@ inputArea.onfocus = function(){ getSearchFile()
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章-数据结构绪论"><span class="toc-number">1.</span> <span class="toc-text">第1章 数据结构绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-基本概念和术语"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 基本概念和术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-数据"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-数据元素"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 数据元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-数据项"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.1.3 数据项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-数据对象"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.1.4 数据对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-数据结构"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.1.5 数据结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-逻辑结构与物理结构"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 逻辑结构与物理结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-逻辑结构"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 逻辑结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-物理结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 物理结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-抽象数据类型"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 抽象数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-数据类型"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-抽象数据类型"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 抽象数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-总结"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-算法"><span class="toc-number">2.</span> <span class="toc-text">2.算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-两种算法的比较"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 两种算法的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-算法的定义"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 算法的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-算法的特性"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 算法的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-算法设计的要求"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 算法设计的要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-算法效率的度量方法"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 算法效率的度量方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-事后统计方法"><span class="toc-number">2.5.1.</span> <span class="toc-text">2.5.1 事后统计方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-事前分析估算方法"><span class="toc-number">2.5.2.</span> <span class="toc-text">2.5.2 事前分析估算方法</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章-数据结构绪论"><span class="toc-number">1.</span> <span class="toc-text">第1章 数据结构绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-基本概念和术语"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 基本概念和术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-数据"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-数据元素"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 数据元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-数据项"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.1.3 数据项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-数据对象"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.1.4 数据对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-数据结构"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.1.5 数据结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-逻辑结构与物理结构"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 逻辑结构与物理结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-逻辑结构"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 逻辑结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-物理结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 物理结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-抽象数据类型"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 抽象数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-数据类型"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-抽象数据类型"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 抽象数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-总结"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-算法"><span class="toc-number">2.</span> <span class="toc-text">2.算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-两种算法的比较"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 两种算法的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-算法的定义"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 算法的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-算法的特性"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 算法的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-算法设计的要求"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 算法设计的要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-算法效率的度量方法"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 算法效率的度量方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-事后统计方法"><span class="toc-number">2.5.1.</span> <span class="toc-text">2.5.1 事后统计方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-事前分析估算方法"><span class="toc-number">2.5.2.</span> <span class="toc-text">2.5.2 事前分析估算方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-算法的时间复杂度"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 算法的时间复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-算法的时间复杂度定义"><span class="toc-number">2.6.1.</span> <span class="toc-text">2.6.1 算法的时间复杂度定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-推导大O阶方法"><span class="toc-number">2.6.2.</span> <span class="toc-text">2.6.2 推导大O阶方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-常见的时间复杂度"><span class="toc-number">2.6.3.</span> <span class="toc-text">2.6.3 常见的时间复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-算法的空间复杂度"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 算法的空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-线性表"><span class="toc-number">3.</span> <span class="toc-text">3.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-线性表的定义"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 线性表的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2线性表的抽象数据类型"><span class="toc-number">3.2.</span> <span class="toc-text">3.2线性表的抽象数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-线性表的顺序存储结构"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 线性表的顺序存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-顺序存储定义"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.3.1 顺序存储定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-顺序存储方式"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.3.2 顺序存储方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-地址计算方法"><span class="toc-number">3.3.3.</span> <span class="toc-text">3.3.3 地址计算方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4顺序存储结构的插入和删除"><span class="toc-number">3.4.</span> <span class="toc-text">3.4顺序存储结构的插入和删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-获取元素的操作"><span class="toc-number">3.4.1.</span> <span class="toc-text">3.4.1 获取元素的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2-插入操作"><span class="toc-number">3.4.2.</span> <span class="toc-text">3.4.2 插入操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3-删除操作"><span class="toc-number">3.4.3.</span> <span class="toc-text">3.4.3 删除操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-5-线性表的顺序存储结构的优缺点"><span class="toc-number">3.4.4.</span> <span class="toc-text">3.4.5 线性表的顺序存储结构的优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-线性表的链式存储结构"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 线性表的链式存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-1-线性表链式存储结构定义"><span class="toc-number">3.5.1.</span> <span class="toc-text">3.5.1 线性表链式存储结构定义</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -630,7 +836,7 @@ inputArea.onfocus = function(){ getSearchFile()
         <span id="busuanzi_container_site_uv" style="display:none;color: white;font-size: 14px;">
                 访客数:<span id="busuanzi_value_site_uv"></span>
         </span>
-        <script async src="/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	
 	<!-- 不算子统计 -->
     </div>
@@ -834,7 +1040,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://anyway1314.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>anyway1314</a>
             </li>
           
             <li class="search-li">
@@ -865,7 +1071,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">学习&lt;br&gt;&lt;br&gt;不只是做一点&lt;br&gt;</div>
   	  	
     	</section>
     
