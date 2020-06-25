@@ -21,7 +21,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2020/06/09/FOVXoP9WLjiJKrZ.png">
 <meta property="article:published_time" content="2020-05-21T06:34:43.000Z">
-<meta property="article:modified_time" content="2020-06-22T04:23:39.274Z">
+<meta property="article:modified_time" content="2020-06-25T02:38:30.369Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="yilia">
@@ -463,7 +463,7 @@ window.onload = function(){
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">6.4k</span>
+        <span class="post-count" style="font-size: 14px;color: navy">6.5k</span>
       </span>
     </span>
     
@@ -472,7 +472,7 @@ window.onload = function(){
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">36分</span>
+        <span class="post-count" style="font-size: 14px;color: navy">37分</span>
       </span>
     </span>
 </div>
@@ -570,6 +570,15 @@ window.onload = function(){
 
 <h2 id="16-动画效果Scrollr"><a href="#16-动画效果Scrollr" class="headerlink" title="16.动画效果Scrollr"></a>16.动画效果Scrollr</h2><p>修改<code>layout.ejs</code>文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;scrollReveal.js&#x2F;4.0.5&#x2F;scrollreveal.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line">function showArticle()&#123;</span><br><span class="line">	$(&quot;.article&quot;).each(function()&#123;</span><br><span class="line">		if( $(this).offset().top &lt;&#x3D; $(window).scrollTop()+$(window).height() &amp;&amp; !($(this).hasClass(&#39;show&#39;)) ) &#123;</span><br><span class="line">			$(this).removeClass(&quot;hidden&quot;).addClass(&quot;show&quot;);</span><br><span class="line">			$(this).addClass(&quot;is-hiddened&quot;);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			if(!$(this).hasClass(&quot;is-hiddened&quot;)) &#123;</span><br><span class="line">				$(this).addClass(&quot;hidden&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">var config &#x3D; &#123;</span><br><span class="line"> 	    reset: true,</span><br><span class="line">            origin: &#39;left&#39;, </span><br><span class="line">            distance: &#39;30px&#39;,</span><br><span class="line">            duration: 1500, </span><br><span class="line">            delay: 0.5, </span><br><span class="line">            rotate: &#123; x: 0, y: 200, z: 0 &#125;, </span><br><span class="line">            container: document.documentElement,</span><br><span class="line">            opacity: 0, </span><br><span class="line">            scale: 1,</span><br><span class="line"></span><br><span class="line">        beforeReveal: function(domEl)&#123;</span><br><span class="line">            console.log(&#39;动画执行了&#39;);</span><br><span class="line">	    </span><br><span class="line">        &#125;,</span><br><span class="line">  </span><br><span class="line">        beforeReset: function(domEl)&#123;</span><br><span class="line">            console.log(&#39;滚轮开始&#39;);</span><br><span class="line">	    </span><br><span class="line">        &#125;,</span><br><span class="line">   </span><br><span class="line">        afterReveal: function(domEl)&#123;</span><br><span class="line">            console.log(&#39;动画结束&#39;);</span><br><span class="line">	   </span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        afterReset: function(domEl)&#123;</span><br><span class="line">            console.log(&#39;滚动结束&#39;);</span><br><span class="line">	    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">window.sr &#x3D; ScrollReveal();</span><br><span class="line">sr.reveal(&#39;.body-wrap&#39;,config);                        </span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="17">
+<li>微信分享图片失效</li>
+</ol>
+<hr>
+<p>文件<code>yilia\layout\_partial\post\share.ejs</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&lt;%- &#39;qrcode&#39; in locals ? qrcode(sUrl) : &#39;&#x2F;&#x2F;pan.baidu.com&#x2F;share&#x2F;qrcode?url&#x3D;&#39; + sUrl  %&gt;&quot; alt&#x3D;&quot;微信分享二维码&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&lt;%- &#39;qrcode&#39; in locals ? qrcode(sUrl) : &#39;&#x2F;&#x2F;api.qrserver.com&#x2F;v1&#x2F;create-qr-code&#x2F;?size&#x3D;150x150&amp;data&#x3D;&#39; + sUrl  %&gt;&quot; alt&#x3D;&quot;微信分享二维码&quot;&gt;</span><br></pre></td></tr></table></figure>
       
 
 <!-- 版权声明 -->
@@ -588,7 +597,7 @@ window.onload = function(){
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-06-22T04:23:39.274Z" itemprop="dateUpdated">2020年06月22日 12:23:39</time>
+        <time datetime="2020-06-25T02:38:30.369Z" itemprop="dateUpdated">2020年06月25日 10:38:30</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -710,7 +719,7 @@ window.onload = function(){
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zsx.pub/articl/d5b19752.html" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://zsx.pub/articl/d5b19752.html" alt="微信分享二维码">
     </div>
 </div>
 

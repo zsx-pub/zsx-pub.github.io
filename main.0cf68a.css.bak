@@ -1109,7 +1109,7 @@ body {
 }
 
 .left-col #header a:hover {
-	color: #b0a0aa
+	color: #87CEFA
 }
 
 .left-col #header .header-subtitle {
@@ -3378,11 +3378,10 @@ pre .css~* .id,pre .id {
 	.article-header {
 		border-left: none;
 		padding: 0;
-		border-bottom: 1px dotted #ddd
 	}
 
 	.article-header h1 {
-		margin-bottom: 10px
+		margin-bottom: 5px
 	}
 
 	.article-header .archive-article-date {
@@ -3424,10 +3423,14 @@ pre .css~* .id,pre .id {
 
 	.article {
 		padding: 10px;
-		margin: 10px 0;
+		margin: 25px 0;
 		border: 0;
-		font-size: 16px;
-		color: #555
+		font-size: 14px;
+		color: #555;
+		width: 92%;
+		position: ralative;
+		left:4%;
+		height: 200px;
 	}
 
 	.article .article-more-link {
