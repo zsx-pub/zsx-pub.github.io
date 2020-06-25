@@ -1829,10 +1829,10 @@ pre .css~* .id,pre .id {
 	border: 1px solid #086ef6
 }
 
-#
-page-nav {
+#page-nav {
 	text-align: center;
-	margin-top: 30px
+	left:50%;
+	margin-top:25px;
 }
 
 #page-nav .page-number {
@@ -1844,11 +1844,12 @@ page-nav {
 	line-height: 25px;
 	font-size: 12px;
 	margin: 0 5px 30px;
-	border-radius: 2px
+	border-radius: 2px;
+	text-align: center;
 }
 
 #page-nav .page-number:hover {
-	background: #5e5e5e
+	background: #88acdb
 }
 
 #page-nav .current {
@@ -1867,7 +1868,7 @@ page-nav {
 }
 
 #page-nav .extend:hover {
-	color: #000
+	color: #fff
 }
 
 #page-nav:hover .extend {
@@ -4650,22 +4651,10 @@ ul.copyright li {
 }
 
 /*�������ð�ť*/
-#search-form .fa-times {
-  display: none;
-  padding: 1px 0.7em;
-  box-shadow: 0 0 3px rgba(0,0,0,0.15);
-  cursor: pointer;
-  color: #ff0000;
+#search-form .icon-search {
+  color: #fff;
 }
-#search-form .fa-times:active {
-  background: #fff;
-}
-#search-form .fa-times:hover {
-  zoom: 1.1;
-  padding: 1px 0.6em;
-  border: 1px solid #fff;
-  box-shadow: 0 0 6px rgba(0,0,0,0.25);
-}
+
 
 /*���������*/
 #local-search-result {
