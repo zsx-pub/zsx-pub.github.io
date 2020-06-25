@@ -1273,11 +1273,10 @@ body {
 	background: #808080;
 	margin: 10px 0;
 	padding: 10px;
-	overflow: auto;
 	color: #fff;
 	font-size: .9em;
 	line-height: 22px;
-	max-height:1100px;
+	box-shadow: 1px 1px 1px rgba(0,0,0, .05)
 	
 }
 
@@ -1296,6 +1295,7 @@ article-entry code,.article-entry pre {
 	background: #eee;
 	padding: 0 .3em;
 	border: none;
+
 }
 
 .article-entry pre code {
@@ -1303,22 +1303,25 @@ article-entry code,.article-entry pre {
 	text-shadow: none;
 	padding: 0;
 	color: #fff;
+	
 }
-
+/*�����߶����ã���������*/
 .article-entry .highlight {
-	border-radius: 4px;
-	overflow: hidden;
+	border-radius: 2px;
+		overflow: auto;
+		max-height: 50em;
 }
 
 .article-entry .highlight pre {
 	border: none;
 	margin: 0;
-	padding: 0
+	padding: 0;
+	overflow: hidden;
 }
 
 .article-entry .highlight table {
 	margin: 0;
-	width: auto
+	max-height:50em;
 }
 
 .article-entry .highlight td {
