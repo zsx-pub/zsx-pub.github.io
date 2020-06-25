@@ -1,0 +1,26 @@
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+    	</div>
+      	<div class="footer-right">
+	<a href="https://github.com/zsx-pub/zsx-pub.github.io.git" target="_blank"> zsx-pub </a>
+      	</div>
+	<!-- 不算子统计 -->
+	<% if (theme.busuanzi && theme.busuanzi.enable){ %>     
+        <span id="busuanzi_container_site_pv" style="color: white;font-size: 14px;">
+                总点击量:<span id="busuanzi_value_site_pv"></span>
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style="display:none;color: white;font-size: 14px;">
+                访客数:<span id="busuanzi_value_site_uv"></span>
+        </span>
+        <script async src="/busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<% } %>
+	<!-- 不算子统计 -->
+    </div>
+  </div>
+</footer>
+<!-- 鼠标点击爱心 -->
+<script type="text/javascript" src="/love.js"></script>
