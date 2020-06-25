@@ -1109,7 +1109,7 @@ body {
 }
 
 .left-col #header a:hover {
-	color: #b0a0aa
+	color: #87CEFA
 }
 
 .left-col #header .header-subtitle {
@@ -1143,13 +1143,13 @@ body {
 }
 
 .left-col #header .header-menu li a {
-	font-size: 14px;
+	font-size: 15px;
 	min-width: 300px
 }
 
 .left-col #header .header-smart-menu {
-	font-size: 12px;
-	margin-bottom: 20px
+	font-size: 14px;
+	margin-bottom: 8px
 }
 
 .left-col #header .header-smart-menu a:after {
