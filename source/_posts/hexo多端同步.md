@@ -4,13 +4,15 @@ tags:
   - hexo
   - gitee
 abbrlink: adc93921
+article_type: 0
 date: 2020-05-17 15:10:23
 ---
-## 1.github创建hexo分支
+## <br>1.github创建hexo分支
 创建hexo分支并设置为默认
-![](http://qa5rgbn80.bkt.clouddn.com/hexo%E5%88%86%E6%94%AF1.PNG)
+![](https://i.loli.net/2020/06/09/wGNiuYf8cVRA7Ep.png)
 <!-- more -->
-![](http://qa5rgbn80.bkt.clouddn.com/hexo%E5%88%86%E6%94%AF2.PNG)
+![](https://i.loli.net/2020/06/09/EFgBxW6qnHfI8QP.png)
+
 
 ## <h2 id="2">2.备份本地blog到github的hexo分支上</h2>
 进本地blog文件夹

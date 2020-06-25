@@ -5,16 +5,19 @@ tags:
   - linux
 abbrlink: d90ce8d0
 date: 2020-05-20 08:43:23
+article_type: 0
+
 ---
----
-**前言**
-偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有[V2ray伪装流量](http://tlanyan.me/v2ray-traffic-mask/)的方法不知道效果会不会好一点),进而就想着把hexo部署到这来
+
+<br>**前言**
+>偶然在hkisl.net找到有免费vps，想着拿来试试搭梯子，结果搭完没几分钟端口就被墙，换了端口没多久又被墙(网上有[V2ray伪装流量](http://tlanyan.me/v2ray-traffic-mask/)的方法不知道效果会不会好一点),进而就想着把hexo部署到这来
 PS:vps只能免费试用2天。。。！！！？？？我。。
 ---
 <!-- more -->
 # 1.了解hexo自动部署的架构
  在搞明白hexo的发布架构后，就会理解后边的操作内容
-![](http://qa5rgbn80.bkt.clouddn.com/jiagou.png)
+![](https://i.loli.net/2020/06/09/jHuAoQc7ftkUGbh.png)
+
 # 2.搭建流程
 1. **服务器环境搭建**
 	1.1 [安装git](#1.1)

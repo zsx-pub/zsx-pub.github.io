@@ -5,8 +5,8 @@
 # Site
 title: A|XIAN
 subtitle: 'A|XIAN的记录分享'
-description: 'A-XIAN记录'
-keywords:
+description: '技术学习分享记录'
+keywords: c语言,c++,linux,hexo
 author: ZSX
 language: zh-CN
 timezone: ''
@@ -88,6 +88,24 @@ use_date_for_updated: false
 per_page: 10
 pagination_dir: page
 
+# 百度主动推送
+baidu_url_submit:
+  count: 10 
+  host: zsx.pub
+  token: izKH5mUKPlafwtyo
+  path: baidu_urls.txt
+
+#字数统计
+word_count: true
+
+# 文章类型，在上面word_count: true的前提下可以进行开启
+# 文章类型具体在对应的md文件开头的 article_type属性进行定义。原创：article_type:0 ，，转载：article_type:1 :
+article_type: true
+
+search:
+  path: search.xml
+  field: all
+
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
@@ -102,9 +120,10 @@ theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: https://github.com/zsx-pub/zsx-pub.github.io
   branch: master
+- type: baidu_url_submitter
 jsonContent:
     meta: false
     pages: false

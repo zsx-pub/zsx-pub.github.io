@@ -4,9 +4,10 @@ tags:
   - c++
 abbrlink: 9156b09f
 date: 2020-05-12 08:43:23
+article_type: 0
 ---
 
-# 指针 #
+# <br>指针 
 ## 1.指针的使用 ## 
 <!-- more -->
 ```
