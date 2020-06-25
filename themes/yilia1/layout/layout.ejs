@@ -1,0 +1,60 @@
+<%- partial('_partial/head') %>
+<body>
+  <div d id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow" >
+      <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+    </div>
+    <div id="loader-wrapper" >
+    <div id="loader" ></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <!-- <div class="load_title">Loading. . .<br></div> -->
+    </div>
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse" >
+      <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+      <div id="wrapper" class="body-wrap" >
+
+        <div class="menu-l" >
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll" >
+            <%- body %>
+          </div>
+        </div>
+      </div>
+      <%- partial('_partial/footer') %>
+    </div>
+    <%- partial('_partial/after-footer') %>
+    <%- partial('_partial/tools') %>
+    <%- partial('_partial/viewer') %>
+  </div>
+  <!-- 复制 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="/clipboard_use.js"></script>
+<script type="text/javascript" src="/roll.js"></script>
+<script type="text/javascript" src="/canvasnset.js"></script>
+
+<script src="https://cdn.bootcss.com/scrollReveal.js/4.0.5/scrollreveal.js"></script>
+<script>
+
+var config = {
+ 	    
+            origin: 'top', 
+            distance: '30px',
+            duration: 1500, 
+            delay: 0, 
+            rotate: { x: 0, y: 200, z: 0 }, 
+            scale: 1
+    };
+ if(!!browser.versions.mobile){
+        window.sr = ScrollReveal();
+	sr.reveal('.article.article-type-post.article-index',config);  
+    }
+                      
+</script>
+
+</body>
+</html>
