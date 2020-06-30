@@ -156,7 +156,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <form id="search-form"> <!-- 搜索框相关 -->
     
-    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="站内搜索" onfocus="this.placeholder=""" class="search form-control" autocomplete="off" autocorrect="off"/>
     <i class="icon-font icon-search"></i> <!-- 清空/重置搜索框  没有使用-->
 </form>
 <div id="local-search-result"></div> <!-- 搜索结果区 -->
@@ -168,17 +168,24 @@ var $resultArea = $("#local-search-result");
 var getSearchFile = function(){
     var path = "/search.xml";
     searchFunc(path, 'local-search-input', 'local-search-result');
-
+    $(".left-col").css("overflow-y","auto");
 }
-inputArea.onfocus = function(){ getSearchFile() 
+inputArea.onfocus = function(){ 
+document.getElementById("local-search-input").placeholder=''
+getSearchFile() 
         $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
             if (!$(e.target).text()) {
                 $(".no-result").show(200);
+		
             } else {
               $(".no-result").hide();}
 	      })
 }
+inputArea.onblur = function(){ 
+	$(".left-col").css("overflow-y","hidden");
+	document.getElementById("local-search-input").placeholder='站内搜索'
 
+}
 </script>
 
 <nav class="header-nav">
@@ -197,10 +204,10 @@ inputArea.onfocus = function(){ getSearchFile()
 
 <style>
 
-.box{width: 250px;height: 200px;margin: 50px auto;overflow: hidden;position: relative;left:-10px}
+.box{width: 260px;height: 270px;margin: 50px auto;overflow: hidden;position: relative;left:-15px}
 .box-1 ul{}
-.box-1 ul li{width: 250px;height: 200px;position: relative;overflow: hidden;}
-.box-1 ul li img{display:block;width: 250px; height: 200px;}
+.box-1 ul li{width: 260px;height: 270px;position: relative;overflow: hidden;}
+.box-1 ul li img{display:block;width: 260px; height: 270px;}
 .box-1 ul li h2{position: absolute;left: 0;bottom: 0;height: 20px;width:250px;background: rgba(125,125,120,.4);text-indent: 2em;
 				padding-right:50px ;font-size: 15px;line-height: 20px;text-overflow: ellipsis;overflow: hidden;
 				white-space: nowrap;font-weight: normal;color: ghostwhite}
@@ -321,16 +328,16 @@ window.onload = function(){
 				<a href="http://www.baidu.com" target="_blank" rel="noopener">
 					<img src="https://i.loli.net/2020/06/25/zKh7AGkicOVm8g1.jpg" alt="这里是第一场图片"></img>
 				</a>
-				<h2>1</h2>
+				<h2></h2>
 				
 			</li>
 			<li>
 				<img src="https://i.loli.net/2020/06/25/1dW6iHS8cvXmw3O.jpg" alt="这里是第二张图片"></img>
-				<h2>2</h2>
+				<h2></h2>
 			</li>
 			<li>
 				<img src="https://i.loli.net/2020/06/25/K5w9U84ecVorWks.jpg" alt="这里是第三张图片"></img>
-				<h2>3</h2>
+				<h2></h2>
 			</li>
 		</ul>
 	</div>

@@ -33,8 +33,14 @@
 <meta property="og:image" content="https://i.loli.net/2020/06/23/qjW3mi5wytJM7QS.png">
 <meta property="og:image" content="https://i.loli.net/2020/06/23/lyiSNFjCuodYZx1.png">
 <meta property="og:image" content="https://i.loli.net/2020/06/23/ebLpu5Z1GKcfsVM.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/27/ZF5MJOolrpfaDge.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/27/IMpDr2qRaOwVl67.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/27/VfQiTwhdMNosypg.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/27/H97Ed8CUJPQgbYa.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/27/fTKrjEDCSONXwiP.png">
+<meta property="og:image" content="https://i.loli.net/2020/06/27/OJsYDFzQClpehBm.png">
 <meta property="article:published_time" content="2020-06-17T01:36:22.000Z">
-<meta property="article:modified_time" content="2020-06-23T08:54:27.451Z">
+<meta property="article:modified_time" content="2020-06-27T11:21:28.648Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="算法">
@@ -167,7 +173,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <form id="search-form"> <!-- 搜索框相关 -->
     
-    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="" class="search form-control" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="站内搜索" onfocus="this.placeholder=""" class="search form-control" autocomplete="off" autocorrect="off"/>
     <i class="icon-font icon-search"></i> <!-- 清空/重置搜索框  没有使用-->
 </form>
 <div id="local-search-result"></div> <!-- 搜索结果区 -->
@@ -179,17 +185,24 @@ var $resultArea = $("#local-search-result");
 var getSearchFile = function(){
     var path = "/search.xml";
     searchFunc(path, 'local-search-input', 'local-search-result');
-
+    $(".left-col").css("overflow-y","auto");
 }
-inputArea.onfocus = function(){ getSearchFile() 
+inputArea.onfocus = function(){ 
+document.getElementById("local-search-input").placeholder=''
+getSearchFile() 
         $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
             if (!$(e.target).text()) {
                 $(".no-result").show(200);
+		
             } else {
               $(".no-result").hide();}
 	      })
 }
+inputArea.onblur = function(){ 
+	$(".left-col").css("overflow-y","hidden");
+	document.getElementById("local-search-input").placeholder='站内搜索'
 
+}
 </script>
 
 <nav class="header-nav">
@@ -208,10 +221,10 @@ inputArea.onfocus = function(){ getSearchFile()
 
 <style>
 
-.box{width: 250px;height: 200px;margin: 50px auto;overflow: hidden;position: relative;left:-10px}
+.box{width: 260px;height: 270px;margin: 50px auto;overflow: hidden;position: relative;left:-15px}
 .box-1 ul{}
-.box-1 ul li{width: 250px;height: 200px;position: relative;overflow: hidden;}
-.box-1 ul li img{display:block;width: 250px; height: 200px;}
+.box-1 ul li{width: 260px;height: 270px;position: relative;overflow: hidden;}
+.box-1 ul li img{display:block;width: 260px; height: 270px;}
 .box-1 ul li h2{position: absolute;left: 0;bottom: 0;height: 20px;width:250px;background: rgba(125,125,120,.4);text-indent: 2em;
 				padding-right:50px ;font-size: 15px;line-height: 20px;text-overflow: ellipsis;overflow: hidden;
 				white-space: nowrap;font-weight: normal;color: ghostwhite}
@@ -332,16 +345,16 @@ window.onload = function(){
 				<a href="http://www.baidu.com" target="_blank" rel="noopener">
 					<img src="https://i.loli.net/2020/06/25/zKh7AGkicOVm8g1.jpg" alt="这里是第一场图片"></img>
 				</a>
-				<h2>1</h2>
+				<h2></h2>
 				
 			</li>
 			<li>
 				<img src="https://i.loli.net/2020/06/25/1dW6iHS8cvXmw3O.jpg" alt="这里是第二张图片"></img>
-				<h2>2</h2>
+				<h2></h2>
 			</li>
 			<li>
 				<img src="https://i.loli.net/2020/06/25/K5w9U84ecVorWks.jpg" alt="这里是第三张图片"></img>
-				<h2>3</h2>
+				<h2></h2>
 			</li>
 		</ul>
 	</div>
@@ -476,7 +489,7 @@ window.onload = function(){
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">3k</span>
+        <span class="post-count" style="font-size: 14px;color: navy">4.2k</span>
       </span>
     </span>
     
@@ -485,7 +498,7 @@ window.onload = function(){
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">11分</span>
+        <span class="post-count" style="font-size: 14px;color: navy">16分</span>
       </span>
     </span>
 </div>
@@ -571,6 +584,72 @@ window.onload = function(){
 <li>造成存储空间的碎片</li>
 </ul>
 <h2 id="3-5-线性表的链式存储结构"><a href="#3-5-线性表的链式存储结构" class="headerlink" title="3.5 线性表的链式存储结构"></a>3.5 线性表的链式存储结构</h2><h3 id="3-5-1-线性表链式存储结构定义"><a href="#3-5-1-线性表链式存储结构定义" class="headerlink" title="3.5.1 线性表链式存储结构定义"></a>3.5.1 线性表链式存储结构定义</h3><p>为了表示每个数据元素a<sub>i</sub>与其直接后继数据元素a<sub>i+1</sub>之间的逻辑关系，对数据元素a<sub>i</sub>来说，除了存储其本身的信息外，还需要存储一个指示其直接后继的信息(即直接后继的存储位置)。我们把存储数据元素信息的域称为<strong>数据域</strong>，把存储直接后继位置的域称为<strong>指针域</strong>。指针域中的存储信息称为<strong>指针或链</strong>。这两部分信息组成数据元素a<sub>i</sub>的存储映像，称为<strong>结点</strong>。<br>n个结点链结成一个链表，即为线性表的链式存储结构，因为此链表的每个结点中只包含一个指针域，所以叫做单链表。<br><img src="https://i.loli.net/2020/06/23/ebLpu5Z1GKcfsVM.png" alt></p>
+<h3 id="3-5-2-头指针与头结点的异同"><a href="#3-5-2-头指针与头结点的异同" class="headerlink" title="3.5.2 头指针与头结点的异同"></a>3.5.2 头指针与头结点的异同</h3><p><img src="https://i.loli.net/2020/06/27/ZF5MJOolrpfaDge.png" alt></p>
+<h3 id="3-5-3-线性表链式储存结构代码描述"><a href="#3-5-3-线性表链式储存结构代码描述" class="headerlink" title="3.5.3 线性表链式储存结构代码描述"></a>3.5.3 线性表链式储存结构代码描述</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	ElemType data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; Node;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">LinkList</span>;</span>  <span class="comment">//定义 LinkList</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/06/27/IMpDr2qRaOwVl67.png" alt></p>
+<h2 id="3-6-单链表的读取"><a href="#3-6-单链表的读取" class="headerlink" title="3.6 单链表的读取"></a>3.6 单链表的读取</h2><h3 id="3-6-1-单链表的读取思路及代码"><a href="#3-6-1-单链表的读取思路及代码" class="headerlink" title="3.6.1 单链表的读取思路及代码"></a>3.6.1 单链表的读取思路及代码</h3><p>获取链表的第i个数据的算法思路：</p>
+<ul>
+<li>1.声明一个节点p指向链表的第一个节点，初始化j从1开始</li>
+<li>2.当j&lt;i时，遍历链表，让p的指针向后移动，不断指向下一个节点，j累加1</li>
+<li>3.若到链表末尾p为空，则说明第i个元素不存在</li>
+<li>4.否则查找成功，返回节点p的数据<br>代码实现如下:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L; <span class="keyword">int</span> i, ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ;</span><br><span class="line">	LinkList p;</span><br><span class="line">	p = L-&gt;next;</span><br><span class="line">	j = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (p &amp;&amp; j &lt; i)</span><br><span class="line">	&#123;</span><br><span class="line">		p = p-&gt;next;</span><br><span class="line">		++j;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!p || j &gt; i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> ERROR;</span><br><span class="line">	&#125;</span><br><span class="line">	*e = p-&gt;data;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-7-单链表的插入与删除"><a href="#3-7-单链表的插入与删除" class="headerlink" title="3.7 单链表的插入与删除"></a>3.7 单链表的插入与删除</h2><h3 id="3-7-1-单链表的插入"><a href="#3-7-1-单链表的插入" class="headerlink" title="3.7.1 单链表的插入"></a>3.7.1 单链表的插入</h3><p><code>s-&gt;next=p-&gt;next; p-&gt;next=s;</code><br><img src="https://i.loli.net/2020/06/27/VfQiTwhdMNosypg.png" alt><br>单链表第i个数据<strong>插入</strong>结点的算法思路：</p>
+<ul>
+<li>1.声明一个节点p指向链表的第一个节点，初始化j从1开始</li>
+<li>2.当j&lt;i时，遍历链表，让p的指针向后移动，不断指向下一个节点，j累加1</li>
+<li>3.若到链表末尾p为空，则说明第i个元素不存在</li>
+<li>4.否则查找成功，在系统中生成一个空结点s</li>
+<li>5.将数据元素e赋值给s-&gt;data</li>
+<li>6.单链表的插入标准语句<code>s-&gt;next=p-&gt;next; p-&gt;next=s</code></li>
+<li>7.返回成功<br>代码实现如下：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList L; <span class="keyword">int</span> i, ElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j;</span><br><span class="line">	LinkList p,s;</span><br><span class="line">	p = *L;</span><br><span class="line">	j = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(p &amp;&amp; j &lt; i)</span><br><span class="line">	&#123;</span><br><span class="line">		p = p-&gt;next;</span><br><span class="line">		++j;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!p || j &gt; i)</span><br><span class="line">		<span class="keyword">return</span> ERROR;</span><br><span class="line">	s = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">	s-&gt;data = e;</span><br><span class="line">	s-&gt;next = p-&gt;next;</span><br><span class="line">	p-&gt;next = s;</span><br><span class="line">	<span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-7-2-单链表的删除"><a href="#3-7-2-单链表的删除" class="headerlink" title="3.7.2 单链表的删除"></a>3.7.2 单链表的删除</h3><p><code>q=p-&gt;next; p-&gt;next=q-&gt;next;</code><br><img src="https://i.loli.net/2020/06/27/H97Ed8CUJPQgbYa.png" alt><br>单链表第i个数据<strong>删除</strong>结点的算法思路：</p>
+<ul>
+<li>1.声明一个节点p指向链表的第一个节点，初始化j从1开始</li>
+<li>2.当j&lt;i时，遍历链表，让p的指针向后移动，不断指向下一个节点，j累加1</li>
+<li>3.若到链表末尾p为空，则说明第i个元素不存在</li>
+<li>4.否则查找成功，将欲删除的结点p-&gt;next赋值给q</li>
+<li>5.单链表的删除标准语句<code>p-&gt;next=q-&gt;next</code></li>
+<li>6.将q结点中的数据赋值给e，作为返回</li>
+<li>7.释放q结点</li>
+<li>8.返回成功<br>代码实现如下：<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList *L; <span class="keyword">int</span> i, ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j;</span><br><span class="line">	LinkList p,q;</span><br><span class="line">	p = *L;</span><br><span class="line">	j = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(p-&gt;next &amp;&amp; j &lt; i)</span><br><span class="line">	&#123;</span><br><span class="line">		p = p-&gt;next;</span><br><span class="line">		++j;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!p-&gt;next || j &gt; i)</span><br><span class="line">		<span class="keyword">return</span> ERROR;</span><br><span class="line">	q = p-&gt;next;</span><br><span class="line">	p-&gt;next = q-&gt;next;</span><br><span class="line">	*e = q-&gt;data;</span><br><span class="line">	<span class="built_in">free</span>(q);</span><br><span class="line">	<span class="keyword">return</span> OK:</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-8-单链表的整表创建"><a href="#3-8-单链表的整表创建" class="headerlink" title="3.8 单链表的整表创建"></a>3.8 单链表的整表创建</h2><p>单链表的创建算法思路:</p>
+<ul>
+<li>1.声明一结点p和计数器变量i</li>
+<li>2.初始化一空链表L</li>
+<li>3.让L的头结点的指针指向NULL，即建立一个带头结点的单链表</li>
+<li>4.循环：<ul>
+<li>生成一个新结点赋值给p</li>
+<li>随机生成一个数字赋值给p的数据域p-&gt;data</li>
+<li>将p插进到头结点与前一新结点之间</li>
+</ul>
+</li>
+</ul>
+<p><strong>头插法</strong>代码实现如下:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateListHead</span><span class="params">(LinkList *L, <span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkList p;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	srand(time(<span class="number">0</span>));                         <span class="comment">/* 初始化随机数种子 */</span></span><br><span class="line">	*L = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">	(*L)-&gt;next = <span class="literal">NULL</span>;                      <span class="comment">/*  先建立一个带头结点的单链表 */</span></span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n; i++) </span><br><span class="line">	&#123;</span><br><span class="line">		p = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node)); <span class="comment">/*  生成新结点 */</span></span><br><span class="line">		p-&gt;data = rand()%<span class="number">100</span>+<span class="number">1</span>;             <span class="comment">/*  随机生成100以内的数字 */</span></span><br><span class="line">		p-&gt;next = (*L)-&gt;next;    </span><br><span class="line">		(*L)-&gt;next = p;						<span class="comment">/*  插入到表头 */</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/06/27/fTKrjEDCSONXwiP.png" alt><br><strong>尾插法</strong>代码实现如下:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateListTail</span><span class="params">(LinkList *L, <span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LinkList p,r;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	srand(time(<span class="number">0</span>));                      <span class="comment">/* 初始化随机数种子 */</span></span><br><span class="line">	*L = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node)); <span class="comment">/* L为整个线性表 */</span></span><br><span class="line">	r=*L;                                <span class="comment">/* r为指向尾部的结点 */</span></span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;n; i++) </span><br><span class="line">	&#123;</span><br><span class="line">		p = (Node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node)); <span class="comment">/*  生成新结点 */</span></span><br><span class="line">		p-&gt;data = rand()%<span class="number">100</span>+<span class="number">1</span>;           <span class="comment">/*  随机生成100以内的数字 */</span></span><br><span class="line">		r-&gt;next=p;                        <span class="comment">/* 将表尾终端结点的指针指向新结点 */</span></span><br><span class="line">		r = p;                            <span class="comment">/* 将当前的新结点定义为表尾终端结点 */</span></span><br><span class="line">	&#125;</span><br><span class="line">	r-&gt;next = <span class="literal">NULL</span>;                       <span class="comment">/* 表示当前链表结束 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-9-单链表的整表删除"><a href="#3-9-单链表的整表删除" class="headerlink" title="3.9 单链表的整表删除"></a>3.9 单链表的整表删除</h2><p>单链表整表删除的算法思路:</p>
+<ul>
+<li>1.声明一个结点p和q</li>
+<li>2.将第一个结点赋值给p</li>
+<li>3.循环<ul>
+<li>将下一个结点赋值给q</li>
+<li>释放p</li>
+<li>将q赋值给p<br>代码实现如下:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ClearList</span><span class="params">(LinkList *L)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">LinkList p,q;</span><br><span class="line">p=(*L)-&gt;next;           <span class="comment">/*  p指向第一个结点 */</span></span><br><span class="line"><span class="keyword">while</span>(p)                <span class="comment">/*  没到表尾 */</span></span><br><span class="line">&#123;</span><br><span class="line">	q=p-&gt;next;</span><br><span class="line">	<span class="built_in">free</span>(p);</span><br><span class="line">	p=q;</span><br><span class="line">&#125;</span><br><span class="line">(*L)-&gt;next=<span class="literal">NULL</span>;        <span class="comment">/* 头结点指针域为空 */</span></span><br><span class="line"><span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-10-单链表结果与顺序储存结果优缺点"><a href="#3-10-单链表结果与顺序储存结果优缺点" class="headerlink" title="3.10 单链表结果与顺序储存结果优缺点"></a>3.10 单链表结果与顺序储存结果优缺点</h2><img src="https://i.loli.net/2020/06/27/OJsYDFzQClpehBm.png" alt></li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -590,7 +669,7 @@ window.onload = function(){
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-06-23T08:54:27.451Z" itemprop="dateUpdated">2020年06月23日 16:54:27</time>
+        <time datetime="2020-06-27T11:21:28.648Z" itemprop="dateUpdated">2020年06月27日 19:21:28</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -765,7 +844,7 @@ window.onload = function(){
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章-数据结构绪论"><span class="toc-number">1.</span> <span class="toc-text">第1章 数据结构绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-基本概念和术语"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 基本概念和术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-数据"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-数据元素"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 数据元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-数据项"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.1.3 数据项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-数据对象"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.1.4 数据对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-数据结构"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.1.5 数据结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-逻辑结构与物理结构"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 逻辑结构与物理结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-逻辑结构"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 逻辑结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-物理结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 物理结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-抽象数据类型"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 抽象数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-数据类型"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-抽象数据类型"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 抽象数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-总结"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-算法"><span class="toc-number">2.</span> <span class="toc-text">2.算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-两种算法的比较"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 两种算法的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-算法的定义"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 算法的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-算法的特性"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 算法的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-算法设计的要求"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 算法设计的要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-算法效率的度量方法"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 算法效率的度量方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-事后统计方法"><span class="toc-number">2.5.1.</span> <span class="toc-text">2.5.1 事后统计方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-事前分析估算方法"><span class="toc-number">2.5.2.</span> <span class="toc-text">2.5.2 事前分析估算方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-算法的时间复杂度"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 算法的时间复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-算法的时间复杂度定义"><span class="toc-number">2.6.1.</span> <span class="toc-text">2.6.1 算法的时间复杂度定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-推导大O阶方法"><span class="toc-number">2.6.2.</span> <span class="toc-text">2.6.2 推导大O阶方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-常见的时间复杂度"><span class="toc-number">2.6.3.</span> <span class="toc-text">2.6.3 常见的时间复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-算法的空间复杂度"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 算法的空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-线性表"><span class="toc-number">3.</span> <span class="toc-text">3.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-线性表的定义"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 线性表的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2线性表的抽象数据类型"><span class="toc-number">3.2.</span> <span class="toc-text">3.2线性表的抽象数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-线性表的顺序存储结构"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 线性表的顺序存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-顺序存储定义"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.3.1 顺序存储定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-顺序存储方式"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.3.2 顺序存储方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-地址计算方法"><span class="toc-number">3.3.3.</span> <span class="toc-text">3.3.3 地址计算方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4顺序存储结构的插入和删除"><span class="toc-number">3.4.</span> <span class="toc-text">3.4顺序存储结构的插入和删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-获取元素的操作"><span class="toc-number">3.4.1.</span> <span class="toc-text">3.4.1 获取元素的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2-插入操作"><span class="toc-number">3.4.2.</span> <span class="toc-text">3.4.2 插入操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3-删除操作"><span class="toc-number">3.4.3.</span> <span class="toc-text">3.4.3 删除操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-5-线性表的顺序存储结构的优缺点"><span class="toc-number">3.4.4.</span> <span class="toc-text">3.4.5 线性表的顺序存储结构的优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-线性表的链式存储结构"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 线性表的链式存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-1-线性表链式存储结构定义"><span class="toc-number">3.5.1.</span> <span class="toc-text">3.5.1 线性表链式存储结构定义</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章-数据结构绪论"><span class="toc-number">1.</span> <span class="toc-text">第1章 数据结构绪论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-基本概念和术语"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 基本概念和术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-数据"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1 数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-数据元素"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 数据元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-数据项"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.1.3 数据项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-数据对象"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.1.4 数据对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-数据结构"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.1.5 数据结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-逻辑结构与物理结构"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 逻辑结构与物理结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-逻辑结构"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1 逻辑结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-物理结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2 物理结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-抽象数据类型"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 抽象数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-数据类型"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.1 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-抽象数据类型"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.3.2 抽象数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-总结"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-算法"><span class="toc-number">2.</span> <span class="toc-text">2.算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-两种算法的比较"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 两种算法的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-算法的定义"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 算法的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-算法的特性"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 算法的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-算法设计的要求"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 算法设计的要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-算法效率的度量方法"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 算法效率的度量方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-事后统计方法"><span class="toc-number">2.5.1.</span> <span class="toc-text">2.5.1 事后统计方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-事前分析估算方法"><span class="toc-number">2.5.2.</span> <span class="toc-text">2.5.2 事前分析估算方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-算法的时间复杂度"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 算法的时间复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-算法的时间复杂度定义"><span class="toc-number">2.6.1.</span> <span class="toc-text">2.6.1 算法的时间复杂度定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-推导大O阶方法"><span class="toc-number">2.6.2.</span> <span class="toc-text">2.6.2 推导大O阶方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-常见的时间复杂度"><span class="toc-number">2.6.3.</span> <span class="toc-text">2.6.3 常见的时间复杂度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-算法的空间复杂度"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 算法的空间复杂度</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-线性表"><span class="toc-number">3.</span> <span class="toc-text">3.线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-线性表的定义"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 线性表的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2线性表的抽象数据类型"><span class="toc-number">3.2.</span> <span class="toc-text">3.2线性表的抽象数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-线性表的顺序存储结构"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 线性表的顺序存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-顺序存储定义"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.3.1 顺序存储定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-顺序存储方式"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.3.2 顺序存储方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-地址计算方法"><span class="toc-number">3.3.3.</span> <span class="toc-text">3.3.3 地址计算方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4顺序存储结构的插入和删除"><span class="toc-number">3.4.</span> <span class="toc-text">3.4顺序存储结构的插入和删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-获取元素的操作"><span class="toc-number">3.4.1.</span> <span class="toc-text">3.4.1 获取元素的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2-插入操作"><span class="toc-number">3.4.2.</span> <span class="toc-text">3.4.2 插入操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3-删除操作"><span class="toc-number">3.4.3.</span> <span class="toc-text">3.4.3 删除操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-5-线性表的顺序存储结构的优缺点"><span class="toc-number">3.4.4.</span> <span class="toc-text">3.4.5 线性表的顺序存储结构的优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-线性表的链式存储结构"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 线性表的链式存储结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-1-线性表链式存储结构定义"><span class="toc-number">3.5.1.</span> <span class="toc-text">3.5.1 线性表链式存储结构定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-2-头指针与头结点的异同"><span class="toc-number">3.5.2.</span> <span class="toc-text">3.5.2 头指针与头结点的异同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-3-线性表链式储存结构代码描述"><span class="toc-number">3.5.3.</span> <span class="toc-text">3.5.3 线性表链式储存结构代码描述</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-单链表的读取"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 单链表的读取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-1-单链表的读取思路及代码"><span class="toc-number">3.6.1.</span> <span class="toc-text">3.6.1 单链表的读取思路及代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-单链表的插入与删除"><span class="toc-number">3.7.</span> <span class="toc-text">3.7 单链表的插入与删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-1-单链表的插入"><span class="toc-number">3.7.1.</span> <span class="toc-text">3.7.1 单链表的插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-2-单链表的删除"><span class="toc-number">3.7.2.</span> <span class="toc-text">3.7.2 单链表的删除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-单链表的整表创建"><span class="toc-number">3.8.</span> <span class="toc-text">3.8 单链表的整表创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9-单链表的整表删除"><span class="toc-number">3.9.</span> <span class="toc-text">3.9 单链表的整表删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10-单链表结果与顺序储存结果优缺点"><span class="toc-number">3.10.</span> <span class="toc-text">3.10 单链表结果与顺序储存结果优缺点</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
