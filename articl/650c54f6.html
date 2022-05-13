@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/06/09/Z4oUhX1BWetKVjQ.png">
 <meta property="og:image" content="https://i.loli.net/2020/06/09/egdFL8RDx5AjTu1.png">
 <meta property="article:published_time" content="2020-05-22T08:37:49.000Z">
-<meta property="article:modified_time" content="2022-04-25T02:46:10.293Z">
+<meta property="article:modified_time" content="2022-05-12T01:51:13.298Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="unix">
 <meta property="article:tag" content="ntp">
@@ -123,7 +123,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/categories">标签</a></li>
 	        
-				<li><a href="/jli/index.html">个人</a></li>
+				<li><a href="/jli">个人</a></li>
 	        
 			</ul>
 			
@@ -423,7 +423,7 @@ window.onload = function(){
 		        
 					<li style="width: 25%"><a href="/categories">标签</a></li>
 		        
-					<li style="width: 25%"><a href="/jli/index.html">个人</a></li>
+					<li style="width: 25%"><a href="/jli">个人</a></li>
 		        
 				</ul>
 			</nav>
@@ -487,7 +487,7 @@ window.onload = function(){
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">1.1k</span>
+        <span class="post-count" style="font-size: 14px;color: navy">1.3k</span>
       </span>
     </span>
     
@@ -496,7 +496,7 @@ window.onload = function(){
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  阅读时长: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">3分</span>
+        <span class="post-count" style="font-size: 14px;color: navy">4分</span>
       </span>
     </span>
 </div>
@@ -517,7 +517,7 @@ window.onload = function(){
 </blockquote>
 <a id="more"></a>
 <p>NTP简介：<br>NTP是网络时间协议(Network Time Protocol)，它是用来同步网络中各个计算机的时间的协议。<br>在计算机的世界里，时间非常地重要<br>例如：对于火箭发射这种科研活动，对时间的统一性和准确性要求就非常地高，是按照A这台计算机的时间，还是按照B这台计算机的时间？<br>NTP就是用来解决这个问题的，NTP（Network Time Protocol，网络时间协议）是用来使网络中的各个计算机时间同步的一种协议。<br>它的用途是把计算机的时钟同步到世界协调时UTC，其精度在局域网内可达0.1ms，在互联网上绝大多数的地方其精度可以达到1-50ms。<br>它可以使计算机对其服务器或时钟源（如石英钟，GPS等等）进行时间同步，它可以提供高精准度的时间校正，而且可以使用加密确认的方式来防止病毒的协议攻击。</p>
-<h2 id="windows做时间服务器设置"><a href="#windows做时间服务器设置" class="headerlink" title="windows做时间服务器设置"></a>windows做时间服务器设置</h2><p>参考microsoft<a href="http://download.microsoft.com/download/E/A/9/EA9F5FDC-255C-46A3-9AFE-C714B6037703/MicrosoftEasyFix50395.msi" target="_blank" rel="noopener">如何在 Windows Server 中配置权威时间服务器</a></p>
+<h2 id="windows做时间服务器设置（方法1）"><a href="#windows做时间服务器设置（方法1）" class="headerlink" title="windows做时间服务器设置（方法1）"></a>windows做时间服务器设置（方法1）</h2><p>参考microsoft<a href="http://download.microsoft.com/download/E/A/9/EA9F5FDC-255C-46A3-9AFE-C714B6037703/MicrosoftEasyFix50395.msi" target="_blank" rel="noopener">如何在 Windows Server 中配置权威时间服务器</a></p>
 <p>1.将服务器类型更改为 NTP。 为此，请按照下列步骤操作：<br>依次选择开始 &gt; 运行，键入 <code>regedit</code>，然后选择确定。<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters\Type</code><br>在右窗格中，右键单击键入，然后选择修改。</p>
 <p>2.在编辑值中的数值数据框中键入 NTP，然后选择确定。<br>将 <code>AnnounceFlags</code> 设置为 5。 为此，请按照下列步骤操作：<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\AnnounceFlags</code><br>在右窗格中，右键单击 <code>AnnounceFlags</code>，然后选择修改。<br>在编辑 DWORD 值中，在数值数据框中键入 5，然后选择确定。</p>
 <p>3.启用 <code>NTPServer</code>。 为此，请按照下列步骤操作：<br>找到并单击下面的注册表子项：<br><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer</code><br>在右窗格中，右键单击已启用，然后选择修改。<br>在编辑 DWORD 值的数值数据框中，键入 1，然后选择确定。</p>
@@ -529,6 +529,22 @@ window.onload = function(){
 <p>在右窗格中，右键单击 <code>MaxNegPhaseCorrection</code>，然后选择修改。<br>在“编辑 DWORD 值”中的“基数” 框中单击选择“十进制”。<br>在编辑 DWORD 值的数值数据框中键入 TimeInSeconds，然后选择确定。</p>
 <p>6.重启windows时间服务，cmd命令<br><code>net stop w32time &amp;&amp; net start w32time</code></p>
 <p><strong>注:自动配置方法</strong><br><a href="http://download.microsoft.com/download/E/A/9/EA9F5FDC-255C-46A3-9AFE-C714B6037703/MicrosoftEasyFix50395.msi" target="_blank" rel="noopener">点击下载 EasyFix.msi</a><br><img src="https://i.loli.net/2020/06/09/yLicws6QXEtxB1N.png" alt></p>
+<h2 id="windows做时间服务器设置（方法2）"><a href="#windows做时间服务器设置（方法2）" class="headerlink" title="windows做时间服务器设置（方法2）"></a>windows做时间服务器设置（方法2）</h2><ol>
+<li>开放防火墙udp123端口</li>
+<li>运行中输入<code>gpedit.msc</code></li>
+<li>展开<code>策略</code>下的<code>计算机配置</code>中的<code>管理模板/系统/windows时间服务/全局配置设置</code></li>
+<li>将上述的状态改为<code>已启用</code></li>
+<li>改变<code>AnnounceFlags</code>参数值为5</li>
+<li>展开<code>策略</code>下的<code>计算机配置</code>中的<code>管理模板/系统/windows时间服务/时间提供程序/启用windows NTP服务器</code></li>
+<li>将上述的状态改为<code>已启用</code></li>
+<li>在windows服务中开启windows time服务，并设置启动类型为<code>自动</code>，并重启服务</li>
+</ol>
+<h2 id="windows客户端时间校准间隔变更"><a href="#windows客户端时间校准间隔变更" class="headerlink" title="windows客户端时间校准间隔变更"></a>windows客户端时间校准间隔变更</h2><p>因windows默认的时间同步间隔为7天，会让同步的精度大打折扣，通过修改注册表来修改自动同步的间隔。</p>
+<ol>
+<li>打开运行<code>regedit</code>打开注册表</li>
+<li>展开HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient</li>
+<li>双击SpecialPollinterval键值，将基数选择到十进制上，显示的数字就是自动对时的间隔（秒为单位），如需间隔1小时，则输入3600</li>
+</ol>
 <h2 id="unix自动时间同步"><a href="#unix自动时间同步" class="headerlink" title="unix自动时间同步"></a>unix自动时间同步</h2><p>1.修改ntp配置文件<code>etc/ntp.config</code>，以windows服务器为准进行同步<br><img src="https://i.loli.net/2020/06/09/Z4oUhX1BWetKVjQ.png" alt></p>
 <p>2.重启ntp进程<br><code>/sbin/init.d/xntp stop</code><br><code>/sbin/intt.d/xntp start</code></p>
 <p>3.查看ntp同步状态<code>ntpq -p</code>(等待5-7分钟校准，如时间偏差过大 先手动调整时间再校准)<br><img src="https://i.loli.net/2020/06/09/egdFL8RDx5AjTu1.png" alt></p>
@@ -552,7 +568,7 @@ window.onload = function(){
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2022-04-25T02:46:10.293Z" itemprop="dateUpdated">2022年04月25日 10:46:10</time>
+        <time datetime="2022-05-12T01:51:13.298Z" itemprop="dateUpdated">2022年05月12日 09:51:13</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -727,7 +743,7 @@ window.onload = function(){
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows做时间服务器设置"><span class="toc-number">1.</span> <span class="toc-text">windows做时间服务器设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unix自动时间同步"><span class="toc-number">2.</span> <span class="toc-text">unix自动时间同步</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows做时间服务器设置（方法1）"><span class="toc-number">1.</span> <span class="toc-text">windows做时间服务器设置（方法1）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows做时间服务器设置（方法2）"><span class="toc-number">2.</span> <span class="toc-text">windows做时间服务器设置（方法2）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows客户端时间校准间隔变更"><span class="toc-number">3.</span> <span class="toc-text">windows客户端时间校准间隔变更</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unix自动时间同步"><span class="toc-number">4.</span> <span class="toc-text">unix自动时间同步</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -1015,7 +1031,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="https://yansheng836.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>荷塘月色</a>
             </li>
           
             <li class="search-li">

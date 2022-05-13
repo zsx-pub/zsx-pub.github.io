@@ -12,15 +12,15 @@
   <link rel="dns-prefetch" href="http://zsx.pub">
   <title>vi命令 | A|XIAN</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="linux Vi常用命令Ctrl+u：向文件首翻半屏；Ctrl+d：向文件尾翻半屏；Ctrl+f：向文件尾翻一屏；Ctrl+b：向文件首翻一屏；Esc：从编辑模式切换到命令模式；ZZ：命令模式下保存当前文件所做的修改后退出vi；">
+  <meta name="description" content="linux Vi常用命令 Ctrl+u：向文件首翻半屏； Ctrl+d：向文件尾翻半屏； Ctrl+f：向文件尾翻一屏； Ctrl+b：向文件首翻一屏； Esc：从编辑模式切换到命令模式； ZZ：命令模式下保存当前文件所做的修改后退出vi；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vi命令">
 <meta property="og:url" content="http://zsx.pub/articl/2ca53460.html">
 <meta property="og:site_name" content="A|XIAN">
-<meta property="og:description" content="linux Vi常用命令Ctrl+u：向文件首翻半屏；Ctrl+d：向文件尾翻半屏；Ctrl+f：向文件尾翻一屏；Ctrl+b：向文件首翻一屏；Esc：从编辑模式切换到命令模式；ZZ：命令模式下保存当前文件所做的修改后退出vi；">
+<meta property="og:description" content="linux Vi常用命令 Ctrl+u：向文件首翻半屏； Ctrl+d：向文件尾翻半屏； Ctrl+f：向文件尾翻一屏； Ctrl+b：向文件首翻一屏； Esc：从编辑模式切换到命令模式； ZZ：命令模式下保存当前文件所做的修改后退出vi；">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-08T03:32:26.000Z">
-<meta property="article:modified_time" content="2020-06-22T04:16:37.457Z">
+<meta property="article:modified_time" content="2022-05-07T00:12:20.792Z">
 <meta property="article:author" content="ZSX">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="vi">
@@ -118,7 +118,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/categories">标签</a></li>
 	        
-				<li><a href="/jli/index.html">个人</a></li>
+				<li><a href="/jli">个人</a></li>
 	        
 			</ul>
 			
@@ -418,7 +418,7 @@ window.onload = function(){
 		        
 					<li style="width: 25%"><a href="/categories">标签</a></li>
 		        
-					<li style="width: 25%"><a href="/jli/index.html">个人</a></li>
+					<li style="width: 25%"><a href="/jli">个人</a></li>
 		        
 				</ul>
 			</nav>
@@ -482,7 +482,7 @@ window.onload = function(){
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 15px;color: navy">  字数统计: </span>
-        <span class="post-count" style="font-size: 14px;color: navy">648</span>
+        <span class="post-count" style="font-size: 14px;color: navy">619</span>
       </span>
     </span>
     
@@ -506,7 +506,41 @@ window.onload = function(){
 -->
     <div class="article-entry" itemprop="articleBody" >
       
-        <h2 id="linux-Vi常用命令"><a href="#linux-Vi常用命令" class="headerlink" title="linux Vi常用命令"></a>linux Vi常用命令</h2><p>Ctrl+u：向文件首翻半屏；<br>Ctrl+d：向文件尾翻半屏；<br>Ctrl+f：向文件尾翻一屏；<br>Ctrl+b：向文件首翻一屏；<br>Esc：从编辑模式切换到命令模式；<br>ZZ：命令模式下保存当前文件所做的修改后退出vi；<a id="more"></a><br>:行号：光标跳转到指定行的行首；<br>:$：光标跳转到最后一行的行首；<br>x或X：删除一个字符，x删除光标后的，而X删除光标前的；<br>D：删除从当前光标到光标所在行尾的全部字符；<br>dd：删除光标行正行内容；<br>ndd：删除当前行及其后n-1行；<br>nyy：将当前行及其下n行的内容保存到寄存器？中，其中？为一个字母，n为一个数字；<br>p：粘贴文本操作，用于将缓存区的内容粘贴到当前光标所在位置的下方；<br>P：粘贴文本操作，用于将缓存区的内容粘贴到当前光标所在位置的上方；<br>/字符串：文本查找操作，用于从当前光标所在位置开始向文件尾部查找指定字符串的内容，查找的字符串会被加亮显示；<br>？name：文本查找操作，用于从当前光标所在位置开始向文件头部查找指定字符串的内容，查找的字符串会被加亮显示；<br>a，bs/F/T：替换文本操作，用于在第a行到第b行之间，将F字符串换成T字符串。其中，“s/”表示进行替换操作；<br>a：在当前字符后添加文本；<br>A：在行末添加文本；<br>i：在当前字符前插入文本；<br>I：在行首插入文本；<br>o：在当前行后面插入一空行；<br>O：在当前行前面插入一空行；<br>:wq：在命令模式下，执行存盘退出操作；<br>:w：在命令模式下，执行存盘操作；<br>:w！：在命令模式下，执行强制存盘操作；<br>:q：在命令模式下，执行退出vi操作；<br>:q！：在命令模式下，执行强制退出vi操作；<br>:e文件名：在命令模式下，打开并编辑指定名称的文件；<br>:n：在命令模式下，如果同时打开多个文件，则继续编辑下一个文件；<br>:f：在命令模式下，用于显示当前的文件名、光标所在行的行号以及显示比例；<br>:set number：在命令模式下，用于在最左端显示行号；<br>:set nonumber：在命令模式下，用于在最左端不显示行号；</p>
+        <h2 id="linux-Vi常用命令"><a href="#linux-Vi常用命令" class="headerlink" title="linux Vi常用命令"></a>linux Vi常用命令</h2><ul>
+<li>Ctrl+u：向文件首翻半屏；</li>
+<li>Ctrl+d：向文件尾翻半屏；</li>
+<li>Ctrl+f：向文件尾翻一屏；</li>
+<li>Ctrl+b：向文件首翻一屏；</li>
+<li>Esc：从编辑模式切换到命令模式；</li>
+<li>ZZ：命令模式下保存当前文件所做的修改后退出vi；<a id="more"></a></li>
+<li>:行号：光标跳转到指定行的行首；</li>
+<li>:$：光标跳转到最后一行的行首；</li>
+<li>x或X：删除一个字符，x删除光标后的，而X删除光标前的；</li>
+<li>D：删除从当前光标到光标所在行尾的全部字符；</li>
+<li>dd：删除光标行正行内容；</li>
+<li>ndd：删除当前行及其后n-1行；</li>
+<li>nyy：将当前行及其下n行的内容保存到寄存器？中，其中？为一个字母，n为一个数字；</li>
+<li>p：粘贴文本操作，用于将缓存区的内容粘贴到当前光标所在位置的下方；</li>
+<li>/字符串：文本查找操作，用于从当前光标所在位置开始向文件尾部查找指定字符串的内容，查找的字符串会被加亮显示；</li>
+<li>？name：文本查找操作，用于从当前光标所在位置开始向文件头部查找指定字符串的内容，查找的字符串会被加亮显示；</li>
+<li>a，bs/F/T：替换文本操作，用于在第a行到第b行之间，将F字符串换成T字符串。其中，“s/”表示进行替换操作；</li>
+<li>a：在当前字符后添加文本；</li>
+<li>A：在行末添加文本；</li>
+<li>i：在当前字符前插入文本；</li>
+<li>I：在行首插入文本；</li>
+<li>o：在当前行后面插入一空行；</li>
+<li>O：在当前行前面插入一空行；</li>
+<li>:wq：在命令模式下，执行存盘退出操作；</li>
+<li>:w：在命令模式下，执行存盘操作；</li>
+<li>:w！：在命令模式下，执行强制存盘操作；</li>
+<li>:q：在命令模式下，执行退出vi操作；</li>
+<li>:q！：在命令模式下，执行强制退出vi操作；</li>
+<li>:e文件名：在命令模式下，打开并编辑指定名称的文件；</li>
+<li>:n：在命令模式下，如果同时打开多个文件，则继续编辑下一个文件；</li>
+<li>:f：在命令模式下，用于显示当前的文件名、光标所在行的行号以及显示比例；</li>
+<li>:set number：在命令模式下，用于在最左端显示行号；</li>
+<li>:set nonumber：在命令模式下，用于在最左端不显示行号；</li>
+</ul>
 
       
 
@@ -526,7 +560,7 @@ window.onload = function(){
     </li>
     <li class="copyright_update-time">
         <strong >最后更新：</strong>
-        <time datetime="2020-06-22T04:16:37.457Z" itemprop="dateUpdated">2020年06月22日 12:16:37</time>
+        <time datetime="2022-05-07T00:12:20.792Z" itemprop="dateUpdated">2022年05月07日 08:12:20</time>
     </li>
     <!-- 有需要的可以取消注释 -->
     <!-- <li class="copyright_article-titles"><strong >本文标题：</strong>
@@ -989,7 +1023,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="https://yansheng836.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>荷塘月色</a>
             </li>
           
             <li class="search-li">
