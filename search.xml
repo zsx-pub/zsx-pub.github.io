@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>centos 7 图形化切换</title>
+      <link href="/articl/a208e35f.html"/>
+      <url>/articl/a208e35f.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>在vm安装完centos7系统后，在安装时未配置图形化界面，实现图形化界面切换的过程记录</p></blockquote><a id="more"></a><p><img src="https://s2.loli.net/2022/05/18/Qb8SnFuR6jIchKB.png" alt><br><img src="https://s2.loli.net/2022/05/18/YB4w5FXGqmpUDNA.png" alt><br><img src="https://s2.loli.net/2022/05/18/OMld1YUhHmk4EtZ.png" alt><br><img src="https://s2.loli.net/2022/05/18/rICcXGxlWAeQ5Bb.png" alt><br><img src="https://s2.loli.net/2022/05/18/bp3P67yrauZlFmj.png" alt><br><img src="https://s2.loli.net/2022/05/18/5ulRjhqxc1Tr6A7.png" alt><br><code>startx</code>命令也可以测试，桌面环境是否能正常启动</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> -centos </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实用网址收录</title>
       <link href="/articl/cf3c8758.html"/>
       <url>/articl/cf3c8758.html</url>
